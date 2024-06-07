@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Header from "./components/Header/Header";
+import Header from "./components/header/Header";
 import Button from "./components/button/Button";
 import Footer from "./components/footer/Footer";
 import Preloader from "./components/preloader/Preloader";
