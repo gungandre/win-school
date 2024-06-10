@@ -2,15 +2,18 @@ import Button from "../button/Button";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-
-const ClassModal = ({ openModal, setOpenModal }) => {
+import useScrollLenis from "../lenis/useScrollLenis";
+const ClassModal = ({ openModal, setOpenModal, dataModal }) => {
   const elemenRef = useRef(null);
+  const [stopScroll, setStopScroll] = useScrollLenis(false);
 
   useGSAP(() => {
     if (openModal) {
       if (elemenRef.current) {
         elemenRef.current.style.zIndex = "1000";
       }
+
+      setStopScroll(true);
 
       gsap.to(elemenRef.current, {
         opacity: 0.5,
@@ -26,6 +29,7 @@ const ClassModal = ({ openModal, setOpenModal }) => {
       if (elemenRef.current) {
         elemenRef.current.style.zIndex = "-1";
       }
+      setStopScroll(false);
       gsap.to(elemenRef.current, {
         opacity: 0,
         duration: 1,
@@ -47,7 +51,7 @@ const ClassModal = ({ openModal, setOpenModal }) => {
         onClick={() => setOpenModal(false)}
       ></div>
       <div className="w-full h-[90%] bg-white-ivory fixed bottom-[-100%] z-[1000]  rounded-tl-[50px] rounded-tr-[50px] flex modal-container">
-        <div className="relative w-full h-full px-15 py-[30px] flex justify-center items-end">
+        <div className="relative w-full h-full px-15 py-[50px] flex justify-center items-end">
           <button
             className="absolute top-0 right-[10%] bg-soft-tosca text-white-ivory w-[210px] h-[76px] rounded-[38px] flex items-center pl-[32px] -translate-y-[50%]"
             onClick={() => setOpenModal(false)}
@@ -68,33 +72,26 @@ const ClassModal = ({ openModal, setOpenModal }) => {
               <path d="M41 41L21 21" stroke="#F96D49" stroke-width="2" />
             </svg>
           </button>
-          <div className="w-[1598px] h-[755px]  flex justify-between">
+          <div className="w-[1598px] h-[745px]  flex justify-between">
             <div className="h-full flex flex-col justify-between">
-              <div className="">
-                <div className="font-seagull text-[3.333vw] text-sunset-coral">
-                  Stimulation Class
+              <div className=" flex flex-col gap-4">
+                <div className="font-seagull text-[3.333vw] leading-[3.333vw] text-sunset-coral">
+                  {dataModal.className}
                 </div>
                 <div className="font-helixa text-[28px] text-[#5E5E5E]">
-                  20 - 30 months old
+                  {dataModal.age}
                 </div>
               </div>
               <div className="w-[901px] h-[596px] rounded-[50px] overflow-hidden">
                 <img
-                  src="/assets/images/modal/modal.png"
+                  src={`${dataModal.image}`}
                   alt=""
                   className="w-full h-full object-cover"
                 />
               </div>
             </div>
             <div className="w-[588px] h-full flex flex-col justify-between">
-              <div>
-                Unlock Your Toddler's Potential with Our Stimulating Classes! Is
-                your little one ready to explore, learn, and grow? Join us for
-                our exciting stimulation classes designed specifically for
-                toddlers aged 20-30 months old! Don't miss out on this enriching
-                experience for your little one! Sign up now and watch them
-                blossom with us.
-              </div>
+              <div>{dataModal.desc}</div>
 
               <div className="grid grid-cols-[1.1fr_0.9fr] gap-[32px]">
                 <div className="">
@@ -155,21 +152,23 @@ const ClassModal = ({ openModal, setOpenModal }) => {
                     Limited Seats
                   </div>
                   <div className="text-helixa text-[28px] leading-[35px] text-sunset-coral">
-                    6 Seats Left
+                    {`${dataModal.seat} Seats Left`}
                   </div>
                 </div>
-
-                <div>
-                  {/* <Button
-                    name={"Register Now"}
-                    arrow={null}
-                    color={"#F96D49"}
-                    fontSize={28}
-                    hoverColor={"#F96D49"}
-                    hoverType={2}
-                    textHover={"#FFFBF3"}
-                  /> */}
-                </div>
+                {dataModal.seat > 0 && (
+                  <div className="h-full flex  items-center">
+                    <div className={`group `}>
+                      <a href="/register" target="_blank">
+                        <div className="w-auto px-[32px] border-[#F96D49] border-[2px] rounded-[22px] h-auto font-helixa text-[28px]  overflow-hidden relative group">
+                          <div className="w-[300px] h-[300px] bg-sunset-coral rounded-full absolute left-1/2 top-1/2 translate-y-full -translate-x-[50%] group-hover:translate-y-[-50%]  duration-1000 transition-all"></div>
+                          <div className="group-hover:text-white-ivory duration-1000 transition-all relative z-10 text-sunset-coral">
+                            Register Now
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

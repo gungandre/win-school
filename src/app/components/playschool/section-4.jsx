@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
-import BeforeFooter from "./before-footer";
 
 const Section4 = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -123,7 +122,7 @@ const Section4 = () => {
 
   return (
     <div
-      className="min-h-dvh w-full  py-[158px] bg-white-ivory relative"
+      className="min-h-dvh w-full  py-[158px] bg-white-ivory relative section"
       ref={elemenRef}
     >
       <div className="w-full">
@@ -156,7 +155,7 @@ const Section4 = () => {
             <div className="grid grid-rows-2">
               <div className="">
                 <div className="flex items-end gap-x-[60px]">
-                  <div className="flex justify-center w-[511px] h-[765px]  overflow-visible bg-red-500">
+                  <div className="flex justify-center w-[511px] h-[765px]  overflow-visible ">
                     <div className="w-[1265px] h-[1795px] rounded-[50px] image-container-gallery overflow-hidden absolute  -translate-x-1/2 ">
                       <img
                         src="assets/images/playschool/gallery/Image 6.png"

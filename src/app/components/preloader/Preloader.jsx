@@ -4,20 +4,27 @@ import Image from "next/image";
 
 import { useEffect, useState } from "react";
 import { useLenis } from "@studio-freight/react-lenis";
+import { preloaderContext } from "@/app/context/preloaderContext";
+import { useContext } from "react";
+import useScrollAndLenis from "../lenis/useScrollLenis";
 
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 
 const Preloader = ({ setNavbarAnimationPlay }) => {
   const [scroll, setScroll] = useState(false);
+  const { preloaderComplete, setPreloaderComplete } =
+    useContext(preloaderContext);
 
-  const lenis = useLenis(() => {
-    if (scroll) {
-      lenis.start();
-    } else {
-      lenis.stop();
-    }
-  }, [scroll]);
+  const [stopScroll, setStopScroll] = useScrollAndLenis(true);
+
+  // const lenis = useLenis(() => {
+  //   if (scroll) {
+  //     lenis.start();
+  //   } else {
+  //     lenis.stop();
+  //   }
+  // }, [scroll]);
 
   useEffect(() => {
     gsap.registerPlugin(SplitText);
@@ -30,6 +37,9 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
     const tlImage = gsap.timeline({ paused: true });
     const tlLoadingPercent = gsap.timeline({ paused: true });
     const tlMenuNavbar = gsap.timeline({ paused: true });
+
+    document.querySelector(".win-school-text").style.opacity = 1;
+    document.querySelector(".win-the-future-text").style.opacity = 1;
 
     tlImage
       .to([".img-1", ".img-4"], {
@@ -60,26 +70,26 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
     tlLoadingPercent
       .to(".counter-3", {
         transform: "translateY(-96.8%)",
-        duration: 5,
+        duration: 3.5,
         ease: "power3.out",
       })
       .to(
         ".counter-2",
         {
           transform: "translateY(-96.8%)",
-          duration: 3.5,
+          duration: 2,
           ease: "power2.out",
         },
-        "-=4.5"
+        "-=3"
       )
       .to(
         ".counter-1",
         {
           transform: "translateY(-50%)",
-          duration: 2.5,
+          duration: 1,
           ease: "power4.out",
         },
-        "-=3"
+        "-=1.5"
       );
 
     tl.to(".loading-percent-1", {
@@ -125,7 +135,7 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
 
       .to(".loading", {
         width: "100%",
-        duration: 4,
+        duration: 2,
         ease: "none",
         onStart: () => {
           tlLoadingPercent.play();
@@ -136,8 +146,8 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
         {
           opacity: 1,
           color: "#F96D49",
-          duration: 0.3,
-          stagger: 0.07,
+          duration: 0.1,
+          stagger: 0.03,
           ease: "power2.inOut",
         },
         "<"
@@ -148,10 +158,10 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
           opacity: 1,
           color: "#F96D49",
           duration: 0.3,
-          stagger: 0.07,
+          stagger: 0.03,
           ease: "power2.inOut",
         },
-        "-=1"
+        "-=0.6"
       )
 
       .fromTo(
@@ -178,7 +188,7 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
         ease: "power1.out",
         visibility: "visible",
         duration: 0.7,
-        delay: 1,
+        delay: 0.5,
       })
       .to(
         ".img-2",
@@ -215,7 +225,7 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
       )
       .to(".a", {
         clipPath: "inset(0% 0% 0% 0%)",
-        delay: 1,
+        delay: 0.5,
         duration: 1.2,
         ease: "power1.inOut",
         onStart: () => {
@@ -224,7 +234,7 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
       })
 
       .to(".bg-tosca", {
-        delay: 1,
+        delay: 0.5,
         clipPath: "inset(0% 0% 0% 0%)",
       })
       .to(
@@ -244,7 +254,7 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
       .to(
         [".bg--white", ".bg-yellow", ".bg-tosca", ".a", ".preloader-container"],
         {
-          duration: 1,
+          duration: 0.5,
           clipPath: "inset(0% 0% 100% 0%)",
           onComplete: () => {
             tl.to(
@@ -259,8 +269,10 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
                 display: "none",
               }
             );
-            setNavbarAnimationPlay(true);
+
             setScroll(true);
+            setStopScroll(false);
+            setPreloaderComplete(true);
           },
         }
       );
@@ -321,12 +333,12 @@ const Preloader = ({ setNavbarAnimationPlay }) => {
           <div className="flex flex-col gap-y-[16px] w-full absolute  bottom-[55px]">
             <div className="flex justify-between">
               <div className="overflow-hidden">
-                <span className="font-seagull text-[40px] text-moonstone-gray  win-school-text">
+                <span className="font-seagull text-[40px] text-moonstone-gray  win-school-text opacity-0">
                   WIN SCHOOL
                 </span>
               </div>
               <div className="overflow-hidden">
-                <span className="font-seagull text-[40px] text-moonstone-gray  win-the-future-text">
+                <span className="font-seagull text-[40px] text-moonstone-gray  win-the-future-text opacity-0">
                   WIN THE FUTURE
                 </span>
               </div>

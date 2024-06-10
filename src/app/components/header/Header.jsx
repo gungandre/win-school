@@ -18,7 +18,6 @@ const menuList = [
     submenu: [
       { name: "Acaedemic Calender", link: "/acaedemic-calender" },
       { name: "School Tour", link: "/school-tour" },
-      "School  Tour",
     ],
   },
   {
@@ -174,7 +173,7 @@ const Header = ({ navbarAnimationPlay, navbarColor }) => {
         "<"
       )
       .to(
-        document.querySelectorAll(`.dropdown-${index} li a div`),
+        document.querySelectorAll(`.text1`),
         {
           color: navbarColor === "#19918E" ? "#FFFBF3" : "#19918E",
           duration: 0.5,
@@ -232,7 +231,7 @@ const Header = ({ navbarAnimationPlay, navbarColor }) => {
         "<"
       )
       .to(
-        document.querySelector(`.dropdown-${index} a span`),
+        document.querySelector(`.dropdown-${index} div span`),
         {
           color: navbarColor === "#19918E" ? "#19918E" : "#FFFBF3",
           duration: 0.5,
@@ -352,7 +351,7 @@ const Header = ({ navbarAnimationPlay, navbarColor }) => {
 
   return (
     <nav className="navbar fixed top-0 w-full p-8 sm:py-9 sm:px-15 flex items-center justify-between z-50">
-      <a href="/">
+      <Link href="/">
         <svg
           className="nav-logo translate-y-[-50%] opacity-0"
           width={149}
@@ -449,7 +448,7 @@ const Header = ({ navbarAnimationPlay, navbarColor }) => {
             </clipPath>
           </defs>
         </svg>
-      </a>
+      </Link>
       <ul className="flex items-center gap-2">
         {menuList.map((item, index) => (
           <li
@@ -458,8 +457,8 @@ const Header = ({ navbarAnimationPlay, navbarColor }) => {
             onMouseEnter={() => hoverMenu(index, item)}
             onMouseLeave={() => hoverLeave(index, item)}
           >
-            <a
-              className="flex items-center justify-center gap-5 text-desktop font-bold text-nowrap menu-name translate-y-[-400%]"
+            <div
+              className="flex items-center justify-center gap-5 text-desktop font-bold text-nowrap menu-name translate-y-[-400%] menuss"
               href="/curriculum"
             >
               <span className="menu-name-span">{item.name}</span>
@@ -478,7 +477,7 @@ const Header = ({ navbarAnimationPlay, navbarColor }) => {
                   strokeWidth={2}
                 />
               </svg>
-            </a>
+            </div>
             <ul
               className={`dropdown-menu-${index} bg-transparent space-y-1 absolute   top-0 left-0 px-2  h-0 overflow-hidden rounded-[10px] sm:pt-16 pb-4 text-desktop w-full  `}
             >

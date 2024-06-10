@@ -24,28 +24,16 @@ const Hero = () => {
     // hero image paralax
     let getRatio = (el) =>
       window.innerHeight / (window.innerHeight + el.offsetHeight);
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
-        },
-      })
-      .to(".hero-image", {
-        backgroundPosition: `50% ${
-          -window.innerHeight * (1 - getRatio(containerRef.current))
-        }px`,
-      });
-
-    gsap.to(".el-top-img", {
-      opacity: 1,
-      duration: 1,
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        scrub: true,
+      },
     });
 
-    gsap.to(".hero-image", {
-      transform: "translateY(0)",
+    gsap.to(".el-top-img", {
       opacity: 1,
       duration: 1,
     });
@@ -98,39 +86,83 @@ const Hero = () => {
         stagger: 0.1,
       }
     );
-  });
 
-  const arrowClick = () => {
-    sectionRef.current.scrollIntoView({ behavior: "smooth" });
-  };
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          pin: true,
 
-  const arrowHover = () => {
-    gsap.to(".arrow-svg", {
-      transform: "translateY(200%)",
+          scrub: true,
+          start: "top top",
+          end: "bottom bottom",
+          anticipatePin: true,
+        },
+      })
+      .to(".daycare-text", {
+        transform: "translateY(-300%)",
+      })
+      .to(
+        ".daycare-hero-desc",
+        {
+          transform: "translateY(-100%)",
+        },
+        "<"
+      )
+      .to(
+        ".daycare-hero-image",
+        {
+          top: "20%",
+          width: "100%",
+          height: "684px",
+        },
+        "<"
+      );
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+
+          scrub: true,
+        },
+      })
+      .to(".daycare-hero-image", {
+        backgroundPosition: `50% ${
+          -window.innerHeight *
+          (1 - getRatio(document.querySelector(".daycare-hero-image")))
+        }px`,
+      });
+
+    gsap.to(".daycare-hero-image", {
+      transform: "translateY(0)",
       opacity: 1,
-      duration: 0.5,
-      onComplete: () => {
-        gsap.fromTo(
-          ".arrow-svg",
-          {
-            transform: "translateY(-200%)",
-          },
-          {
-            transform: "translateY(0)",
-
-            duration: 0.5,
-          }
-        );
-      },
+      duration: 1,
+      ease: "power1.out",
     });
-  };
+
+    gsap.to(".daycare-text-desc", {
+      transform: "translateY(0)",
+      duration: 1,
+      ease: "power1.out",
+    });
+
+    gsap.to(".daycare-text-desc-2", {
+      transform: "translateY(0)",
+      delay: 0.5,
+      duration: 1,
+      ease: "power1.out",
+    });
+  });
 
   return (
     <div
       className="min-h-dvh w-full flex flex-col px-15 relative bg-white-ivory section"
       ref={containerRef}
     >
-      <div className="text-sunset-coral text-[11.979vw] font-seagull text-center mt-[80px] playschool flex justify-center">
+      <div className="text-sunset-coral text-[11.979vw] leading-[11.979vw] font-seagull  mt-[80px]  flex mb-[5%] daycare-text ">
         <div className="overflow-hidden">
           <div className="text-sunset-coral text-[11.979vw] translate-y-full playschool">
             P
@@ -182,47 +214,52 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="mt-[250px] relative">
-        <div className="w-[450px] h-[309px] bg-soft-tosca rounded-[50px] absolute right-[14%] -translate-y-1/2 el-top-img opacity-0 z-10">
-          <div className="relative w-full h-full">
-            <div className="w-[294px] font-helixa text-[25px] leading-[35px] text-white-ivory pt-[38px] pl-[48px] font-bold our-daycare">
-              Our playschool program introduces children to basic academic
-              concepts in a fun and engaging way.
+      <div className=" relative img-container-hero">
+        <div className=" relative  flex">
+          <div className="w-[60%]"></div>
+          <div className="flex flex-col w-[40%]  items-center daycare-hero-desc z-10">
+            <div>
+              <div className="flex flex-col ">
+                <div className="overflow-hidden">
+                  <div className="font-helixa text-[28px] text-[#5e5e5e] translate-y-full daycare-text-desc">
+                    For children aged
+                  </div>
+                </div>
+                <div className="overflow-hidden">
+                  <div className="font-helixa text-[48px] text-soft-tosca translate-y-full daycare-text-desc">
+                    20 months - 6 years old
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="overflow-hidden">
+                  <div className="font-helixa text-[28px] text-[#5e5e5e] translate-y-full daycare-text-desc-2">
+                    Days and hours
+                  </div>
+                </div>
+                <div className="font-helixa text-[48px] text-soft-tosca">
+                  <div className="overflow-hidden">
+                    <div className="translate-y-full daycare-text-desc-2">
+                      Available from
+                    </div>
+                  </div>
+                  <div className="overflow-hidden">
+                    <div className="translate-y-full daycare-text-desc-2">
+                      Monday - Friday
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button
-              className="absolute w-[76px] h-[76px] bg-dark-tosca rounded-full right-[5%] bottom-[7%] overflow-hidden flex justify-center items-center "
-              onMouseEnter={arrowHover}
-              onClick={arrowClick}
-            >
-              <svg
-                width="30"
-                height="31"
-                viewBox="0 0 30 31"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="arrow-svg"
-              >
-                <path
-                  d="M14.9985 0.857867L14.9985 29.1421M14.9985 29.1421L29.1406 15M14.9985 29.1421L0.856355 15"
-                  stroke="#FFFBF3"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
           </div>
         </div>
         <div
-          className="w-full h-[514px] overflow-hidden rounded-[50px]  hero-image bg-no-repeat translate-y-full opacity-0"
+          className="w-[1042px] h-[514px] overflow-hidden rounded-[50px]  daycare-hero-image bg-no-repeat bg-cover absolute translate-y-full top-0 opacity-0"
           style={{
             backgroundImage: "url('/assets/images/playschool/image-hero.png')",
           }}
-        >
-          {/* <img
-            src="/assets/images/playschool/image-hero.png"
-            alt="hero"
-            className="w-full object-cover h-full object-top hero-image"
-          /> */}
-        </div>
+        ></div>
+        <div className="w-[1042px] h-[514px] overflow-hidden rounded-[50px]   bg-no-repeat bg-cover  "></div>
       </div>
       <div className="w-full mt-[132px] mb-[132px]" ref={sectionRef}>
         <div className="font-helixa text-sunset-coral text-[6.667vw] leading-[6.771vw] text-center">

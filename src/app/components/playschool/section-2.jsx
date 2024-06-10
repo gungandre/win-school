@@ -27,7 +27,7 @@ const Section2 = () => {
 
   return (
     <div
-      className="h-dvh  w-full flex justify-center items-center bg-white-ivory"
+      className="h-dvh  w-full flex justify-center items-center bg-white-ivory section"
       ref={elemenRef}
     >
       <div className="font-helixa text-[13.333vw] text-sunset-coral text-nowrap translate-x-[100%] text-scroll">

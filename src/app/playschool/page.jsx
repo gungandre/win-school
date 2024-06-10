@@ -16,9 +16,20 @@ import gsap from "gsap";
 import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import Footer2 from "../components/footer/footer-2";
+import useNavColor from "../hook/useNavColor";
 
 const page = () => {
   const [onHover, setOnHover] = useState(false);
+
+  const navColorArray = [
+    "#19918E",
+    "#19918E",
+    "#19918E",
+    "#19918E",
+    "#FFFBF3",
+    "#FFFBF3",
+  ];
+  const { navbarColor } = useNavColor(navColorArray, ".section");
 
   const cursorRef = useRef(null);
   useEffect(() => {
@@ -39,22 +50,6 @@ const page = () => {
       document.removeEventListener("mousemove", moveCursor);
     };
   }, []);
-
-  // useGSAP(() => {
-  //   gsap
-  //     .timeline({
-  //       scrollTrigger: {
-  //         trigger: "footer",
-  //         start: "top top",
-  //         end: "bottom bottom",
-  //         markers: true,
-  //         scrub: 1,
-  //         pin: true,
-  //         pinSpacing: true,
-  //       },
-  //     })
-  //     .fromTo("footer", { y: "-100%", zIndex: "-100" }, { y: "-100%" });
-  // });
 
   if (onHover) {
     const cursorHover = () => {
@@ -82,7 +77,7 @@ const page = () => {
     <>
       <Cursor cursorRef={cursorRef} cursorText={"MORE"} />
 
-      <Header navbarAnimationPlay={true} />
+      <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
       <Hero />
       <Section2 />
       <Section3 setOnHover={setOnHover} />

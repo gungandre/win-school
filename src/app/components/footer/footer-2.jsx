@@ -78,18 +78,6 @@ const Footer = () => {
       });
     });
 
-    // ScrollTrigger.create({
-    //   trigger: "footer",
-    //   markers: true,
-    //   scrub: true,
-    //   start: "top top",
-    //   animation: gsap.from(
-    //     "footer",
-
-    //     { y: "-100%", ease: "none", duration: 1 }
-    //   ),
-    // });
-
     gsap
       .timeline({
         scrollTrigger: {
@@ -156,7 +144,6 @@ const Footer = () => {
       end: "bottom",
 
       onLeaveBack: () => {
-        console.log("leave");
         gsap.to(
           [wText, iText, nText, sText, cText, hText, oText1, oText2, lText],
 
@@ -167,13 +154,6 @@ const Footer = () => {
         );
       },
     });
-    // ScrollTrigger.create({
-    //   trigger: "footer",
-    //   markers: true,
-    //   scrub: true,
-    //   start: "+=100vh top",
-
-    // });
   });
   return (
     <footer className="h-dvh  relative  flex flex-col justify-end bg-white-ivory   footer after:w-full section after:bg-sunset-coral after:h-[120px] after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:top-0  z-10">

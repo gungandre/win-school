@@ -14,7 +14,7 @@ const Section2 = () => {
         scrollTrigger: {
           trigger: elemenRef.current,
           start: "top top",
-          end: "+=2000",
+          end: "bottom top",
           scrub: true,
           pin: true,
           pinSpacer: true,
@@ -23,6 +23,8 @@ const Section2 = () => {
       .to(".text-scroll", {
         transform: "translateX(-100%)",
       });
+
+    ScrollTrigger.refresh();
   });
 
   return (

@@ -11,8 +11,6 @@ function useNavColor(navbarColors, sectionSelector) {
   useGSAP(() => {
     const sections = gsap.utils.toArray(sectionSelector);
 
-    console.log({ sections });
-
     sections.forEach(function (section, index) {
       ScrollTrigger.create({
         trigger: section,

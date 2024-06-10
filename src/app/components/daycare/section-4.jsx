@@ -128,7 +128,7 @@ const Section4 = () => {
     >
       <div className="w-full">
         <div className="font-helixa text-[6.667vw] text-sunset-coral text-center playschool-photo-gallery opacity-0 translate-y-full">
-          daycare Photo Gallery
+          Daycare Photo Gallery
         </div>
         <div className="grid grid-cols-[37.5vw_62.5vw] mt-[178px] relative">
           <div className=" mr-[60px] mt-[25%]">
@@ -156,7 +156,7 @@ const Section4 = () => {
             <div className="grid grid-rows-2">
               <div className="">
                 <div className="flex items-end gap-x-[60px]">
-                  <div className="flex justify-center w-[511px] h-[765px]  overflow-visible bg-red-500">
+                  <div className="flex justify-center w-[511px] h-[765px]  overflow-visible ">
                     <div className="w-[1265px] h-[1795px] rounded-[50px] image-container-gallery overflow-hidden absolute  -translate-x-1/2 ">
                       <img
                         src="assets/images/playschool/gallery/Image 6.png"
