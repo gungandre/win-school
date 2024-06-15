@@ -5,8 +5,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import Footer2 from "../footer/footer-2";
-const BeforeFooter = () => {
+
+const BeforeFooter = ({ tlComplete }) => {
   const elemenRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
@@ -57,7 +57,7 @@ const BeforeFooter = () => {
         backgroundColor: "transparent",
         duration: 1,
       });
-  });
+  }, [tlComplete]);
 
   return (
     <div className="w-full h-dvh  relative  bg-white-ivory section z-[11] section">
@@ -77,6 +77,8 @@ const BeforeFooter = () => {
         </div>
         <div className="w-full flex justify-center get-special-offer-button opacity-0 translate-y-[200%]">
           <Button
+            buttonType={"a"}
+            link={"https://wa.me/6281130910001"}
             name={"Get a Special Offer"}
             arrow={null}
             color={"#FFFBF3"}

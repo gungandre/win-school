@@ -190,6 +190,8 @@ const Section9 = () => {
           </div>
           <div className="w-full flex justify-center absolute left-0 bottom-[30%] button-register opacity-0 translate-y-full">
             <Button
+              link={"https://wa.me/6281130910001"}
+              buttonType={"a"}
               name={"Get a Special Offer"}
               arrow={null}
               color={"#FFFBF3"}

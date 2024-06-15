@@ -143,6 +143,8 @@ const Footer = () => {
                 Denpasar Bali 80239
               </p>
               <Button
+                buttonType="a"
+                link={"https://maps.app.goo.gl/Hvey7B4hL15PsyZ96"}
                 className={""}
                 name={"Get Direction"}
                 arrow={"right"}

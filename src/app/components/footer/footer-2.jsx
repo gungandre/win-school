@@ -8,7 +8,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import gsap from "gsap";
 import Button from "../button/Button";
 
-const Footer = () => {
+const Footer = ({ tlComplete }) => {
   const elemenRef = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
 
@@ -154,7 +154,7 @@ const Footer = () => {
         );
       },
     });
-  });
+  }, []);
   return (
     <footer className="h-dvh  relative  flex flex-col justify-end bg-white-ivory   footer after:w-full section after:bg-sunset-coral after:h-[120px] after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:top-0  z-10">
       <div className="h-[120px]"></div>

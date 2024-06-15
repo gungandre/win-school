@@ -1,7 +1,20 @@
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
 
-const validRoutes = ["/", "/daycare", "/playschool"];
+const validRoutes = [
+  "/",
+  "/daycare",
+  "/playschool",
+  "/our-approach",
+  "/our-programmes",
+  "/our-team",
+  "/our-vision-and-mission",
+  "/our-features",
+  "/school-tour",
+  "/our-location",
+  "/academic-calender",
+  "/our-facilities",
+];
 
 export async function middleware(req) {
   const { pathname } = req.nextUrl;

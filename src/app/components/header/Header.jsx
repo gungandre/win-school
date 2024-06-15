@@ -9,14 +9,14 @@ const menuList = [
     id: 1,
     name: "Curriculum",
     submenu: [
-      { name: "Our Aproach", link: "/our-aproach" },
+      { name: "Our Approach", link: "/our-approach" },
       { name: "Our Programmes", link: "/our-programmes" },
     ],
   },
   {
     name: "Admission",
     submenu: [
-      { name: "Acaedemic Calender", link: "/acaedemic-calender" },
+      { name: "Academic Calender", link: "/academic-calender" },
       { name: "School Tour", link: "/school-tour" },
     ],
   },
@@ -509,15 +509,17 @@ const Header = ({ navbarAnimationPlay, navbarColor }) => {
         ))}
       </ul>
 
-      <button
-        className="nav-cta text-dark-tosca text-20-body-text-2 border-[2px] opacity-0 border-dark-tosca rounded-full flex items-center justify-center p-[10px_24px] translate-y-[-180%] overflow-hidden relative group"
+      <a
+        href="https://wa.me/6281130910001"
+        target="_blank"
+        className="nav-cta text-dark-tosca text-20-body-text-2 border-[2px] opacity-0 border-dark-tosca rounded-full flex items-center justify-center p-[10px_55px] translate-y-[-180%] overflow-hidden relative group"
         onMouseEnter={() => buttonHover()}
         onMouseLeave={() => buttonLeave()}
       >
-        <div className="title-button text-dark-tosca "> Book School Tour</div>
+        <div className="title-button text-dark-tosca "> Contact Us</div>
 
         <div className="w-[300px] circle-button rounded-full z-[-1] h-[300px] bg-dark-tosca absolute translate-y-[100%] "></div>
-      </button>
+      </a>
     </nav>
   );
 };

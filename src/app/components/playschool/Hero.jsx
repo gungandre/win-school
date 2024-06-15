@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
 
-const Hero = () => {
+const Hero = ({ setTlComplete }) => {
   const containerRef = useRef(null);
   const sectionRef = useRef(null);
 
@@ -134,6 +134,7 @@ const Hero = () => {
           -window.innerHeight *
           (1 - getRatio(document.querySelector(".daycare-hero-image")))
         }px`,
+        onComplete: () => {},
       });
 
     gsap.to(".daycare-hero-image", {

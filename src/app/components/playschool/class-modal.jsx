@@ -158,10 +158,13 @@ const ClassModal = ({ openModal, setOpenModal, dataModal }) => {
                 {dataModal.seat > 0 && (
                   <div className="h-full flex  items-center">
                     <div className={`group `}>
-                      <a href="/register" target="_blank">
+                      <a href="https://wa.me/6281130910001" target="_blank">
                         <div className="w-auto px-[32px] border-[#F96D49] border-[2px] rounded-[22px] h-auto font-helixa text-[28px]  overflow-hidden relative group">
                           <div className="w-[300px] h-[300px] bg-sunset-coral rounded-full absolute left-1/2 top-1/2 translate-y-full -translate-x-[50%] group-hover:translate-y-[-50%]  duration-1000 transition-all"></div>
-                          <div className="group-hover:text-white-ivory duration-1000 transition-all relative z-10 text-sunset-coral">
+                          <div
+                            className="group-hover:text-white-ivory duration-10
+                          00 transition-all relative z-10 text-sunset-coral"
+                          >
                             Register Now
                           </div>
                         </div>

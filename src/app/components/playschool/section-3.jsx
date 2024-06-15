@@ -212,8 +212,8 @@ const Section3 = ({ setOnHover }) => {
         ref={elemenRef}
       >
         <div className="w-full flex  flex-wrap justify-between">
-          {datas &&
-            datas.map((data, index) => (
+          {dataClass &&
+            dataClass.map((data, index) => (
               <div
                 className="group class-card translate-y-full opacity-0 cursor-none"
                 onClick={() => modalClick(data)}
@@ -233,7 +233,8 @@ const Section3 = ({ setOnHover }) => {
                     <div className="">
                       <div className="relative w-[203px] h-[76px] flex items-center">
                         <Link
-                          href={"/register"}
+                          href={"https://wa.me/6281130910001"}
+                          target="_blank"
                           className="cursor-pointer w-0 group-hover:w-[301px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[76px] bg-white-ivory rounded-[38px] absolute right-0 overflow-hidden"
                           onMouseEnter={() => setOnHover(false)}
                           onMouseLeave={() => setOnHover(true)}

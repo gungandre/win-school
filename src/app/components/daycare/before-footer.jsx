@@ -5,7 +5,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import Footer2 from "../footer/footer-2";
+
 const BeforeFooter = () => {
   const elemenRef = useRef(null);
 
@@ -76,7 +76,10 @@ const BeforeFooter = () => {
           </div>
         </div>
         <div className="w-full flex justify-center get-special-offer-button opacity-0 translate-y-[200%]">
+          {" "}
           <Button
+            buttonType={"a"}
+            link={"https://wa.me/6281130910001"}
             name={"Get a Special Offer"}
             arrow={null}
             color={"#FFFBF3"}

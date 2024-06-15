@@ -8,7 +8,7 @@ import Section3 from "../components/playschool/section-3";
 import Section4 from "../components/playschool/section-4";
 
 import BeforeFooter from "../components/playschool/before-footer";
-import Footer from "../components/footer/Footer";
+// import Footer from "../components/footer/Footer";
 import { Cursor } from "../components/cursor/Cursor";
 import { useRef } from "react";
 
@@ -20,6 +20,7 @@ import useNavColor from "../hook/useNavColor";
 
 const page = () => {
   const [onHover, setOnHover] = useState(false);
+  const [tlComplete, setTlComplete] = useState(false);
 
   const navColorArray = [
     "#19918E",
@@ -78,14 +79,14 @@ const page = () => {
       <Cursor cursorRef={cursorRef} cursorText={"MORE"} />
 
       <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
-      <Hero />
-      <Section2 />
+      <Hero setTlComplete={setTlComplete} />
+      <Section2 setTlComplete={setTlComplete} />
       <Section3 setOnHover={setOnHover} />
 
       <Section4 />
-      <BeforeFooter />
+      <BeforeFooter tlComplete={tlComplete} />
 
-      <Footer2 />
+      <Footer2 tlComplete={tlComplete} />
     </>
   );
 };

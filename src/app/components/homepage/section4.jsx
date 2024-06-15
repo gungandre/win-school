@@ -77,7 +77,7 @@ const Section4 = () => {
           </div>
         </div>
         <div className="w-full flex justify-center mt-[176px] button-section-we-are-leading">
-          <Button
+          {/* <Button
             className={""}
             name={"About Us"}
             arrow={"right"}
@@ -85,7 +85,7 @@ const Section4 = () => {
             hoverColor={"#F96D49"}
             hoverType={1}
             textHover={"#FFFBF3"}
-          />
+          /> */}
         </div>
       </div>
     </section>

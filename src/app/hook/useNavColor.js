@@ -6,12 +6,15 @@ import { useState } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 function useNavColor(navbarColors, sectionSelector) {
-  const [navbarColor, setNavbarColor] = useState(navbarColors[0]);
+  const [navbarColor, setNavbarColor] = useState([navbarColors[0]]);
 
   useGSAP(() => {
     const sections = gsap.utils.toArray(sectionSelector);
 
+    console.log({ sections });
+
     sections.forEach(function (section, index) {
+      console.log(index, navbarColors[index]);
       ScrollTrigger.create({
         trigger: section,
         start: "top 128px",

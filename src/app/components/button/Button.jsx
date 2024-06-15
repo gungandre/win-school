@@ -16,6 +16,7 @@ const Button = ({
   hoverPosition,
   disableButton,
   buttonType = "link",
+  link,
 }) => {
   gsap.registerPlugin(SplitText);
   const swiper = useSwiper();
@@ -454,7 +455,7 @@ const Button = ({
           // }
         >
           <a
-            href="/register"
+            href={link}
             target="_blank"
             className={`w-auto h-auto flex relative px-[22px] rounded-full border-[${color}] border-[2px] ${
               color === "#FFFBF3" ? "text-white-ivory" : "text-sunset-coral"
