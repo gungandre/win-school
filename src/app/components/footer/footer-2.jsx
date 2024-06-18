@@ -156,7 +156,7 @@ const Footer = ({ tlComplete }) => {
     });
   }, []);
   return (
-    <footer className="h-dvh  relative  flex flex-col justify-end bg-white-ivory   footer after:w-full section after:bg-sunset-coral after:h-[120px] after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:top-0  z-10">
+    <footer className="h-dvh  relative  flex flex-col justify-end bg-white-ivory   footer after:w-full section after:bg-sunset-coral after:h-[120px] after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:top-0  z-10 section">
       <div className="h-[120px]"></div>
       <div className="px-15 sm:pt-[160px] space-y-[10.417vw] h-full">
         <div className="grid grid-cols-12">

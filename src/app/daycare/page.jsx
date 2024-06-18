@@ -20,6 +20,7 @@ import useNavColor from "../hook/useNavColor";
 
 const page = () => {
   const [onHover, setOnHover] = useState(false);
+  const [tlComplete, setTlComplete] = useState(false);
 
   const navColorArray = [
     "#19918E",
@@ -37,12 +38,12 @@ const page = () => {
     <>
       <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
       <Hero />
-      <Section2 />
+      <Section2 setTlComplete={setTlComplete} />
 
       <Section3 setOnHover={setOnHover} />
 
       <Section4 />
-      <BeforeFooter />
+      <BeforeFooter tlComplete={tlComplete} />
 
       <Footer />
     </>

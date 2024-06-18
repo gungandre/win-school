@@ -36,10 +36,41 @@ const Hero = ({ rendered }) => {
       ease: "power1.out",
       duration: 1,
     });
+
+    const descAfterHero = new SplitText(".desc-after-hero", {
+      type: "lines",
+      linesClass: "desc-after-hero-line",
+    });
+
+    ScrollTrigger.create({
+      trigger: ".desc-after-hero",
+      once: true,
+      onEnter: () => {
+        gsap.from(descAfterHero.lines, {
+          transform: "translateY(100%)",
+          opacity: 0,
+          duration: 1,
+          stagger: 0.1,
+          ease: "power1.out",
+        });
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: ".title-after-hero",
+      once: true,
+      onEnter: () => {
+        gsap.to(".title-after-hero", {
+          transform: "translateY(0)",
+          ease: "power1.out",
+          duration: 1,
+        });
+      },
+    });
   }, [rendered]);
 
   return (
-    <div className="min-h-dvh w-full bg-white-ivory ">
+    <div className="min-h-dvh w-full bg-white-ivory section">
       <div className="w-full flex justify-center flex-col items-center gap-20">
         <div className="mt-[8%]">
           <div className="font-seagull text-[5.313vw] leading-[5.313vw] text-sunset-coral flex ">
@@ -118,18 +149,24 @@ const Hero = ({ rendered }) => {
           <div className="w-[85%]  flex justify-between">
             <div className="flex flex-col gap-y-5">
               <div>
-                <div className="font-helixa text-[6.667vw] leading-[6.667vw] text-sunset-coral">
-                  Holistic
+                <div className="overflow-hidden">
+                  <div className="font-helixa text-[6.667vw] leading-[6.667vw] text-sunset-coral translate-y-full title-after-hero">
+                    Holistic
+                  </div>
                 </div>
-                <div className="font-helixa text-[6.667vw] leading-[6.667vw] text-sunset-coral">
-                  and Balance
+                <div className="overflow-hidden">
+                  <div className="font-helixa text-[6.667vw] leading-[6.667vw] text-sunset-coral translate-y-full title-after-hero">
+                    and Balance
+                  </div>
                 </div>
               </div>
-              <div className="font-helixa text-[2.865vw]">
-                Focusing on the whole child
+              <div className="overflow-hidden">
+                <div className="font-helixa text-[2.865vw] translate-y-full title-after-hero">
+                  Focusing on the whole child
+                </div>
               </div>
             </div>
-            <div className="w-[484px] mt-auto font-helixa text-[#5E5E5E]">
+            <div className="max-w-[484px] mt-auto font-helixa text-[#5E5E5E] desc-after-hero">
               Our curriculum focuses on developing knowledge, skills, and
               understanding to prepare children for the next stage in their
               education. It ensures they reach international milestones for

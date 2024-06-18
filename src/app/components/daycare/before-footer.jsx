@@ -6,12 +6,13 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-const BeforeFooter = () => {
+const BeforeFooter = ({ tlComplete }) => {
   const elemenRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
+    console.log({ tlComplete });
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     gsap
@@ -57,7 +58,7 @@ const BeforeFooter = () => {
         backgroundColor: "transparent",
         duration: 1,
       });
-  });
+  }, [tlComplete]);
 
   return (
     <div className="w-full h-dvh  relative  bg-white-ivory section z-[11]">

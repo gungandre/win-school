@@ -5,7 +5,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-const Section2 = () => {
+const Section2 = ({ setTlComplete }) => {
   const elemenRef = useRef(null);
 
   useGSAP(() => {
@@ -22,6 +22,9 @@ const Section2 = () => {
       })
       .to(".text-scroll", {
         transform: "translateX(-100%)",
+        onComplete: () => {
+          setTlComplete(true);
+        },
       });
 
     ScrollTrigger.refresh();

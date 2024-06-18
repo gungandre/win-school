@@ -60,7 +60,7 @@ const BeforeFooter = () => {
   });
 
   return (
-    <div className="w-full h-dvh  relative  bg-white-ivory section z-[11]">
+    <div className="w-full h-dvh  relative  bg-white-ivory section z-[11] section">
       <div
         ref={elemenRef}
         className="w-full h-dvh bg-sunset-coral clip-mask justify-center flex flex-col gap-y-[119px] relative bottom-0 circle-before-footer "

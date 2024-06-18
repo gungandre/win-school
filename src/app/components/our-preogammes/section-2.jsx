@@ -1,6 +1,6 @@
 const Section2 = () => {
   return (
-    <div className="w-full min-h-dvh bg-white-ivory py-[180px]">
+    <div className="w-full min-h-dvh bg-white-ivory py-[180px] section">
       <div className="text-center text-sunset-coral text-[128px] leading-[130px] font-helixa">
         We Divide it Into Three Programmes
       </div>

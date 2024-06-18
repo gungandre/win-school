@@ -119,7 +119,7 @@ const Section4 = () => {
       duration: 1,
       ease: "power1.out",
     });
-  });
+  }, []);
 
   return (
     <div

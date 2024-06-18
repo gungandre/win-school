@@ -1,8 +1,35 @@
-import React from "react";
+"use client";
 
-const Section4 = () => {
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+
+const Section4 = ({ rendered }) => {
+  // gsap.registerPlugin(ScrollTrigger);
+  // const sectionRef = useRef(null);
+
+  // useGSAP(() => {
+  //   console.log({ rendered });
+
+  //   gsap
+  //     .timeline({
+  //       scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         start: "top bottom",
+
+  //         markers: true,
+  //       },
+  //     })
+  //     .to(".text-animation", {
+  //       transform: "translateY(100%)",
+  //       ease: "power1.out",
+  //       duration: 1,
+  //     });
+  // }, [rendered]);
+
   return (
-    <div className="w-full h-dvh bg-white-ivory flex flex-col px-15">
+    <div className="w-full h-dvh bg-white-ivory flex flex-col px-15 section">
       <div className="w-full h-full flex justify-center items-start">
         <div className="w-[90%]  font-helixa text-[6.667vw] leading-[6.667vw] text-sunset-coral flex justify-between items-end">
           <div>
