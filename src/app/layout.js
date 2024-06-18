@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
       <body>
         <PreloaderContextProvider>
           <SmoothScrolling>
-            {/* <Preloader /> */}
+            <Preloader />
 
             {children}
           </SmoothScrolling>
