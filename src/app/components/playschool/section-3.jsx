@@ -212,8 +212,8 @@ const Section3 = ({ setOnHover }) => {
         ref={elemenRef}
       >
         <div className="w-full flex  flex-wrap justify-between">
-          {dataClass &&
-            dataClass.map((data, index) => (
+          {datas &&
+            datas.map((data, index) => (
               <div
                 className="group class-card translate-y-full opacity-0 cursor-none"
                 onClick={() => modalClick(data)}

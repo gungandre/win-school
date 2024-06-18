@@ -4,7 +4,51 @@ import { useRef, useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+const data = [
+  {
+    Time: "08.00 - 09.00 AM",
+    Activity: "Drop off & Breakfast",
+  },
+  {
+    Time: "09.00 - 09.30 AM",
+    Activity: "Self-directed Play",
+  },
+  {
+    Time: "09.30 - 10.00 AM",
+    Activity: "Circle Time (Morning Routines + Song)",
+  },
+  {
+    Time: "10.00 - 10.15 AM",
+    Activity: "Morning Snack",
+  },
+  {
+    Time: "10.15 - 11.30 AM",
+    Activity: "Outside Play & Physical Activity",
+  },
 
+  {
+    Time: "11.30 - 12.00 PM",
+    Activity: "Having Lunch Together",
+  },
+
+  {
+    Time: "01.00 - 01.30 PM",
+    Activity: "Story Time (Books or Songs)",
+  },
+
+  {
+    Time: "01.30 - 02.30 PM",
+    Activity: "Nap Time",
+  },
+  {
+    Time: "02.30 - 03.30 PM",
+    Activity: "Group Play & Take a Shower",
+  },
+  {
+    Time: "03.30 - 04.00 PM",
+    Activity: "Closing Circle (Pick up Time)",
+  },
+];
 const Section3 = ({ setOnHover }) => {
   const elemenRef = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -12,69 +56,26 @@ const Section3 = ({ setOnHover }) => {
   const [activitiesData, setActivitiesData] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchingData = await fetch(
-          "http://localhost:1337/api/daycare?populate=*"
-        );
-        const result = await fetchingData.json();
-        console.log(result.data.attributes.Activities);
-        setActivitiesData(result.data.attributes.Activities);
-      } catch (error) {
-        console.log("Gagal mengambil data:", error);
-      }
-    };
+    // const fetchData = async () => {
+    //   try {
+    //     const fetchingData = await fetch(
+    //       "http://localhost:1337/api/daycare?populate=*"
+    //     );
+    //     const result = await fetchingData.json();
+    //     console.log(result.data.attributes.Activities);
 
-    fetchData();
+    //   } catch (error) {
+    //     console.log("Gagal mengambil data:", error);
+    //   }
+    // };
+
+    // fetchData();
+
+    setActivitiesData(data);
   }, []);
 
-  // const data = [
-  //   {
-  //     time: "08.00 - 09.00 AM",
-  //     desc: "Drop off & Breakfast",
-  //   },
-  //   {
-  //     time: "09.00 - 09.30 AM",
-  //     desc: "Self-directed Play",
-  //   },
-  //   {
-  //     time: "09.30 - 10.00 AM",
-  //     desc: "Circle Time (Morning Routines + Song)",
-  //   },
-  //   {
-  //     time: "10.00 - 10.15 AM",
-  //     desc: "Morning Snack",
-  //   },
-  //   {
-  //     time: "10.15 - 11.30 AM",
-  //     desc: "Outside Play & Physical Activity",
-  //   },
-
-  //   {
-  //     time: "11.30 - 12.00 PM",
-  //     desc: "Having Lunch Together",
-  //   },
-
-  //   {
-  //     time: "01.00 - 01.30 PM",
-  //     desc: "Story Time (Books or Songs)",
-  //   },
-
-  //   {
-  //     time: "01.30 - 02.30 PM",
-  //     desc: "Nap Time",
-  //   },
-  //   {
-  //     time: "02.30 - 03.30 PM",
-  //     desc: "Group Play & Take a Shower",
-  //   },
-  //   {
-  //     time: "03.30 - 04.00 PM",
-  //     desc: "Closing Circle (Pick up Time)",
-  //   },
-  // ];
-
   useGSAP(() => {
+    console.log(activitiesData);
     activitiesData?.map((item, index) => {
       console.log("index item", index);
 
