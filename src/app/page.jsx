@@ -25,7 +25,21 @@ import Section8 from "./components/homepage/section-8";
 import Section9 from "./components/homepage/section-9";
 import { useContext } from "react";
 import { preloaderContext } from "./context/preloaderContext";
-import useScrollAndLenis from "./components/lenis/useScrollLenis";
+
+import HeroMobile from "./components/homepage/hero-mobile";
+import HeaderMobile from "./components/header/header-mobile";
+
+import Section2Mobile from "./components/homepage/section-2-mobile";
+import Section4mobile from "./components/homepage/section-4-mobile";
+
+import SectionVideoMobile from "./components/homepage/section-video-mobile";
+import Section6Mobile from "./components/homepage/section-6-mobile";
+import Section7Mobile from "./components/homepage/section-7-mobile";
+import WinnerClasses from "./components/homepage/WinnerClasses";
+import BeforeFooterMobile from "./components/homepage/before-footer-mobile";
+import FooterMobile from "./components/homepage/FooterMobile";
+import useMediaQuery from "./utils/useMediaQuery";
+
 export default function Home() {
   gsap.registerPlugin(SplitText);
 
@@ -35,8 +49,8 @@ export default function Home() {
   const [videoPause, setVideoPause] = useState(false);
   const [disableButton, setDisableButton] = useState(false);
   const { preloaderComplete } = useContext(preloaderContext);
-
-  // const [stopScroll, setStopScroll] = useScrollAndLenis();
+  const [tlMobile, setTlMobile] = useState(false);
+  const small = useMediaQuery("(max-width: 640px)");
 
   const videoRef = useRef(null);
   const cursorRef = useRef(null);
@@ -78,13 +92,13 @@ export default function Home() {
       });
 
       gsap.to(".animation-image", {
-        y: 0,
+        transform: "translateY(0)",
         duration: 1,
         stagger: 0.1,
         ease: "power1.out",
       });
       gsap.to([".hero-1", ".hero-2"], {
-        y: 0,
+        transform: "translateY(0)",
         duration: 1,
         ease: "power1.out",
       });
@@ -417,6 +431,22 @@ export default function Home() {
         "<"
       );
 
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".footer",
+          start: "top top",
+          end: "bottom top",
+
+          scrub: true,
+        },
+      })
+      .to(".footer", {
+        transform: "translateY(0)",
+        duration: 10,
+        ease: "none",
+      });
+
     // section swiper
     ScrollTrigger.create({
       trigger: ".section-swiper",
@@ -502,6 +532,7 @@ export default function Home() {
 
     ScrollTrigger.create({
       trigger: ".section-after-video",
+
       onEnter: () => {
         gsap.fromTo(
           ".card-building",
@@ -537,64 +568,52 @@ export default function Home() {
       },
     });
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: ".footer",
-          start: "top top",
-          end: "bottom top",
+    if (wText) {
+      ScrollTrigger.create({
+        trigger: ".footer",
+        scrub: true,
 
-          scrub: true,
+        start: "center center",
+        end: "+=1000",
+
+        onEnter: () => {
+          gsap.fromTo(
+            [wText, iText, nText, sText, cText, hText, oText1, oText2, lText],
+            {
+              y: "150%",
+            },
+            {
+              y: 0,
+              stagger: 0.1,
+            }
+          );
         },
-      })
-      .to(".footer", {
-        transform: "translateY(0)",
-        duration: 10,
-        ease: "none",
       });
 
-    ScrollTrigger.create({
-      trigger: ".footer",
-      scrub: true,
+      ScrollTrigger.create({
+        trigger: ".footer",
+        scrub: true,
 
-      start: "center center",
-      end: "+=1000",
+        start: "bottom center",
+        end: "bottom",
 
-      onEnter: () => {
-        gsap.fromTo(
-          [wText, iText, nText, sText, cText, hText, oText1, oText2, lText],
-          {
-            y: "150%",
-          },
-          {
-            y: 0,
-            stagger: 0.1,
-          }
-        );
-      },
-    });
+        onLeaveBack: () => {
+          gsap.fromTo(
+            [wText, iText, nText, sText, cText, hText, oText1, oText2, lText],
+            {
+              y: 0,
+            },
+            {
+              y: "150%",
+              stagger: 0.1,
+            }
+          );
+        },
+      });
+    }
 
-    ScrollTrigger.create({
-      trigger: ".footer",
-      scrub: true,
-
-      start: "bottom center",
-      end: "bottom",
-
-      onLeaveBack: () => {
-        gsap.fromTo(
-          [wText, iText, nText, sText, cText, hText, oText1, oText2, lText],
-          {
-            y: 0,
-          },
-          {
-            y: "150%",
-            stagger: 0.1,
-          }
-        );
-      },
-    });
-  }, []);
+    setTlMobile(true);
+  }, [small, preloaderComplete]);
 
   const cursorHover = (text) => {
     setCursorText(text);
@@ -642,41 +661,56 @@ export default function Home() {
     <>
       {/* {!preloaderComplete && <Preloader setStopScroll={setStopScroll} />} */}
 
-      <Cursor
-        cursorRef={cursorRef}
-        videoPause={videoPause}
-        cursorText={cursorText}
-      />
+      {small ? (
+        <>
+          <HeaderMobile />
+          <HeroMobile />
+          <Section2Mobile />
 
-      <Header
-        navbarAnimationPlay={preloaderComplete}
-        navbarColor={navbarColor}
-      />
+          <SectionAfterSwiper />
+          <Section4mobile />
 
-      <Hero />
+          <SectionVideoMobile />
 
-      <Section2 />
+          <Section6Mobile tlMobile={tlMobile} />
+          <Section7Mobile />
 
-      <SectionAfterSwiper />
+          <WinnerClasses />
+          <BeforeFooterMobile />
+          <FooterMobile />
+        </>
+      ) : (
+        <div>
+          <Cursor
+            cursorRef={cursorRef}
+            videoPause={videoPause}
+            cursorText={cursorText}
+          />
+          <Header
+            navbarAnimationPlay={preloaderComplete}
+            navbarColor={navbarColor}
+          />
+          <Hero />
+          <Section2 />
 
-      <Section4 />
+          <SectionAfterSwiper />
+          <Section4 />
 
-      <SectionVideo
-        cursorLeave={cursorLeave}
-        videoRef={videoRef}
-        videoPlayback={videoPlayback}
-        cursorHover={cursorHover}
-      />
+          <SectionVideo
+            cursorLeave={cursorLeave}
+            videoRef={videoRef}
+            videoPlayback={videoPlayback}
+            cursorHover={cursorHover}
+          />
+          <Section6 />
+          <Section7 />
 
-      <Section6 />
+          <Section8 cursorHover={cursorHover} cursorLeave={cursorLeave} />
+          <Section9 />
 
-      <Section7 />
-
-      <Section8 cursorHover={cursorHover} cursorLeave={cursorLeave} />
-
-      <Section9 />
-
-      <Footer />
+          <Footer />
+        </div>
+      )}
     </>
   );
 }

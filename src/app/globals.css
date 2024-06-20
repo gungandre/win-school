@@ -73,16 +73,19 @@ html,
 body {
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
+  background-color: #fffbf3;
 }
 
-.swiper-pagination {
-  position: absolute !important;
-  top: 11% !important;
+@media screen and (min-width: 640px) {
+  .swiper-pagination {
+    position: absolute !important;
+    top: 11% !important;
 
-  display: flex !important;
-  justify-content: end !important;
-  align-items: unset !important;
-  height: min-content !important;
+    display: flex !important;
+    justify-content: end !important;
+    align-items: unset !important;
+    height: min-content !important;
+  }
 }
 
 .swiper-pagination-bullet {
@@ -100,23 +103,7 @@ body {
   clip-path: inset(var(--y) var(--x) 0 var(--x) round var(--r) var(--r) 0 0);
 }
 
-/* Start - Navbar */
-/* .navbar {
-  @apply transition-all duration-500;
+.pagination-mobile {
+  top: 0 !important;
+  height: min-content !important;
 }
-.navbar-white {
-  @apply text-white transition-all duration-500;
-}
-.navbar-white .nav-logo {
-  @apply brightness-0 invert transition-all duration-500;
-}
-.navbar-white ul li {
-  @apply text-white transition-all duration-500;
-}
-.navbar-white svg path {
-  @apply stroke-white transition-all duration-500;
-} */
-/* End - Navbar */
-
-/* Start - Button Overlay */
-/* Initial styles */

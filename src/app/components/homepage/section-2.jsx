@@ -81,7 +81,7 @@ const Section2 = () => {
 
   return (
     <section className="h-dvh  place-content-center bg-soft-tosca section flex justify-center items-center section-swiper">
-      <div className="w-[1496px] h-[746px] flex gap-x-14 ">
+      <div className="w-[85%] h-[80%] flex gap-x-14 ">
         <Swiper
           // install Swiper modules
           modules={[Pagination]}
@@ -96,12 +96,12 @@ const Section2 = () => {
           className=" !pl-[30px]"
         >
           <SwiperSlide>
-            <div className="w-[1496px] h-[746px] flex gap-x-14 !overflow-visible">
+            <div className="max-sm:w-full max-sm:h-full w-[1496px] h-[80%] flex gap-x-14 !overflow-visible max-sm:flex-col">
               <div className="flex flex-col">
                 <div className="flex flex-col w-max h-full gap-y-20">
                   <div className="relative  w-[340px] h-[483px]  flex justify-center ">
                     <div className=" swiper-image-container mt-auto ">
-                      <div className="absolute w-[340px] h-[404px] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
+                      <div className="absolute  w-[340px] h-[404px] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
                       <img
                         className="relative w-[454px] max-w-[unset] left-[56%] translate-x-[-50%]"
                         src="/assets/images/home/founder.png "
@@ -279,7 +279,7 @@ const Section2 = () => {
                 </div>
               </div>
             </div>
-          </SwiperSlide>{" "}
+          </SwiperSlide>
           <SwiperSlide>
             <div className="w-[1496px] h-[746px] flex gap-x-14 !overflow-visible">
               <div className="flex flex-col">

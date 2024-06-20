@@ -1,102 +1,127 @@
 const Hero = () => {
   return (
-    <section className="h-dvh bg-white-ivory relative section overflow-hidden">
+    <section className="h-dvh bg-white-ivory relative section overflow-hidden max-sm:flex max-sm:items-center">
       <h1 className="sr-only">SCHOOL OF FUTURE LEADERS</h1>
-      <div className="px-15 sm:pt-32">
+      <div className="max-sm:px-0 px-15 sm:pt-32 flex flex-col">
         <div className="flex flex-col gap-y-5">
           <div>
-            <div
-              className="font-seagull text-[102px] text-sunset-coral flex
-        "
-            >
+            <div className="font-seagull text-[5.313vw] text-sunset-coral flex">
               <div className="overflow-hidden">
-                <div className="school  translate-y-[100%]">S</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  S
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">C</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  C
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">H</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  H
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">O</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  O
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">O</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  O
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">L</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  L
+                </div>
               </div>
               &nbsp;
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">O</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  O
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">F</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  F
+                </div>
               </div>
               &nbsp;
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">F</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  F
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">U</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  U
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">T</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  T
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">U</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  U
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">R</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  R
+                </div>
               </div>
               <div className="overflow-hidden">
-                <div className="school translate-y-[100%]">E</div>
+                <div className="school text-[5.313vw] translate-y-[100%]">
+                  E
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div className="w-full flex justify-center">
-          <div className="font-seagull text-[450px]  text-sunset-coral flex">
+          <div className="font-seagull text-[23.438vw]  text-sunset-coral flex">
             <div className="overflow-hidden">
-              <div className="translate-y-[100%] leaders leading-[350px]">
+              <div className="translate-y-[100%] leaders leading-[18.229vw]">
                 L
               </div>
             </div>
             <div className="overflow-hidden">
-              <div className="translate-y-[100%] leaders leading-[350px]">
+              <div className="translate-y-[100%] leaders leading-[18.229vw]">
                 E
               </div>
             </div>
             <div className="overflow-hidden">
-              <div className="translate-y-[100%] leaders leading-[350px]">
+              <div className="translate-y-[100%] leaders leading-[18.229vw]">
                 A
               </div>
             </div>
             <div className="overflow-hidden">
-              <div className="translate-y-[100%] leaders leading-[350px]">
+              <div className="translate-y-[100%] leaders leading-[18.229vw]">
                 D
               </div>
             </div>
             <div className="overflow-hidden">
-              <div className="translate-y-[100%] leaders leading-[350px]">
+              <div className="translate-y-[100%] leaders leading-[18.229vw]">
                 E
               </div>
             </div>
             <div className="overflow-hidden">
-              <div className="translate-y-[100%] leaders leading-[350px]">
+              <div className="translate-y-[100%] leaders leading-[18.229vw]">
                 R
               </div>
             </div>
             <div className="overflow-hidden">
-              <div className="translate-y-[100%] leaders leading-[350px]">
+              <div className="translate-y-[100%] leaders leading-[18.229vw]">
                 S
               </div>
             </div>
           </div>
         </div>
         <div className="sm:mt-32 flex justify-center">
-          <div className="flex w-[915px] items-center justify-between   ">
+          <div className="flex w-[52%] max-sm:w-full items-center max-sm:flex-wrap max-sm:justify-evenly justify-between   ">
             <div className="overflow-hidden">
               <div className=" gap-6 translate-y-[100%] animation-image bg-[#EEE7D9] w-[167px] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[20px]">
                 Experience
@@ -125,19 +150,21 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 w-full flex items-end justify-between">
-        <img
-          width="730"
-          className="ml-4 hero-1 translate-y-[100%]"
-          src="/assets/images/home-hero1.png"
-          alt="Hero 1"
-        />
-        <img
-          width="730"
-          className="mr-4 hero-2 translate-y-[100%]"
-          src="/assets/images/home-hero2.png"
-          alt="Hero 2"
-        />
+      <div className="absolute bottom-0 w-[100vw] flex items-end justify-between">
+        <div className="max-sm:w-[600px] max-w-[730px]">
+          <img
+            className="ml-4 hero-1 translate-y-[100%] w-full"
+            src="/assets/images/home-hero1.png"
+            alt="Hero 1"
+          />
+        </div>
+        <div className="max-sm:w-[600px] max-w-[730px]">
+          <img
+            className="mr-4 hero-2 translate-y-[100%] w-full"
+            src="/assets/images/home-hero2.png"
+            alt="Hero 2"
+          />
+        </div>
       </div>
     </section>
   );

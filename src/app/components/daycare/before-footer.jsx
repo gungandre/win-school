@@ -12,7 +12,6 @@ const BeforeFooter = ({ tlComplete }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useGSAP(() => {
-    console.log({ tlComplete });
     const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
     gsap

@@ -173,26 +173,26 @@ const Section3 = ({ setOnHover }) => {
       },
     });
 
-    datas.forEach((data, index) => {
-      gsap.to(`.playschool-img-thumbail-${index}`, {
-        objectPosition: `50% ${
-          -window.innerHeight *
-          (1 -
-            getRatio(
-              document.querySelector(`.playschool-img-thumbail-${index}`)
-            ))
-        }px`,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: `.playschool-img-thumbail-${index}`,
-          start: "top bottom+=50%",
-          end: "bottom top-=30%",
+    // datas.forEach((data, index) => {
+    //   gsap.to(`.playschool-img-thumbail-${index}`, {
+    //     objectPosition: `50% ${
+    //       -window.innerHeight *
+    //       (1 -
+    //         getRatio(
+    //           document.querySelector(`.playschool-img-thumbail-${index}`)
+    //         ))
+    //     }px`,
+    //     ease: "power1.out",
+    //     scrollTrigger: {
+    //       trigger: `.playschool-img-thumbail-${index}`,
+    //       start: "top bottom+=50%",
+    //       end: "bottom top-=30%",
 
-          scrub: true,
-          invalidateOnRefresh: true, // to make it responsive
-        },
-      });
-    });
+    //       scrub: true,
+    //       invalidateOnRefresh: true, // to make it responsive
+    //     },
+    //   });
+    // });
   }, [dataClass]);
 
   const modalClick = (data) => {
@@ -208,10 +208,10 @@ const Section3 = ({ setOnHover }) => {
         dataModal={dataModal}
       />
       <div
-        className="min-h-dvh w-full px-15  bg-white-ivory section"
+        className="min-h-dvh w-full max-sm:px-[32px] px-15  bg-white-ivory section"
         ref={elemenRef}
       >
-        <div className="w-full flex  flex-wrap justify-between">
+        <div className="w-full grid max-sm:grid-cols-1 max-sm:gap-y-[80px] grid-cols-2 gap-5">
           {datas &&
             datas.map((data, index) => (
               <div
@@ -220,17 +220,17 @@ const Section3 = ({ setOnHover }) => {
                 onMouseEnter={() => setOnHover(true)}
                 onMouseLeave={() => setOnHover(false)}
               >
-                <div className="p-[48px] w-[890px] h-[669px] flex flex-col justify-between  bg-white-ivory rounded-[50px] group-hover:bg-soft-tosca duration-500 transition-all">
+                <div className="max-sm:p-0 max-sm:h-auto max-sm:gap-y-[20px] p-[48px] w-full h-[669px] flex flex-col justify-between  bg-white-ivory max-sm:rounded-[25px] rounded-[50px] group-hover:bg-soft-tosca duration-500 transition-all">
                   <div className="w-full flex justify-between items-center ">
                     <div className="flex flex-col">
-                      <div className="font-helixa text-[48px] text-sunset-coral group-hover:text-white-ivory transition-all duration-500">
+                      <div className="font-helixa max-sm:text-[32px] text-[48px] text-sunset-coral group-hover:text-white-ivory transition-all duration-500">
                         {data.className}
                       </div>
-                      <div className="text-[28px] font-helixa text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                      <div className="max-sm:text-[16px] text-[28px] font-helixa text-[#404040] group-hover:text-white-ivory transition-all duration-500">
                         {data.age}
                       </div>
                     </div>
-                    <div className="">
+                    <div className="max-sm:hidden">
                       <div className="relative w-[203px] h-[76px] flex items-center">
                         <Link
                           href={"https://wa.me/6281130910001"}
@@ -272,7 +272,7 @@ const Section3 = ({ setOnHover }) => {
                   </div>
 
                   <div
-                    className={`w-[794px] h-[335px] rounded-[50px] overflow-hidden playschool-img-thumbail-container-${index}`}
+                    className={`max-sm:w-full max-sm:h-[290px] max-sm:rounded-[25px] w-full h-[335px] rounded-[50px] overflow-hidden playschool-img-thumbail-container-${index}`}
                   >
                     <img
                       src={`${data.image}`}
@@ -280,32 +280,67 @@ const Section3 = ({ setOnHover }) => {
                       className={`w-full h-full object-cover object-top  playschool-img-thumbail-${index}`}
                     />
                   </div>
-                  <div className="w-full flex justify-between">
-                    <div className=" flex w-[55%] justify-between">
+                  <div className="w-full flex max-sm:flex-col max-sm:gap-y-[20px] justify-between">
+                    <div className=" flex max-sm:w-full w-[55%] justify-between">
                       <div className="flex flex-col">
-                        <div className="font-helixa text-[24px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa max-sm:text-[16px] text-[24px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
                           Time
                         </div>
-                        <div className="font-helixa font-bold text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
                           {data.time}
                         </div>
                       </div>
                       <div className="flex flex-col">
-                        <div className="font-helixa text-[24px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
                           Days
                         </div>
-                        <div className="font-helixa font-bold text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
                           {data.days}
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col">
-                      <div className="font-helixa text-[24px] text-[#404040] text-end group-hover:text-white-ivory transition-all duration-500">
-                        Limited Seats
+                    <div className="flex max-sm:flex-row max-sm:justify-between max-sm:items-center flex-col ">
+                      <div>
+                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040]  group-hover:text-white-ivory transition-all duration-500">
+                          Limited Seats
+                        </div>
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                          {`${data.seat} Seats Left`}
+                        </div>
                       </div>
-                      <div className="font-helixa font-bold text-[20px] text-[#404040] text-end group-hover:text-white-ivory transition-all duration-500">
-                        {`${data.seat} Seats Left`}
+                      <div className="max-sm:block hidden">
+                        <div className="relative w-[183px] h-[40px] flex items-center">
+                          <Link
+                            href={"https://wa.me/6281130910001"}
+                            target="_blank"
+                            className="cursor-pointer w-0 group-hover:w-[183px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[40px] bg-white-ivory rounded-[20px] absolute right-0 overflow-hidden"
+                            onMouseEnter={() => setOnHover(false)}
+                            onMouseLeave={() => setOnHover(true)}
+                          >
+                            <div className="relative w-full h-full flex items-center">
+                              <div className="font-helixa font-bold text-[20px] text-[#404040] ml-0 group-hover:ml-[16px] opacity-0 group-hover:opacity-100 duration-1000 transition-all text-nowrap">
+                                Register Now
+                              </div>
+                            </div>
+                          </Link>
+                          <div className="flex justify-center items-center">
+                            <div className="w-[32px] h-[32px] group-hover:w-[32px] group-hover:h-[32px] transition-all duration-1000 bg-sunset-coral rounded-full flex justify-center items-center absolute right-[5%] z-10">
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0.736328 11.2685L11.2626 0.742188M11.2626 0.742188L0.736328 0.742189M11.2626 0.742188V11.2685"
+                                  stroke="#EEE7D9"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

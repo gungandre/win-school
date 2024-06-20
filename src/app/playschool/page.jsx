@@ -17,10 +17,16 @@ import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import Footer2 from "../components/footer/footer-2";
 import useNavColor from "../hook/useNavColor";
+import HeaderMobile from "../components/header/header-mobile";
+import HeroMobile from "../components/playschool/Hero-mobile";
+import Section4Mobile from "../components/playschool/section-4-mobile";
+import useMediaQuery from "../utils/useMediaQuery";
+import FooterMobile from "../components/homepage/FooterMobile";
 
 const page = () => {
   const [onHover, setOnHover] = useState(false);
   const [tlComplete, setTlComplete] = useState(false);
+  const small = useMediaQuery("(max-width: 640px)");
 
   const navColorArray = [
     "#19918E",
@@ -78,15 +84,27 @@ const page = () => {
     <>
       <Cursor cursorRef={cursorRef} cursorText={"MORE"} />
 
-      <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
-      <Hero setTlComplete={setTlComplete} />
+      <div>
+        {small ? (
+          <HeaderMobile />
+        ) : (
+          <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
+        )}
+      </div>
+
+      <div>
+        {small ? <HeroMobile /> : <Hero setTlComplete={setTlComplete} />}
+      </div>
+
       <Section2 setTlComplete={setTlComplete} />
       <Section3 setOnHover={setOnHover} />
 
-      <Section4 />
+      {/* <Section4 /> */}
+      <Section4Mobile />
       <BeforeFooter tlComplete={tlComplete} />
-
-      <Footer2 tlComplete={tlComplete} />
+      <div>
+        {small ? <FooterMobile /> : <Footer2 tlComplete={tlComplete} />}
+      </div>
     </>
   );
 };
