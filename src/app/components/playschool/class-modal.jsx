@@ -72,7 +72,10 @@ const ClassModal = ({ openModal, setOpenModal, dataModal }) => {
               <path d="M41 41L21 21" stroke="#F96D49" stroke-width="2" />
             </svg>
           </button>
-          <div className="max-sm:w-full max-sm:h-full max-sm:gap-y-[20px] max-sm:flex-col w-[1598px] h-[745px]  flex  justify-between overflow-x-hidden overflow-y-scroll">
+          <div
+            className="max-sm:w-full max-sm:h-full max-sm:gap-y-[20px] max-sm:flex-col w-[1598px] h-[745px]  flex  justify-between overflow-x-hidden overflow-y-scroll"
+            data-lenis-prevent="true"
+          >
             <div className="h-full flex flex-col max-sm:gap-y-[20px] justify-between">
               <div className=" flex flex-col max-sm:gap-2 gap-4">
                 <div className="font-seagull max-sm:text-[24px] text-[3.333vw] leading-[3.333vw] text-sunset-coral">
