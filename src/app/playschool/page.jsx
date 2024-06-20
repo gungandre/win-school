@@ -85,25 +85,33 @@ const page = () => {
       <Cursor cursorRef={cursorRef} cursorText={"MORE"} />
 
       <div>
-        {small ? (
-          <HeaderMobile />
-        ) : (
+        {small === false ? (
           <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
+        ) : (
+          <HeaderMobile />
         )}
       </div>
 
       <div>
-        {small ? <HeroMobile /> : <Hero setTlComplete={setTlComplete} />}
+        {small === false ? (
+          <Hero setTlComplete={setTlComplete} />
+        ) : (
+          <HeroMobile />
+        )}
       </div>
 
       <Section2 setTlComplete={setTlComplete} />
       <Section3 setOnHover={setOnHover} />
 
-      {/* <Section4 /> */}
-      <Section4Mobile />
+      <div>{small === false ? <Section4 /> : <Section4Mobile />}</div>
+
       <BeforeFooter tlComplete={tlComplete} />
       <div>
-        {small ? <FooterMobile /> : <Footer2 tlComplete={tlComplete} />}
+        {small === false ? (
+          <Footer2 tlComplete={tlComplete} />
+        ) : (
+          <FooterMobile />
+        )}
       </div>
     </>
   );

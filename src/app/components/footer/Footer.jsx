@@ -23,6 +23,66 @@ const Footer = () => {
     const oText2 = document.getElementById("o-text_2");
     const lText = document.getElementById("l-text");
 
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".footer",
+          start: "top top",
+          end: "bottom top",
+
+          scrub: true,
+        },
+      })
+      .to(".footer", {
+        transform: "translateY(0)",
+        duration: 10,
+        ease: "none",
+      });
+
+    if (wText) {
+      ScrollTrigger.create({
+        trigger: ".footer",
+        scrub: true,
+
+        start: "center center",
+        end: "+=1000",
+
+        onEnter: () => {
+          gsap.fromTo(
+            [wText, iText, nText, sText, cText, hText, oText1, oText2, lText],
+            {
+              y: "150%",
+            },
+            {
+              y: 0,
+              stagger: 0.1,
+            }
+          );
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: ".footer",
+        scrub: true,
+
+        start: "bottom center",
+        end: "bottom",
+
+        onLeaveBack: () => {
+          gsap.fromTo(
+            [wText, iText, nText, sText, cText, hText, oText1, oText2, lText],
+            {
+              y: 0,
+            },
+            {
+              y: "150%",
+              stagger: 0.1,
+            }
+          );
+        },
+      });
+    }
+
     // .to([wText, iText, nText, sText, cText, hText, oText1, oText2, lText], {
     //   y: 0,
     //   stagger: 0.1,

@@ -8,19 +8,18 @@ import Section3 from "../components/daycare/section-3";
 import Section4 from "../components/daycare/section-4";
 
 import BeforeFooter from "../components/daycare/before-footer";
-// import Footer from "../components/footer/Footer";
 
-import { useRef } from "react";
-
-import gsap from "gsap";
 import { useState } from "react";
-import { useGSAP } from "@gsap/react";
+
 import Footer from "../components/footer/footer-2";
 import useNavColor from "../hook/useNavColor";
-
+import useMediaQuery from "../utils/useMediaQuery";
+import HeroMobile from "../components/daycare/hero-mobile";
+import HeaderMobile from "../components/header/header-mobile";
 const page = () => {
   const [onHover, setOnHover] = useState(false);
   const [tlComplete, setTlComplete] = useState(false);
+  const small = useMediaQuery("(max-width: 640px)");
 
   const navColorArray = [
     "#19918E",
@@ -32,13 +31,19 @@ const page = () => {
   ];
   const { navbarColor } = useNavColor(navColorArray, ".section");
 
-  const cursorRef = useRef(null);
-
   return (
     <>
-      <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
-      <Hero />
-      <Section2 setTlComplete={setTlComplete} />
+      <div>
+        {small === false ? (
+          <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
+        ) : (
+          <HeaderMobile />
+        )}
+      </div>
+
+      <div>{small === true ? <HeroMobile /> : <Hero />}</div>
+
+      <Section2 small={small} setTlComplete={setTlComplete} />
 
       <Section3 setOnHover={setOnHover} />
 

@@ -1,7 +1,107 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 const Section7 = () => {
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: ".text-we-provide",
+
+      onEnter: () => {
+        gsap.fromTo(
+          ".text-we-provide",
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.out",
+          }
+        );
+
+        gsap.fromTo(
+          ".text-explore",
+          {
+            y: 100,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.out",
+          }
+        );
+      },
+    });
+    ScrollTrigger.create({
+      trigger: ".card-daycare",
+      onEnter: () => {
+        gsap.to(
+          ".card-daycare",
+
+          {
+            transform: "translateY(0)",
+            opacity: 1,
+            duration: 1,
+            stagger: 0.05,
+            ease: "power1.out",
+          }
+        );
+      },
+    });
+
+    ScrollTrigger.create({
+      trigger: ".content-register-1",
+
+      onEnter: () => {
+        gsap.fromTo(
+          ".content-register-1",
+          {
+            y: "100%",
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            delay: 0.5,
+            ease: "power1.out",
+            duration: 1,
+          }
+        );
+      },
+      toggleActions: "play none none none",
+      once: true,
+    });
+
+    ScrollTrigger.create({
+      trigger: ".content-register-2",
+
+      onEnter: () => {
+        gsap.fromTo(
+          ".content-register-2",
+          {
+            y: "100%",
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            delay: 0.5,
+            ease: "power1.out",
+            duration: 1,
+          }
+        );
+      },
+      toggleActions: "play none none none",
+      once: true,
+    });
+  }, []);
   return (
     <section className="min-h-dvh w-full px-15 bg-white-ivory flex flex-col gap-y-[300px] section section-we-provides">
       <div className="h-full w-full flex justify-between px-24">

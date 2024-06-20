@@ -1,4 +1,35 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
 const Section8 = ({ cursorHover, cursorLeave }) => {
+  useGSAP(() => {
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".section-winner-classes",
+          start: "top top",
+          end: "bottom end",
+
+          scrub: true,
+          pin: true,
+          pinSpacing: true,
+        },
+      })
+      .to(".winner-classes", {
+        transform: "translateX(-100%)",
+        ease: "power1.out",
+      })
+      .to(
+        ".section-class",
+        {
+          transform: "translateX(0)",
+          ease: "power1.out",
+        },
+        "-=0.3"
+      );
+  }, []);
+
   return (
     <section className="w-full h-auto flex items-center bg-white-ivory section section-winner-classes">
       <div className="w-full h-dvh flex items-center flex-nowrap relative">

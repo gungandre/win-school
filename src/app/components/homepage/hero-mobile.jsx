@@ -6,6 +6,38 @@ import { useGSAP } from "@gsap/react";
 
 const HeroMobile = () => {
   gsap.registerPlugin(ScrollTrigger);
+  console.log("ceve");
+  useGSAP(() => {
+    gsap.to(".school", {
+      transform: "translateY(0)",
+      duration: 1,
+      stagger: 0.1,
+      ease: "power1.out",
+      onComplete: () => {
+        console.log("testing");
+      },
+    });
+    gsap.to(".leaders", {
+      transform: "translateY(0)",
+      duration: 1,
+      stagger: 0.1,
+      ease: "power1.out",
+    });
+
+    gsap.to(".animation-image", {
+      transform: "translateY(0)",
+      duration: 1,
+      stagger: 0.1,
+      ease: "power1.out",
+    });
+
+    gsap.to([".hero-1", ".hero-2"], {
+      transform: "translateY(0)",
+      duration: 1,
+
+      ease: "power1.out",
+    });
+  }, []);
 
   return (
     <div className="w-full h-dvh flex justify-center items-center px-[32px] relative overflow-hidden">

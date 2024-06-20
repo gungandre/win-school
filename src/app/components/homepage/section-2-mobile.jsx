@@ -7,6 +7,8 @@ import { useState } from "react";
 
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 import "swiper/css";
 
@@ -16,6 +18,90 @@ const Section2Mobile = () => {
   const [disableButtonRight, setDisableButtonRight] = useState(false);
   const [disableButtonLeft, setDisableButtonLeft] = useState(true);
   const [swiper, useSwiper] = useState(null);
+
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: ".section-swiper",
+      onEnter: () => {
+        const prevNameEl = document.querySelectorAll(
+          ".name .overflow-hidden div"
+        );
+
+        const prevProfesionEl = document.querySelectorAll(
+          ".profesion .overflow-hidden div"
+        );
+
+        const prevQuotesEl = document.querySelectorAll(
+          ".quotes .overflow-hidden div"
+        );
+
+        const prevPetikEl = document.querySelectorAll(
+          ".petik-dua .overflow-hidden div"
+        );
+        gsap.fromTo(
+          prevNameEl,
+          {
+            y: "100%",
+          },
+          {
+            y: 0,
+            duration: 1,
+            ease: "none",
+          }
+        );
+
+        gsap.fromTo(
+          prevProfesionEl,
+          {
+            y: "100%",
+          },
+          {
+            y: 0,
+            duration: 1,
+            ease: "none",
+          }
+        );
+
+        gsap.fromTo(
+          prevQuotesEl,
+          {
+            y: "100%",
+          },
+          {
+            y: 0,
+            duration: 1,
+            ease: "none",
+          }
+        );
+
+        gsap.fromTo(
+          prevPetikEl,
+          {
+            y: "100%",
+          },
+          {
+            y: 0,
+            duration: 1,
+            ease: "none",
+          }
+        );
+
+        gsap.fromTo(
+          document.querySelectorAll(".swiper-image-container"),
+          {
+            y: 30,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 2,
+            ease: "power2.out",
+          }
+        );
+      },
+    });
+  }, []);
 
   const swiperInit = (swiper) => {
     useSwiper(swiper);
@@ -404,7 +490,7 @@ const Section2Mobile = () => {
   };
 
   return (
-    <div className="w-full h-dvh bg-soft-tosca flex justify-center items-center px-[32px]">
+    <div className="w-full min-h-dvh bg-soft-tosca flex justify-center items-center px-[32px]">
       <Swiper
         // install Swiper modules
         modules={[Pagination]}

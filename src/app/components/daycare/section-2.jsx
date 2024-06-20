@@ -5,30 +5,31 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-const Section2 = ({ setTlComplete }) => {
+const Section2 = ({ setTlComplete, small }) => {
   const elemenRef = useRef(null);
 
-  useGSAP(() => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: elemenRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          pin: true,
-          pinSpacer: true,
-        },
-      })
-      .to(".text-scroll", {
-        transform: "translateX(-100%)",
-        onComplete: () => {
-          setTlComplete(true);
-        },
-      });
-
-    ScrollTrigger.refresh();
-  });
+  useGSAP(
+    () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: elemenRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: true,
+            pin: true,
+            pinSpacer: true,
+          },
+        })
+        .to(".text-scroll", {
+          transform: "translateX(-100%)",
+          onComplete: () => {
+            setTlComplete(true);
+          },
+        });
+    },
+    { scope: elemenRef }
+  );
 
   return (
     <div

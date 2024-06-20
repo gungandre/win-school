@@ -3,6 +3,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
+import { useContext } from "react";
+import { preloaderContext } from "@/app/context/preloaderContext";
 
 const menuList = [
   {
@@ -52,7 +54,8 @@ const menuList = [
   },
 ];
 
-const Header = ({ navbarAnimationPlay, navbarColor }) => {
+const Header = ({ navbarColor }) => {
+  const { preloaderComplete } = useContext(preloaderContext);
   useGSAP(() => {
     if (navbarColor) {
       gsap.to(".menu-name-span", {
@@ -126,10 +129,10 @@ const Header = ({ navbarAnimationPlay, navbarColor }) => {
         "<"
       );
 
-    if (navbarAnimationPlay) {
+    if (preloaderComplete) {
       tlNavbarAnimation.play();
     }
-  }, [navbarAnimationPlay]);
+  }, [preloaderComplete]);
 
   const hoverMenu = (index, item) => {
     let tlMenu = gsap.timeline({

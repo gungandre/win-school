@@ -1,8 +1,34 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 const Section6 = () => {
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: ".section-after-video",
+
+      onEnter: () => {
+        gsap.fromTo(
+          ".card-building",
+          {
+            transform: "translateY(100%)",
+            opacity: 0,
+          },
+          {
+            transform: "translateY(0)",
+            opacity: 1,
+            duration: 1,
+            stagger: 0.05,
+            ease: "power1.out",
+          }
+        );
+      },
+    });
+  }, []);
+
   return (
     <section className="w-full h-dvh   bg-white-ivory section-video relative px-[59px] flex justify-center items-center section section-after-video">
       <div className="w-full  flex justify-between mb-[20%]">

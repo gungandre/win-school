@@ -1,4 +1,41 @@
+import gsap from "gsap";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { preloaderContext } from "@/app/context/preloaderContext";
+
 const Hero = () => {
+  const { preloaderComplete } = useContext(preloaderContext);
+
+  useEffect(() => {
+    if (preloaderComplete) {
+      gsap.to(".leaders", {
+        y: 0,
+        duration: 1,
+        stagger: 0.1,
+        ease: "power1.out",
+      });
+
+      gsap.to(".school", {
+        y: 0,
+        duration: 1,
+        stagger: 0.03,
+        ease: "power1.out",
+      });
+
+      gsap.to(".animation-image", {
+        transform: "translateY(0)",
+        duration: 1,
+        stagger: 0.1,
+        ease: "power1.out",
+      });
+      gsap.to([".hero-1", ".hero-2"], {
+        transform: "translateY(0)",
+        duration: 1,
+        ease: "power1.out",
+      });
+    }
+  }, [preloaderComplete]);
+
   return (
     <section className="h-dvh bg-white-ivory relative section overflow-hidden max-sm:flex max-sm:items-center">
       <h1 className="sr-only">SCHOOL OF FUTURE LEADERS</h1>

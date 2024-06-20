@@ -1,6 +1,51 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import SplitText from "gsap/SplitText";
+import gsap from "gsap";
 
 const Section4mobile = () => {
+  useGSAP(() => {
+    const weAreLeading = new SplitText(".we-are-leading", { type: "lines" });
+
+    ScrollTrigger.create({
+      trigger: ".section-we-are-leading",
+
+      onEnter: () => {
+        gsap.fromTo(
+          weAreLeading.lines,
+          {
+            y: "100%",
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            delay: 0.5,
+            ease: "power1.out",
+            stagger: 0.1,
+            duration: 1,
+          }
+        );
+
+        gsap.fromTo(
+          ".img-we-are-leading",
+          {
+            scale: 1.5,
+          },
+          {
+            scale: 1,
+            delay: 0.5,
+            ease: "power1.out",
+            duration: 1,
+          }
+        );
+      },
+      toggleActions: "play none none none",
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="w-full min-h-dvh  flex bg-white-ivory section section-we-are-leading  py-[120px] flex-col">
       <div className="w-full h-[60vh] relative flex items-center justify-center">

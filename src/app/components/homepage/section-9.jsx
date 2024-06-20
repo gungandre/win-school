@@ -1,7 +1,125 @@
+"use client";
+
 import React from "react";
 import Button from "../button/Button";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 
 const Section9 = () => {
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  useGSAP(() => {
+    const tlRegister = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".section-register-2",
+          start: "top top",
+          end: "+=4000",
+          // anticipatePin: 1,
+          scrub: true,
+          pin: true,
+        },
+      })
+      .from(".would-register", {
+        opacity: 0,
+        y: 100,
+
+        ease: "power1.out",
+        once: true,
+      })
+      .from(".grid-register", {
+        opacity: 0,
+        y: 100,
+
+        ease: "power1.out",
+        once: true,
+      })
+      .to(".would-register", {
+        opacity: 0,
+        y: -500,
+
+        ease: "power1.out",
+        once: true,
+      })
+      .to(
+        ".grid-register",
+        {
+          opacity: 0,
+          y: -500,
+
+          ease: "power1.out",
+          once: true,
+        },
+        "<"
+      )
+      .from(
+        ".section-before-footer",
+
+        {
+          delay: 0.5,
+          duration: 1,
+          ease: "power1.out",
+          "--r": `${windowWidth}px`,
+          "--y": `${windowHeight}px`,
+          "--x": "50%",
+        },
+        "-=1"
+      )
+      .from(
+        ".text-under-before-footer",
+        {
+          y: 100,
+          stagger: 0.05,
+        },
+        "<"
+      )
+
+      .to(
+        ".text-before-footer",
+
+        {
+          transform: "translateY(-100%)",
+          ease: "power1.out",
+        }
+      )
+      .from(
+        ".img-container-before-footer",
+        {
+          transform: "translateX(100%)",
+          ease: "power1.out",
+        },
+        "<"
+      )
+      .to(".text-before-footer", {
+        fontSize: 173,
+        lineHeight: "176px",
+        transform: "translateY(-50%)",
+      })
+      .to(
+        ".section-before-footer",
+        {
+          backgroundColor: "#F96D49",
+        },
+        "<"
+      )
+      .to(
+        ".img-container-before-footer",
+        {
+          transform: "translateX(-100%)",
+          ease: "power1.out",
+        },
+        "<"
+      )
+      .to(
+        ".button-register",
+        {
+          opacity: 1,
+          transform: "translateX(0)",
+        },
+        "<"
+      );
+  }, []);
   return (
     <section className="h-dvh w-full bg-white-ivory flex justify-center items-center section relative z-10   after:w-full after:h-[120px] after:absolute after:bottom-0 after:bg-sunset-coral after:translate-y-full after:rounded-br-[30px] after:rounded-bl-[30px] section-register-2">
       <div className="w-[1354px] h-[704px] flex flex-col gap-y-[140px] ">

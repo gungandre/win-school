@@ -1,8 +1,96 @@
 import Button from "../button/Button";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitText from "gsap/SplitText";
+import { useRef } from "react";
 const Section4 = () => {
+  const container = useRef();
+
+  useGSAP(
+    () => {
+      const weAreLeading = new SplitText(".we-are-leading", { type: "lines" });
+
+      ScrollTrigger.create({
+        trigger: ".section-we-are-leading",
+
+        onEnter: () => {
+          gsap.fromTo(
+            weAreLeading.lines,
+            {
+              y: "100%",
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              delay: 0.5,
+              ease: "power1.out",
+              stagger: 0.1,
+              duration: 1,
+            }
+          );
+
+          gsap.fromTo(
+            ".img-we-are-leading",
+            {
+              scale: 1.5,
+            },
+            {
+              scale: 1,
+              delay: 0.5,
+              ease: "power1.out",
+              duration: 1,
+            }
+          );
+        },
+        toggleActions: "play none none none",
+        once: true,
+      });
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".section-the-biggest",
+            start: "top-=500 center",
+            end: "center center",
+
+            scrub: true,
+          },
+        })
+        .to(".section-the-biggest", {
+          transform: "translateX(0)",
+
+          ease: "none",
+          duration: 5,
+
+          onComplete: () => {
+            gsap.fromTo(
+              ".button-section-we-are-leading",
+              {
+                transform: "translateY(100%)",
+                opacity: 0,
+              },
+              {
+                transform: "translateY(0)",
+                opacity: 1,
+                duration: 1,
+                ease: "power1.out",
+              }
+            );
+          },
+        });
+    },
+    { scope: container }
+  );
+
   return (
-    <section className="w-full min-h-dvh px-[142px] py-[134px] flex bg-white-ivory section section-we-are-leading">
+    <section
+      className="w-full min-h-dvh px-[142px] py-[134px] flex bg-white-ivory section section-we-are-leading"
+      ref={container}
+    >
       <div className="w-full h-full py-[108px]">
         <div className="w-auto h-auto relative">
           <div className="overflow-hidden w-[244px] h-[244px] absolute bottom-[-21%] rounded-[30px] z-10">
@@ -77,7 +165,7 @@ const Section4 = () => {
           </div>
         </div>
         <div className="w-full flex justify-center mt-[176px] button-section-we-are-leading">
-          {/* <Button
+          <Button
             className={""}
             name={"About Us"}
             arrow={"right"}
@@ -85,7 +173,7 @@ const Section4 = () => {
             hoverColor={"#F96D49"}
             hoverType={1}
             textHover={"#FFFBF3"}
-          /> */}
+          />
         </div>
       </div>
     </section>

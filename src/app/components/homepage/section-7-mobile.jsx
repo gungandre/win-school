@@ -80,6 +80,23 @@ const Section7Mobile = () => {
         });
       },
     });
+
+    ScrollTrigger.create({
+      trigger: ".card-daycare",
+      onEnter: () => {
+        gsap.to(
+          ".card-daycare",
+
+          {
+            transform: "translateY(0)",
+            opacity: 1,
+            duration: 1,
+            stagger: 0.05,
+            ease: "power1.out",
+          }
+        );
+      },
+    });
   }, []);
 
   return (

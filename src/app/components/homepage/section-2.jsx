@@ -4,13 +4,104 @@ import { Pagination } from "swiper/modules";
 import Button from "../button/Button";
 import { useState } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/SplitText";
+import { useRef } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import "swiper/css";
 
 import "swiper/css/pagination";
 const Section2 = () => {
   const [disableButtonRight, setDisableButtonRight] = useState(false);
   const [disableButtonLeft, setDisableButtonLeft] = useState(true);
+  const container = useRef();
+
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: ".section-swiper",
+        onEnter: () => {
+          const prevNameEl = document.querySelectorAll(
+            ".name .overflow-hidden div"
+          );
+
+          const prevProfesionEl = document.querySelectorAll(
+            ".profesion .overflow-hidden div"
+          );
+
+          const prevQuotesEl = document.querySelectorAll(
+            ".quotes .overflow-hidden div"
+          );
+
+          const prevPetikEl = document.querySelectorAll(
+            ".petik-dua .overflow-hidden div"
+          );
+          gsap.fromTo(
+            prevNameEl,
+            {
+              y: "100%",
+            },
+            {
+              y: 0,
+              duration: 1,
+              ease: "none",
+            }
+          );
+
+          gsap.fromTo(
+            prevProfesionEl,
+            {
+              y: "100%",
+            },
+            {
+              y: 0,
+              duration: 1,
+              ease: "none",
+            }
+          );
+
+          gsap.fromTo(
+            prevQuotesEl,
+            {
+              y: "100%",
+            },
+            {
+              y: 0,
+              duration: 1,
+              ease: "none",
+            }
+          );
+
+          gsap.fromTo(
+            prevPetikEl,
+            {
+              y: "100%",
+            },
+            {
+              y: 0,
+              duration: 1,
+              ease: "none",
+            }
+          );
+
+          gsap.fromTo(
+            document.querySelectorAll(".swiper-image-container"),
+            {
+              y: 30,
+              opacity: 0,
+            },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 2,
+              ease: "power2.out",
+            }
+          );
+        },
+      });
+    },
+    { scope: container }
+  );
 
   const swiperInit = (swiper) => {
     swiper.slides.forEach((el) => {
@@ -80,7 +171,10 @@ const Section2 = () => {
   };
 
   return (
-    <section className="h-dvh  place-content-center bg-soft-tosca section flex justify-center items-center section-swiper">
+    <section
+      className="h-dvh  place-content-center bg-soft-tosca section flex justify-center items-center section-swiper"
+      ref={container}
+    >
       <div className="w-[85%] h-[80%] flex gap-x-14 ">
         <Swiper
           // install Swiper modules
