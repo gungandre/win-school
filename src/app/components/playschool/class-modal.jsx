@@ -73,7 +73,7 @@ const ClassModal = ({ openModal, setOpenModal, dataModal }) => {
             </svg>
           </button>
           <div
-            className="max-sm:w-full max-sm:h-full max-sm:gap-y-[20px] max-sm:flex-col w-[1598px] h-[745px]  flex  justify-between overflow-x-hidden overflow-y-scroll"
+            className="max-sm:w-full max-sm:h-full max-sm:gap-y-[20px] max-sm:flex-col w-[1598px] h-[745px]  flex  justify-between overflow-x-hidden "
             data-lenis-prevent="true"
           >
             <div className="h-full flex flex-col max-sm:gap-y-[20px] justify-between">
