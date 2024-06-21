@@ -17,7 +17,7 @@ const Section9 = () => {
       const tlRegister = gsap
         .timeline({
           scrollTrigger: {
-            trigger: ".section-register-2",
+            trigger: container.current,
             start: "top top",
             end: "+=4000",
             // anticipatePin: 1,

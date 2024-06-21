@@ -198,7 +198,7 @@ const Footer = ({ tlComplete }) => {
         trigger: elemenRefMobile.current,
         start: "center top",
         end: "bottom top",
-        markers: true,
+
         onEnter: () => {
           gsap.to(
             [wText, iText, nText, sText, cText, hText, oText1, oText2, lText],

@@ -351,9 +351,9 @@ const Hero = ({ setTlComplete }) => {
           ref={containerMobileRef}
         >
           <div className="w-full flex flex-col gap-y-[63px] mt-[158px]">
-            <div className="font-seagull text-[58px] leading-[57px] text-sunset-coral playschool-text-mobile flex justify-center">
+            <div className="font-seagull text-[13.488vw] leading-[13.256vw] text-sunset-coral playschool-text-mobile flex justify-center">
               <div className="overflow-hidden">
-                <div className="translate-y-full playschool-mobile">P</div>
+                <div className="translate-y-full playschool-mobile ">P</div>
               </div>
               <div className="overflow-hidden">
                 <div className="translate-y-full playschool-mobile">L</div>

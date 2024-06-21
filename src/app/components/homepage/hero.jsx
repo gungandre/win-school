@@ -255,7 +255,7 @@ const Hero = () => {
       >
         <div className="flex flex-col gap-y-[60px]">
           <div>
-            <div className="font-seagull text-[24px] leading-[23px] text-sunset-coral flex ">
+            <div className="font-seagull text-[5.581vw] leading-[5.349vw] text-sunset-coral flex ">
               <div className="overflow-hidden">
                 <div className="school translate-y-full ">S</div>
               </div>
@@ -302,7 +302,7 @@ const Hero = () => {
               </div>
               {/* SCHOOL OF FUTURE */}
             </div>
-            <div className="font-seagull text-[95px] leading-[93px] text-sunset-coral flex">
+            <div className="font-seagull max-sm:text-[21.628vw] leading-[21.628vw] text-sunset-coral flex">
               <div className="overflow-hidden">
                 <div className="translate-y-[100%] leaders ">L</div>
               </div>
@@ -329,29 +329,29 @@ const Hero = () => {
 
           <div className="w-full flex justify-evenly flex-wrap gap-[16px]">
             <div className="overflow-hidden">
-              <div className=" gap-6  animation-image bg-[#EEE7D9] w-[108px] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full">
+              <div className=" gap-6  animation-image bg-[#EEE7D9] w-[25.116vw] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full">
                 Experience
               </div>
             </div>
             <div className="overflow-hidden">
-              <div className=" gap-6  animation-image bg-[#EEE7D9] w-[108px] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full ">
+              <div className=" gap-6  animation-image bg-[#EEE7D9] w-[25.116vw] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full ">
                 Active
               </div>
             </div>
             <div className="overflow-hidden">
-              <div className=" gap-6  animation-image bg-[#EEE7D9] w-[108px] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full ">
+              <div className=" gap-6  animation-image bg-[#EEE7D9] w-[25.116vw] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full ">
                 Balance
               </div>
             </div>
             <div className="flex gap-[16px]">
               <div className="overflow-hidden">
-                <div className=" gap-6  animation-image bg-[#EEE7D9] w-[108px] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full">
+                <div className=" gap-6  animation-image bg-[#EEE7D9] w-[25.116vw] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full">
                   Play
                 </div>
               </div>
 
               <div className="overflow-hidden">
-                <div className=" gap-6  animation-image bg-[#EEE7D9] w-[108px] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full">
+                <div className=" gap-6  animation-image bg-[#EEE7D9] w-[25.116vw] h-[47px] rounded-[23.5px] flex justify-center items-center font-helixa text-[16px] translate-y-full">
                   Transition
                 </div>
               </div>

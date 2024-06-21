@@ -5,34 +5,41 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Section6Mobile from "./section-6-mobile";
-
+import { useRef } from "react";
 const Section6 = () => {
-  useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".section-after-video",
+  const container = useRef();
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: ".section-after-video",
 
-      onEnter: () => {
-        gsap.fromTo(
-          ".card-building",
-          {
-            transform: "translateY(100%)",
-            opacity: 0,
-          },
-          {
-            transform: "translateY(0)",
-            opacity: 1,
-            duration: 1,
-            stagger: 0.05,
-            ease: "power1.out",
-          }
-        );
-      },
-    });
-  }, []);
+        onEnter: () => {
+          gsap.fromTo(
+            ".card-building",
+            {
+              transform: "translateY(100%)",
+              opacity: 0,
+            },
+            {
+              transform: "translateY(0)",
+              opacity: 1,
+              duration: 1,
+              stagger: 0.05,
+              ease: "power1.out",
+            }
+          );
+        },
+      });
+    },
+    { scope: container }
+  );
 
   return (
     <>
-      <section className="w-full h-dvh  max-sm:hidden  bg-white-ivory section-video relative px-[59px] flex justify-center items-center section section-after-video">
+      <section
+        className="w-full h-dvh  max-sm:hidden  bg-white-ivory section-video relative px-[59px] flex justify-center items-center section section-after-video"
+        ref={container}
+      >
         <div className="w-full  flex justify-between mb-[20%]">
           <Link href="/building">
             <div className="group card-building">

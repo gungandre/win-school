@@ -3,7 +3,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-const Section6Mobile = ({ tlMobile }) => {
+const Section6Mobile = () => {
   const container = useRef();
 
   gsap.registerPlugin(ScrollTrigger);
@@ -24,7 +24,7 @@ const Section6Mobile = ({ tlMobile }) => {
         },
       });
     },
-    { scope: container, dependencies: [tlMobile] }
+    { scope: container }
   );
   return (
     <div

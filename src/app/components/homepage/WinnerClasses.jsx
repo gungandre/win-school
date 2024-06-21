@@ -27,9 +27,9 @@ const WinnerClasses = () => {
       ScrollTrigger.create({
         trigger: ".class-mobile",
         onEnter: () => {
-          gsap.from(".class-mobile", {
-            transform: "translateY(100%)",
-            opacity: 0,
+          gsap.to(".class-mobile", {
+            transform: "translateY(0)",
+            opacity: 1,
             ease: "power1.out",
             duration: 1,
             stagger: 0.1,
@@ -78,7 +78,7 @@ const WinnerClasses = () => {
       <div className="flex w-full flex-col items-center mt-[80px] gap-y-[50px]">
         <Link href={"/daycare"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
-            <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
                 <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                   Nursery
@@ -131,7 +131,7 @@ const WinnerClasses = () => {
         </Link>
         <Link href={"/daycare"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
-            <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
                 <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                   Preschool
@@ -184,7 +184,7 @@ const WinnerClasses = () => {
         </Link>
         <Link href={"/daycare"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
-            <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
                 <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                   Kindy A
@@ -237,7 +237,7 @@ const WinnerClasses = () => {
         </Link>
         <Link href={"/daycare"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
-            <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
                 <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                   Kindy B

@@ -507,11 +507,11 @@ const Section2Mobile = () => {
       >
         <SwiperSlide>
           <div className="w-full h-[80%] ">
-            <div className="w-full flex flex-col justify-center items-center h-full gap-y-[32px]">
+            <div className="w-full flex flex-col justify-center items-center h-full gap-y-[32px] ">
               <div></div>
-              <div className="relative  w-[269px] h-[300px]  flex justify-center items-end">
+              <div className="relative  w-[62.558vw] h-[300px]  flex justify-center items-end">
                 <div className=" swiper-image-container w-full ">
-                  <div className="absolute  w-[204px] h-[266px] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
+                  <div className="absolute  w-[47.442vw] h-[266px] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
                   <div className="w-full h-full">
                     <img
                       className="relative w-[97%]  left-[55%] translate-x-[-50%]"

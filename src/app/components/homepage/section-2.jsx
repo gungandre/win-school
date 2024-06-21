@@ -849,7 +849,7 @@ const Section2 = () => {
       </section>
 
       <div
-        className="w-full min-h-dvh bg-soft-tosca  justify-center items-center px-[32px] max-sm:flex hidden"
+        className="w-full min-h-dvh bg-soft-tosca  justify-center items-center px-[32px] py-[32px] max-sm:flex hidden"
         ref={containerMobile}
       >
         <Swiper
@@ -870,9 +870,9 @@ const Section2 = () => {
             <div className="w-full h-[80%] ">
               <div className="w-full flex flex-col justify-center items-center h-full gap-y-[32px]">
                 <div></div>
-                <div className="relative  w-[269px] h-[300px]  flex justify-center items-end">
+                <div className="relative  max-sm:w-[62.558vw] h-[300px]  flex justify-center items-end">
                   <div className=" swiper-image-container w-full ">
-                    <div className="absolute  w-[204px] h-[266px] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
+                    <div className="absolute  w-[47.442vw] h-[61.86vw] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
                     <div className="w-full h-full">
                       <img
                         className="relative w-[97%]  left-[55%] translate-x-[-50%]"
@@ -883,7 +883,7 @@ const Section2 = () => {
                   </div>
 
                   <buttom
-                    className="w-[40px] h-[40px] rounded-full border-white-ivory  border-[1px] absolute left-[-18%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute left-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
                     onClick={swiperPrevSlide}
                   >
                     <svg
@@ -900,7 +900,7 @@ const Section2 = () => {
                     </svg>
                   </buttom>
                   <button
-                    className="w-[40px] h-[40px] rounded-full border-white-ivory  border-[1px] absolute right-[-18%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute right-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
                     onClick={swiperNextSlide}
                   >
                     <svg
@@ -918,16 +918,16 @@ const Section2 = () => {
                   </button>
                 </div>
                 <div className="flex flex-col gap-y-[8px]">
-                  <div className="font-seagull text-[24px] leading-[24px] text-white-ivory text-center gap-y-[5px] name">
+                  <div className="font-seagull text-[5.581vw] leading-[5.581vw] text-white-ivory text-center gap-y-[5px] name">
                     Dr. Drs. I Nyoman Gede <br />
                     Astina, M.Pd., CHT., CHA
                   </div>
-                  <div className="font-helixa text-[16px] text-white-ivory text-center profesion">
+                  <div className="font-helixa text-[3.721vw] text-white-ivory text-center profesion">
                     Founder
                   </div>
                 </div>
 
-                <div className="text-center font-helixa text-[24px]  leading-[29px] text-white-ivory quotes">
+                <div className="text-center font-helixa text-[5.581vw]  leading-[6.744vw] text-white-ivory quotes">
                   “ It is a wonderful milestone for our organization to
                   facilitate Early Childhood Education with strong will in
                   nurturing future leaders. ”
@@ -940,9 +940,9 @@ const Section2 = () => {
             <div className="w-full h-[80%] ">
               <div className="w-full flex flex-col justify-center items-center h-full gap-y-[32px]">
                 <div></div>
-                <div className="relative  w-[269px] h-[300px]  flex justify-center items-end">
+                <div className="relative max-sm:w-[62.558vw] h-[300px]  flex justify-center items-end">
                   <div className=" swiper-image-container w-full ">
-                    <div className="absolute  w-[204px] h-[266px] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
+                    <div className="absolute  w-[47.442vw] h-[61.86vw] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
                     <div className="w-full h-full">
                       <img
                         className="relative w-[70%]  left-[48%] translate-x-[-50%]"
@@ -953,7 +953,7 @@ const Section2 = () => {
                   </div>
 
                   <buttom
-                    className="w-[40px] h-[40px] rounded-full border-white-ivory  border-[1px] absolute left-[-18%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute left-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
                     onClick={swiperPrevSlide}
                   >
                     <svg
@@ -970,7 +970,7 @@ const Section2 = () => {
                     </svg>
                   </buttom>
                   <button
-                    className="w-[40px] h-[40px] rounded-full border-white-ivory  border-[1px] absolute right-[-18%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute right-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
                     onClick={swiperNextSlide}
                   >
                     <svg
@@ -988,16 +988,16 @@ const Section2 = () => {
                   </button>
                 </div>
                 <div className="flex flex-col gap-y-[8px]">
-                  <div className="font-seagull text-[24px] leading-[24px] text-white-ivory text-center gap-y-[5px] name">
+                  <div className="font-seagull text-[5.581vw] leading-[5.581vw] text-white-ivory text-center gap-y-[5px] name">
                     Dr. I Made <br />
                     Sudjana, S.E., M.M., CHT., CHA
                   </div>
-                  <div className="font-helixa text-[16px] text-white-ivory text-center profesion">
+                  <div className="font-helixa text-[3.721vw] text-white-ivory text-center profesion">
                     Founder
                   </div>
                 </div>
 
-                <div className="text-center font-helixa text-[24px]  leading-[29px] text-white-ivory quotes">
+                <div className="text-center font-helixa text-[5.581vw]  leading-[6.744vw] text-white-ivory quotes">
                   “ Continuum education from early childhood to higher education
                   must ensure the quality of both process and outcomes. I
                   believe WIN School is fully on the right direction. ”
@@ -1010,9 +1010,9 @@ const Section2 = () => {
             <div className="w-full h-[80%] ">
               <div className="w-full flex flex-col justify-center items-center h-full gap-y-[32px]">
                 <div></div>
-                <div className="relative  w-[269px] h-[300px]  flex justify-center items-end">
+                <div className="relative  max-sm:w-[62.558vw] h-[300px]  flex justify-center items-end">
                   <div className=" swiper-image-container w-full ">
-                    <div className="absolute  w-[204px] h-[266px] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
+                    <div className="absolute  w-[47.442vw] h-[61.86vw] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
                     <div className="w-full h-full">
                       <img
                         className="relative w-[70%]  left-[53%] translate-x-[-50%]"
@@ -1023,7 +1023,7 @@ const Section2 = () => {
                   </div>
 
                   <buttom
-                    className="w-[40px] h-[40px] rounded-full border-white-ivory  border-[1px] absolute left-[-18%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute left-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
                     onClick={swiperPrevSlide}
                   >
                     <svg
@@ -1040,7 +1040,7 @@ const Section2 = () => {
                     </svg>
                   </buttom>
                   <button
-                    className="w-[40px] h-[40px] rounded-full border-white-ivory  border-[1px] absolute right-[-18%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute right-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
                     onClick={swiperNextSlide}
                   >
                     <svg
@@ -1058,15 +1058,15 @@ const Section2 = () => {
                   </button>
                 </div>
                 <div className="flex flex-col gap-y-[8px]">
-                  <div className="font-seagull text-[24px] leading-[24px] text-white-ivory text-center gap-y-[5px] name">
+                  <div className="font-seagull text-[5.581vw] leading-[5.581vw] text-white-ivory text-center gap-y-[5px] name">
                     Imroatun Nafi'ah, S.Pd.
                   </div>
-                  <div className="font-helixa text-[16px] text-white-ivory text-center profesion">
+                  <div className="font-helixa text-[3.721vw] text-white-ivory text-center profesion">
                     WIN Principal
                   </div>
                 </div>
 
-                <div className="text-center font-helixa text-[24px]  leading-[29px] text-white-ivory quotes">
+                <div className="text-center font-helixa text-[5.581vw]  leading-[6.744vw] text-white-ivory quotes">
                   “ Our school offers so much value, and it goes beyond simply
                   providing access to top-notch learning resources; it also
                   fosters a vibrant community where dreams come true, ideas
@@ -1080,9 +1080,9 @@ const Section2 = () => {
             <div className="w-full h-[80%] ">
               <div className="w-full flex flex-col justify-center items-center h-full gap-y-[32px]">
                 <div></div>
-                <div className="relative  w-[269px] h-[300px]  flex justify-center items-end">
+                <div className="relative  max-sm:w-[62.558vw] h-[300px]  flex justify-center items-end">
                   <div className=" swiper-image-container w-full ">
-                    <div className="absolute  w-[204px] h-[266px] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
+                    <div className="absolute  w-[47.442vw] h-[61.86vw] bg-white-ivory rounded-[35px] bottom-0 left-1/2 translate-x-[-50%] "></div>
                     <div className="w-full h-full">
                       <img
                         className="relative w-[94%]  left-[50%] translate-x-[-50%]"
@@ -1093,7 +1093,7 @@ const Section2 = () => {
                   </div>
 
                   <buttom
-                    className="w-[40px] h-[40px] rounded-full border-white-ivory  border-[1px] absolute left-[-18%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute left-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
                     onClick={swiperPrevSlide}
                   >
                     <svg
@@ -1110,7 +1110,7 @@ const Section2 = () => {
                     </svg>
                   </buttom>
                   <button
-                    className="w-[40px] h-[40px] rounded-full border-white-ivory  border-[1px] absolute right-[-18%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute right-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
                     onClick={swiperNextSlide}
                   >
                     <svg
@@ -1128,15 +1128,15 @@ const Section2 = () => {
                   </button>
                 </div>
                 <div className="flex flex-col gap-y-[8px]">
-                  <div className="font-seagull text-[24px] leading-[24px] text-white-ivory text-center gap-y-[5px] name">
+                  <div className="font-seagull text-[5.581vw] leading-[5.581vw] text-white-ivory text-center gap-y-[5px] name">
                     Margareth
                   </div>
-                  <div className="font-helixa text-[16px] text-white-ivory text-center profesion">
+                  <div className="font-helixa text-[3.721vw] text-white-ivory text-center profesion">
                     Early Childhood Practitioner
                   </div>
                 </div>
 
-                <div className="text-center font-helixa text-[24px]  leading-[29px] text-white-ivory quotes">
+                <div className="text-center font-helixa text-[5.581vw]  leading-[6.744vw] text-white-ivory quotes">
                   “ Children’s learning is dynamic, complex and holistic. A well
                   designed play based learning environment allow children to
                   make connections between prior experiences and new learning. ”

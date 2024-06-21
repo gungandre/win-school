@@ -11,9 +11,9 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: ".section-winner-classes",
+            trigger: container.current,
             start: "top top",
-            end: "bottom end",
+            end: "+=2000",
 
             scrub: true,
             pin: true,
@@ -37,7 +37,7 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
   );
 
   return (
-    <>
+    <div>
       <section
         className="w-full h-auto flex items-center bg-white-ivory section section-winner-classes max-sm:hidden "
         ref={container}
@@ -163,7 +163,7 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
       <div className="max-sm:block hidden">
         <WinnerClasses />
       </div>
-    </>
+    </div>
   );
 };
 

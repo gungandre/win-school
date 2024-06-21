@@ -110,12 +110,15 @@ const Section3 = ({ setOnHover }) => {
         });
       });
     },
-    { dependencies: [activitiesData] }
+    { scope: elemenRef, dependencies: [activitiesData] }
   );
 
   return (
     <>
-      <div className="min-h-dvh w-full   bg-white-ivory flex flex-col section-timetable">
+      <div
+        className="min-h-dvh w-full   bg-white-ivory flex flex-col section-timetable"
+        ref={elemenRef}
+      >
         {activitiesData &&
           activitiesData.map((item, index) => {
             console.log("index elemen", index);
@@ -123,7 +126,6 @@ const Section3 = ({ setOnHover }) => {
             return (
               <div
                 className={`w-full group relative overflow-hidden timetable-${index}`}
-                ref={elemenRef}
                 key={index}
               >
                 <div className="absolute bg-soft-tosca h-full w-full translate-y-full group-hover:translate-y-0 duration-500 transition-all"></div>

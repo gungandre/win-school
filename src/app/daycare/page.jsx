@@ -35,15 +35,8 @@ const page = () => {
 
   return (
     <>
-      <div>
-        {small === false ? (
-          <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
-        ) : (
-          <HeaderMobile />
-        )}
-      </div>
-
-      <div>{small === true ? <HeroMobile /> : <Hero />}</div>
+      <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
+      <Hero />
 
       <Section2 small={small} setTlComplete={setTlComplete} />
 

@@ -109,7 +109,7 @@ const Section7 = () => {
     { scope: container }
   );
   return (
-    <>
+    <div>
       <section
         className="min-h-dvh w-full px-15 bg-white-ivory flex flex-col gap-y-[300px] section section-we-provides max-sm:hidden "
         ref={container}
@@ -301,10 +301,10 @@ const Section7 = () => {
           </div>
         </div>
       </section>
-      <div className="max-sm:block hidden">
+      {/* <div className="max-sm:block hidden">
         <Section7Mobile />
-      </div>
-    </>
+      </div> */}
+    </div>
   );
 };
 

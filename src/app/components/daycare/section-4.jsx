@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
-import BeforeFooter from "./before-footer";
 
 const Section4 = () => {
   gsap.registerPlugin(ScrollTrigger);
