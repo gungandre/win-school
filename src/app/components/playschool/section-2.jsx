@@ -8,25 +8,28 @@ import { useRef } from "react";
 const Section2 = ({ setTlComplete }) => {
   const elemenRef = useRef(null);
 
-  useGSAP(() => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: elemenRef.current,
-          start: "top top",
-          end: "+=2000",
-          scrub: true,
-          pin: true,
-          pinSpacer: true,
-        },
-      })
-      .to(".text-scroll", {
-        transform: "translateX(-100%)",
-        onComplete: () => {
-          setTlComplete(true);
-        },
-      });
-  });
+  useGSAP(
+    () => {
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: elemenRef.current,
+            start: "top top",
+            end: "+=2000",
+            scrub: true,
+            pin: true,
+            pinSpacer: true,
+          },
+        })
+        .to(".text-scroll", {
+          transform: "translateX(-100%)",
+          onComplete: () => {
+            setTlComplete(true);
+          },
+        });
+    },
+    { scope: elemenRef }
+  );
 
   return (
     <div

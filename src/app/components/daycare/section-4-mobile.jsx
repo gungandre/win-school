@@ -1,39 +1,45 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
 const Section4Mobile = () => {
-  useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".text-playscholl-photo",
+  const container = useRef();
 
-      onEnter: () => {
-        gsap.to(".text-playscholl-photo", {
-          translateY: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power1.out",
-          stagger: 0.1,
-        });
-      },
-    });
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: ".text-playscholl-photo",
 
-    ScrollTrigger.create({
-      trigger: ".img-photo-gallery",
+        onEnter: () => {
+          gsap.to(".text-playscholl-photo", {
+            translateY: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power1.out",
+            stagger: 0.1,
+          });
+        },
+      });
 
-      onEnter: () => {
-        gsap.to(".img-photo-gallery", {
-          translateX: 0,
-          duration: 1,
-          ease: "power1.out",
-          stagger: 0.1,
-        });
-      },
-    });
-  }, []);
+      ScrollTrigger.create({
+        trigger: ".img-photo-gallery",
+
+        onEnter: () => {
+          gsap.to(".img-photo-gallery", {
+            translateX: 0,
+            duration: 1,
+            ease: "power1.out",
+            stagger: 0.1,
+          });
+        },
+      });
+    },
+    { scope: container }
+  );
 
   return (
-    <div className="w-full min-h-dvh bg-white-ivory px-[32px]">
+    <div className="w-full min-h-dvh bg-white-ivory px-[32px]" ref={container}>
       <div className="font-helixa text-[48px] leading-[50px] text-sunset-coral text-center mt-[120px]">
         <div className="translate-y-full text-playscholl-photo opacity-0">
           Playschool

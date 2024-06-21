@@ -12,154 +12,157 @@ const Hero = ({ setTlComplete }) => {
 
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  useGSAP(() => {
-    // playschool title
+  useGSAP(
+    () => {
+      // playschool title
 
-    console.log("masuk");
+      console.log("masuk");
 
-    gsap.to(".playschool", {
-      transform: "translateY(0)",
-      duration: 1,
-      ease: "power1.out",
-      stagger: 0.1, // Tanda titik digunakan di sini untuk memisahkan properti stagger
-    });
+      gsap.to(".playschool", {
+        transform: "translateY(0)",
+        duration: 1,
+        ease: "power1.out",
+        stagger: 0.1, // Tanda titik digunakan di sini untuk memisahkan properti stagger
+      });
 
-    // hero image paralax
-    let getRatio = (el) =>
-      window.innerHeight / (window.innerHeight + el?.offsetHeight);
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
+      // hero image paralax
+      let getRatio = (el) =>
+        window.innerHeight / (window.innerHeight + el?.offsetHeight);
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      });
 
-    gsap.to(".el-top-img", {
-      opacity: 1,
-      duration: 1,
-    });
+      gsap.to(".el-top-img", {
+        opacity: 1,
+        duration: 1,
+      });
 
-    ScrollTrigger.create({
-      trigger: ".we-provide",
+      ScrollTrigger.create({
+        trigger: ".we-provide",
 
-      onEnter: () => {
-        gsap.to(".we-provide", {
-          opacity: 1,
-          transform: "translateY(0)",
-          duration: 1,
-        });
-      },
-    });
-
-    const aboveAllSplit = new SplitText(".above-all", { type: "lines" });
-
-    ScrollTrigger.create({
-      trigger: ".above-all",
-      onEnter: () => {
-        gsap.fromTo(
-          aboveAllSplit.lines,
-          {
-            transform: "translateY(100%)",
-            opacity: 0,
-          },
-          {
+        onEnter: () => {
+          gsap.to(".we-provide", {
             opacity: 1,
             transform: "translateY(0)",
             duration: 1,
-            stagger: 0.1,
-          }
-        );
-      },
-    });
-
-    const ourDaycareSplit = new SplitText(".our-daycare", { type: "lines" });
-
-    gsap.fromTo(
-      ourDaycareSplit.lines,
-      {
-        transform: "translateY(100%)",
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        transform: "translateY(0)",
-        duration: 1,
-        stagger: 0.1,
-      }
-    );
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          pin: true,
-
-          scrub: true,
-          start: "top top",
-          end: "bottom bottom",
-          anticipatePin: true,
+          });
         },
-      })
-      .to(".daycare-text", {
-        transform: "translateY(-300%)",
-      })
-      .to(
-        ".daycare-hero-desc",
-        {
-          transform: "translateY(-100%)",
-        },
-        "<"
-      )
-      .to(
-        ".daycare-hero-image",
-        {
-          top: "20%",
-          width: "100%",
-          height: "684px",
-        },
-        "<"
-      );
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-
-          scrub: true,
-        },
-      })
-      .to(".daycare-hero-image", {
-        backgroundPosition: `50% ${
-          -window.innerHeight *
-          (1 - getRatio(document.querySelector(".daycare-hero-image")))
-        }px`,
-        onComplete: () => {},
       });
 
-    gsap.to(".daycare-hero-image", {
-      transform: "translateY(0)",
-      opacity: 1,
-      duration: 1,
-      ease: "power1.out",
-    });
+      const aboveAllSplit = new SplitText(".above-all", { type: "lines" });
 
-    gsap.to(".daycare-text-desc", {
-      transform: "translateY(0)",
-      duration: 1,
-      ease: "power1.out",
-    });
+      ScrollTrigger.create({
+        trigger: ".above-all",
+        onEnter: () => {
+          gsap.fromTo(
+            aboveAllSplit.lines,
+            {
+              transform: "translateY(100%)",
+              opacity: 0,
+            },
+            {
+              opacity: 1,
+              transform: "translateY(0)",
+              duration: 1,
+              stagger: 0.1,
+            }
+          );
+        },
+      });
 
-    gsap.to(".daycare-text-desc-2", {
-      transform: "translateY(0)",
-      delay: 0.5,
-      duration: 1,
-      ease: "power1.out",
-    });
-  }, []);
+      const ourDaycareSplit = new SplitText(".our-daycare", { type: "lines" });
+
+      gsap.fromTo(
+        ourDaycareSplit.lines,
+        {
+          transform: "translateY(100%)",
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          transform: "translateY(0)",
+          duration: 1,
+          stagger: 0.1,
+        }
+      );
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            pin: true,
+
+            scrub: true,
+            start: "top top",
+            end: "bottom bottom",
+            anticipatePin: true,
+          },
+        })
+        .to(".daycare-text", {
+          transform: "translateY(-300%)",
+        })
+        .to(
+          ".daycare-hero-desc",
+          {
+            transform: "translateY(-100%)",
+          },
+          "<"
+        )
+        .to(
+          ".daycare-hero-image",
+          {
+            top: "20%",
+            width: "100%",
+            height: "684px",
+          },
+          "<"
+        );
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: "bottom bottom",
+
+            scrub: true,
+          },
+        })
+        .to(".daycare-hero-image", {
+          backgroundPosition: `50% ${
+            -window.innerHeight *
+            (1 - getRatio(document.querySelector(".daycare-hero-image")))
+          }px`,
+          onComplete: () => {},
+        });
+
+      gsap.to(".daycare-hero-image", {
+        transform: "translateY(0)",
+        opacity: 1,
+        duration: 1,
+        ease: "power1.out",
+      });
+
+      gsap.to(".daycare-text-desc", {
+        transform: "translateY(0)",
+        duration: 1,
+        ease: "power1.out",
+      });
+
+      gsap.to(".daycare-text-desc-2", {
+        transform: "translateY(0)",
+        delay: 0.5,
+        duration: 1,
+        ease: "power1.out",
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
     <>

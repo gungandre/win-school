@@ -74,41 +74,44 @@ const Section3 = ({ setOnHover }) => {
     setActivitiesData(data);
   }, []);
 
-  useGSAP(() => {
-    console.log(activitiesData);
-    activitiesData?.map((item, index) => {
-      console.log("index item", index);
+  useGSAP(
+    () => {
+      console.log(activitiesData);
+      activitiesData?.map((item, index) => {
+        console.log("index item", index);
 
-      ScrollTrigger.create({
-        trigger: `.timetable-${index}`,
+        ScrollTrigger.create({
+          trigger: `.timetable-${index}`,
 
-        onEnter: () => {
-          gsap.to(
-            `.time-${index}`,
+          onEnter: () => {
+            gsap.to(
+              `.time-${index}`,
 
-            {
-              opacity: 1,
-              left: 0,
-              ease: "power1.in",
-              duration: 0.5,
-            }
-          );
+              {
+                opacity: 1,
+                left: 0,
+                ease: "power1.in",
+                duration: 0.5,
+              }
+            );
 
-          gsap.to(
-            `.desc-${index}`,
+            gsap.to(
+              `.desc-${index}`,
 
-            {
-              opacity: 1,
-              right: 0,
-              transform: "translateX(0)",
-              ease: "power1.in",
-              duration: 0.5,
-            }
-          );
-        },
+              {
+                opacity: 1,
+                right: 0,
+                transform: "translateX(0)",
+                ease: "power1.in",
+                duration: 0.5,
+              }
+            );
+          },
+        });
       });
-    });
-  }, [activitiesData]);
+    },
+    { dependencies: [activitiesData] }
+  );
 
   return (
     <>
@@ -125,17 +128,17 @@ const Section3 = ({ setOnHover }) => {
               >
                 <div className="absolute bg-soft-tosca h-full w-full translate-y-full group-hover:translate-y-0 duration-500 transition-all"></div>
                 <div className="flex justify-center w-full h-[120px]">
-                  <div className="w-[90%] flex border-y-[1px]">
-                    <div className="w-[35%]  flex items-center h-full">
+                  <div className="w-[90%] flex border-y-[1px] max-sm:flex-col max-sm:justify-center">
+                    <div className="w-[35%] max-sm:w-full max-sm:h-auto  flex items-center h-full">
                       <div
-                        className={`font-helixa font-bold text-[20px] text-[#404040] group-hover:text-white-ivory duration-500 transition-all z-10 time-${index} opacity-0  left-[-10%] relative`}
+                        className={`font-helixa font-bold text-[20px] max-sm:text-[16px] text-[#404040] group-hover:text-white-ivory duration-500 transition-all z-10 time-${index} opacity-0  left-[-10%] relative`}
                       >
                         {item.Time}
                       </div>
                     </div>
-                    <div className="w-[65%]  h-full flex items-center">
+                    <div className="w-[65%] max-sm:w-full max-sm:h-auto h-full flex items-center">
                       <div
-                        className={`font-helixa font-bold text-[48px] text-[#404040] group-hover:text-white-ivory duration-500 transition-all z-10 desc-${index}  opacity-0 relative right-[-10%]`}
+                        className={`font-helixa font-bold max-sm:text-[24px] text-[48px] text-[#404040] group-hover:text-white-ivory duration-500 transition-all z-10 desc-${index}  opacity-0 relative right-[-10%]`}
                       >
                         {item.Activity}
                       </div>

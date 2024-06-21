@@ -351,7 +351,7 @@ const PreloaderMobile = () => {
             </defs>
           </svg>
         </div>
-        <div className="w-[90%]  absolute bottom-[20%] flex flex-col gap-y-5 ">
+        <div className="w-[90%]  absolute bottom-[5%] flex flex-col gap-y-5 ">
           <div className="relative w-full h-[6px]">
             <div className="bg-sunset-coral h-[6px] w-full opacity-25 absolute"></div>
             <div className="bg-sunset-coral h-[6px] w-0 absolute loading-mobile"></div>

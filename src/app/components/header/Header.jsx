@@ -5,6 +5,7 @@ import gsap from "gsap";
 import Link from "next/link";
 import { useContext } from "react";
 import { preloaderContext } from "@/app/context/preloaderContext";
+import { useRef } from "react";
 
 const menuList = [
   {
@@ -56,6 +57,7 @@ const menuList = [
 
 const Header = ({ navbarColor }) => {
   const { preloaderComplete } = useContext(preloaderContext);
+  const container = useRef();
   useGSAP(() => {
     if (navbarColor) {
       gsap.to(".menu-name-span", {
@@ -353,7 +355,10 @@ const Header = ({ navbarColor }) => {
   };
 
   return (
-    <nav className="navbar fixed top-0 w-full p-8 sm:py-9 sm:px-15 flex items-center justify-between z-50">
+    <nav
+      className="navbar fixed top-0 w-full p-8 sm:py-9 sm:px-15 flex items-center justify-between z-50"
+      ref={container}
+    >
       <Link href="/">
         <svg
           className="nav-logo translate-y-[-50%] opacity-0"

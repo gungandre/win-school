@@ -153,47 +153,50 @@ const Section3 = ({ setOnHover }) => {
     fetchData();
   }, []);
 
-  useGSAP(() => {
-    let getRatio = (el) =>
-      window.innerHeight / (window.innerHeight + el?.offsetHeight);
+  useGSAP(
+    () => {
+      let getRatio = (el) =>
+        window.innerHeight / (window.innerHeight + el?.offsetHeight);
 
-    ScrollTrigger.create({
-      trigger: elemenRef.current,
-      start: "top bottom",
-      end: "bottom top",
+      ScrollTrigger.create({
+        trigger: elemenRef.current,
+        start: "top bottom",
+        end: "bottom top",
 
-      onEnter: () => {
-        gsap.to(".class-card", {
-          opacity: 1,
-          transform: "translateY(0)",
-          ease: "power1.out",
-          duration: 1,
-          stagger: 0.2,
-        });
-      },
-    });
+        onEnter: () => {
+          gsap.to(".class-card", {
+            opacity: 1,
+            transform: "translateY(0)",
+            ease: "power1.out",
+            duration: 1,
+            stagger: 0.2,
+          });
+        },
+      });
 
-    // datas.forEach((data, index) => {
-    //   gsap.to(`.playschool-img-thumbail-${index}`, {
-    //     objectPosition: `50% ${
-    //       -window.innerHeight *
-    //       (1 -
-    //         getRatio(
-    //           document.querySelector(`.playschool-img-thumbail-${index}`)
-    //         ))
-    //     }px`,
-    //     ease: "power1.out",
-    //     scrollTrigger: {
-    //       trigger: `.playschool-img-thumbail-${index}`,
-    //       start: "top bottom+=50%",
-    //       end: "bottom top-=30%",
+      // datas.forEach((data, index) => {
+      //   gsap.to(`.playschool-img-thumbail-${index}`, {
+      //     objectPosition: `50% ${
+      //       -window.innerHeight *
+      //       (1 -
+      //         getRatio(
+      //           document.querySelector(`.playschool-img-thumbail-${index}`)
+      //         ))
+      //     }px`,
+      //     ease: "power1.out",
+      //     scrollTrigger: {
+      //       trigger: `.playschool-img-thumbail-${index}`,
+      //       start: "top bottom+=50%",
+      //       end: "bottom top-=30%",
 
-    //       scrub: true,
-    //       invalidateOnRefresh: true, // to make it responsive
-    //     },
-    //   });
-    // });
-  }, [dataClass]);
+      //       scrub: true,
+      //       invalidateOnRefresh: true, // to make it responsive
+      //     },
+      //   });
+      // });
+    },
+    { scope: elemenRef, dependencies: [dataClass] }
+  );
 
   const modalClick = (data) => {
     setOpenModal(!openModal);

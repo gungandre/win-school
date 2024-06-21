@@ -131,6 +131,28 @@ const Section4mobile = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+      <div className="w-full flex justify-center items-center px-[16px] pt-[40px]">
+        <a
+          href=""
+          className="w-[146px] h-[40px] px-[16px] border-[1px] border-sunset-coral rounded-[20px] flex justify-between items-center"
+        >
+          <div className="font-helixa text-[20px] leading-[24px] text-sunset-coral">
+            About Us
+          </div>
+          <div>
+            <svg
+              width="17"
+              height="18"
+              viewBox="0 0 17 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 9L16 9" stroke="#F96D49" />
+              <path d="M8 1L16 9L8 17" stroke="#F96D49" />
+            </svg>
+          </div>
+        </a>
+      </div>
     </div>
   );
 };

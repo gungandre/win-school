@@ -11,60 +11,63 @@ const BeforeFooter = ({ tlComplete }) => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useGSAP(() => {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: elemenRef.current,
-          start: "top bottom",
-          end: "bottom top",
+  useGSAP(
+    () => {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: elemenRef.current,
+            start: "top bottom",
+            end: "bottom top",
 
-          scrub: true,
-          pinSpacing: true,
-        },
-      })
-      .from(".circle-before-footer", {
-        duration: 1,
-        ease: "power1.out",
-        "--r": `${windowWidth}px`,
-        "--y": `${windowHeight}px`,
-        "--x": "50%",
-      })
-      .to(
-        ".take-the-first-step",
-        {
-          opacity: 1,
-          transform: "translateY(0)",
-          ease: "power1.out",
+            scrub: true,
+            pinSpacing: true,
+          },
+        })
+        .from(".circle-before-footer", {
           duration: 1,
-          stagger: 0.1,
-        },
-        "<"
-      )
-      .to(
-        ".get-special-offer-button",
-        {
-          opacity: 1,
-          transform: "translateY(0)",
           ease: "power1.out",
+          "--r": `${windowWidth}px`,
+          "--y": `${windowHeight}px`,
+          "--x": "50%",
+        })
+        .to(
+          ".take-the-first-step",
+          {
+            opacity: 1,
+            transform: "translateY(0)",
+            ease: "power1.out",
+            duration: 1,
+            stagger: 0.1,
+          },
+          "<"
+        )
+        .to(
+          ".get-special-offer-button",
+          {
+            opacity: 1,
+            transform: "translateY(0)",
+            ease: "power1.out",
+            duration: 1,
+          },
+          "<"
+        )
+        .to(".container-section-4", {
+          backgroundColor: "transparent",
           duration: 1,
-        },
-        "<"
-      )
-      .to(".container-section-4", {
-        backgroundColor: "transparent",
-        duration: 1,
-      });
-  }, [tlComplete]);
+        });
+    },
+    { scope: elemenRef, dependencies: [tlComplete] }
+  );
 
   return (
-    <div className="w-full h-dvh  relative  bg-white-ivory section z-[11]">
-      <div
-        ref={elemenRef}
-        className="w-full h-dvh bg-sunset-coral clip-mask justify-center flex flex-col gap-y-[119px] relative bottom-0 circle-before-footer "
-      >
+    <div
+      className="w-full h-dvh  relative  bg-white-ivory section z-[11] "
+      ref={elemenRef}
+    >
+      <div className="w-full h-dvh bg-sunset-coral clip-mask justify-center flex flex-col gap-y-[119px] relative bottom-0 circle-before-footer ">
         <div className="flex flex-col w-full">
           <div className="text-center font-helixa text-[9.01vw] leading-[9.167vw] text-white-ivory">
             <div className="take-the-first-step  translate-y-full">

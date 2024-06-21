@@ -11,115 +11,118 @@ const Section4 = () => {
 
   const elemenRef = useRef(null);
 
-  useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".playschool-photo-gallery",
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: ".playschool-photo-gallery",
 
-      start: "top center",
-      end: "top top",
-      once: true,
-      onEnter: () => {
-        gsap.to(".playschool-photo-gallery", {
-          transform: "translateY(0)",
-          opacity: 1,
-          duration: 1,
-          ease: "power1.out",
-        });
-        gsap.fromTo(
-          ".image-container-gallery",
-
-          {
-            width: "1265px",
-            height: "1795px",
+        start: "top center",
+        end: "top top",
+        once: true,
+        onEnter: () => {
+          gsap.to(".playschool-photo-gallery", {
+            transform: "translateY(0)",
+            opacity: 1,
             duration: 1,
             ease: "power1.out",
-          },
-          {
-            width: "1065px",
-            height: "1595px",
+          });
+          gsap.fromTo(
+            ".image-container-gallery",
 
-            duration: 1,
-            ease: "power1.out",
-            onComplete: () => {
-              ScrollTrigger.create({
-                trigger: ".image-container-gallery",
-
-                start: "top +=40%",
-                once: true,
-                animation: gsap.to(
-                  ".image-container-gallery",
-
-                  {
-                    width: "511px",
-                    height: "765px",
-                    duration: 1,
-                    ease: "power1.out",
-                  }
-                ),
-              });
-
-              ScrollTrigger.create({
-                trigger: ".image-container-gallery",
-
-                start: "top +=40%",
-                once: true,
-                animation: gsap.to(
-                  ".another-img",
-
-                  {
-                    transform: "translate(0)",
-                    duration: 1.5,
-                    ease: "power1.out",
-                  }
-                ),
-              });
-
-              ScrollTrigger.create({
-                trigger: ".image-container-gallery",
-
-                start: "top +=40%",
-                once: true,
-                animation: gsap.to(
-                  ".another-img-1",
-
-                  {
-                    delay: 0.1,
-                    transform: "translate(0)",
-                    duration: 1.5,
-                    ease: "power1.out",
-                  }
-                ),
-              });
-
-              ScrollTrigger.create({
-                trigger: ".image-container-gallery",
-
-                start: "top +=40%",
-                once: true,
-                animation: gsap.to(
-                  ".another-img-2",
-
-                  {
-                    delay: 0.01,
-                    transform: "translate(0)",
-                    duration: 1.5,
-                    ease: "power1.out",
-                  }
-                ),
-              });
+            {
+              width: "1265px",
+              height: "1795px",
+              duration: 1,
+              ease: "power1.out",
             },
-          },
-          "<"
-        );
-      },
-    });
+            {
+              width: "1065px",
+              height: "1595px",
 
-    gsap.timeline({}).to(".image-container-gallery", {
-      transform: "translate(0)",
-      duration: 1,
-      ease: "power1.out",
-    });
-  }, []);
+              duration: 1,
+              ease: "power1.out",
+              onComplete: () => {
+                ScrollTrigger.create({
+                  trigger: ".image-container-gallery",
+
+                  start: "top +=40%",
+                  once: true,
+                  animation: gsap.to(
+                    ".image-container-gallery",
+
+                    {
+                      width: "511px",
+                      height: "765px",
+                      duration: 1,
+                      ease: "power1.out",
+                    }
+                  ),
+                });
+
+                ScrollTrigger.create({
+                  trigger: ".image-container-gallery",
+
+                  start: "top +=40%",
+                  once: true,
+                  animation: gsap.to(
+                    ".another-img",
+
+                    {
+                      transform: "translate(0)",
+                      duration: 1.5,
+                      ease: "power1.out",
+                    }
+                  ),
+                });
+
+                ScrollTrigger.create({
+                  trigger: ".image-container-gallery",
+
+                  start: "top +=40%",
+                  once: true,
+                  animation: gsap.to(
+                    ".another-img-1",
+
+                    {
+                      delay: 0.1,
+                      transform: "translate(0)",
+                      duration: 1.5,
+                      ease: "power1.out",
+                    }
+                  ),
+                });
+
+                ScrollTrigger.create({
+                  trigger: ".image-container-gallery",
+
+                  start: "top +=40%",
+                  once: true,
+                  animation: gsap.to(
+                    ".another-img-2",
+
+                    {
+                      delay: 0.01,
+                      transform: "translate(0)",
+                      duration: 1.5,
+                      ease: "power1.out",
+                    }
+                  ),
+                });
+              },
+            },
+            "<"
+          );
+        },
+      });
+
+      gsap.timeline({}).to(".image-container-gallery", {
+        transform: "translate(0)",
+        duration: 1,
+        ease: "power1.out",
+      });
+    },
+    { scope: elemenRef }
+  );
 
   return (
     <div
