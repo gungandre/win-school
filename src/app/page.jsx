@@ -2,7 +2,7 @@
 
 import Header from "./components/header/Header";
 
-import Footer from "./components/footer/footer";
+import Footer from "./components/footer/Footer";
 
 import useNavColor from "./hook/useNavColor";
 import { Cursor } from "./components/cursor/Cursor";
