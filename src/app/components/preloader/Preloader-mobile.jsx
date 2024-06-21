@@ -3,12 +3,12 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useContext } from "react";
-import { preloaderContext } from "@/app/context/preloaderContext";
+// import { preloaderContext } from "@/app/context/preloaderContext";
 import { useRef } from "react";
 
 const PreloaderMobile = () => {
-  const { preloaderComplete, setPreloaderComplete } =
-    useContext(preloaderContext);
+  // const { preloaderComplete, setPreloaderComplete } =
+  //   useContext(preloaderContext);
   const container = useRef();
   useGSAP(
     () => {
@@ -71,7 +71,7 @@ const PreloaderMobile = () => {
                 ease: "ease.out1",
                 duration: 1,
                 onComplete: () => {
-                  setPreloaderComplete(true);
+                  // setPreloaderComplete(true);
                 },
               });
             },

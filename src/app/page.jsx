@@ -12,7 +12,6 @@ import gsap from "gsap";
 
 import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
-import Preloader from "./components/preloader/Preloader";
 
 import Hero from "./components/homepage/hero";
 import Section2 from "./components/homepage/section-2";
@@ -39,7 +38,7 @@ import WinnerClasses from "./components/homepage/WinnerClasses";
 import BeforeFooterMobile from "./components/homepage/before-footer-mobile";
 import FooterMobile from "./components/homepage/FooterMobile";
 import useMediaQuery from "./utils/useMediaQuery";
-
+import Preloader from "./components/preloader/Preloader";
 export default function Home() {
   gsap.registerPlugin(SplitText);
 

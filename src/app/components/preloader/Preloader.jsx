@@ -16,7 +16,7 @@ import PreloaderMobile from "./Preloader-mobile";
 import { useRef } from "react";
 import PreloaderDesktop from "./Preloader-desktop";
 
-const Preloader = ({ setNavbarAnimationPlay }) => {
+const Preloader = () => {
   const small = useMediaQuery("(max-width: 640px)");
   return <>{small ? <PreloaderMobile /> : <PreloaderDesktop />}</>;
 };
