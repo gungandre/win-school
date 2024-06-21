@@ -43,7 +43,7 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
         ref={container}
       >
         <div className="w-full h-dvh flex items-center flex-nowrap relative">
-          <div className="text-nowrap text-[13.333vw] text-sunset-coral translate-x-[100%] winner-classes">
+          <div className="text-nowrap text-[13.333vw] text-sunset-coral translate-x-[120%] winner-classes">
             WINner Classes
           </div>
           <div className="w-full h-dvh flex items-center bg-white-ivory section overflow-hidden translate-x-full section-class absolute flex-nowrap">
@@ -67,6 +67,14 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
                   </h1>
                   <div className="font-helixa text-[#5E5E5E] text-[36px] group-hover:left-[15%] group-hover:text-white-ivory duration-1000 transition-all">
                     2 - 3 years old
+                  </div>
+                </div>
+                <div className="flex flex-col absolute top-[40%]  left-[26%] group-hover:left-[21%] group-hover:text-white-ivory duration-1000 transition-all">
+                  <div className="font-helixa text-white-ivory text-[28px] group-hover:left-[15%] group-hover:text-white-ivory duration-1000 transition-all">
+                    <ol className="list-disc">
+                      <li>Max. Capacity 12 Seats</li>
+                      <li>Teacher : Student = 1 : 4</li>
+                    </ol>
                   </div>
                 </div>
                 <div className="absolute   bottom-0 right-[-30%] group-hover:right-[-20%]  w-[500px] h-auto group-hover:w-[400px] duration-1000 transition-all">
@@ -95,6 +103,14 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
                     3 - 4 years old
                   </div>
                 </div>
+                <div className="flex flex-col absolute top-[40%]  left-[26%] group-hover:left-[21%] group-hover:text-white-ivory duration-1000 transition-all">
+                  <div className="font-helixa text-white-ivory text-[28px] group-hover:left-[15%] group-hover:text-white-ivory duration-1000 transition-all">
+                    <ol className="list-disc">
+                      <li>Max. Capacity 16 Seats</li>
+                      <li>Teacher : Student = 1 : 8</li>
+                    </ol>
+                  </div>
+                </div>
                 <div className="absolute   bottom-0 right-[-30%] group-hover:right-[-20%]  w-[500px] h-auto group-hover:w-[400px] duration-1000 transition-all">
                   <img
                     src="/assets/images/home/img-class-2.png"
@@ -121,6 +137,14 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
                     4 - 5 years old
                   </div>
                 </div>
+                <div className="flex flex-col absolute top-[40%]  left-[26%] group-hover:left-[21%] group-hover:text-white-ivory duration-1000 transition-all">
+                  <div className="font-helixa text-white-ivory text-[28px] group-hover:left-[15%] group-hover:text-white-ivory duration-1000 transition-all">
+                    <ol className="list-disc">
+                      <li>Max. Capacity 20 Seats</li>
+                      <li>Teacher : Student = 1 : 10</li>
+                    </ol>
+                  </div>
+                </div>
                 <div className="absolute   bottom-0 right-[-30%] group-hover:right-[-20%]  w-[500px] h-auto group-hover:w-[400px] duration-1000 transition-all">
                   <img
                     src="/assets/images/home/img-class-3.png"
@@ -145,6 +169,14 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
                   </h1>
                   <div className="font-helixa text-[#5E5E5E] text-[36px] group-hover:left-[15%] group-hover:text-white-ivory duration-1000 transition-all">
                     5 - 6 years old
+                  </div>
+                </div>
+                <div className="flex flex-col absolute top-[40%]  left-[26%] group-hover:left-[21%] group-hover:text-white-ivory duration-1000 transition-all">
+                  <div className="font-helixa text-white-ivory text-[28px] group-hover:left-[15%] group-hover:text-white-ivory duration-1000 transition-all">
+                    <ol className="list-disc">
+                      <li>Max. Capacity 20 Seats</li>
+                      <li>Teacher : Student = 1 : 10</li>
+                    </ol>
                   </div>
                 </div>
                 <div className="absolute   bottom-0 right-[-30%] group-hover:right-[-20%]  w-[500px] h-auto group-hover:w-[400px] duration-1000 transition-all">

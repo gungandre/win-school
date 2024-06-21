@@ -6,6 +6,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ClassModal from "./class-modal";
 import Link from "next/link";
+import useMediaQuery from "@/app/utils/useMediaQuery";
 
 const datas = [
   {
@@ -121,12 +122,13 @@ one! Sign up now and watch them blossom with us.`,
   },
 ];
 
-const Section3 = ({ setOnHover }) => {
+const Section3 = ({ setOnHover, tlComplete }) => {
   gsap.registerPlugin(ScrollTrigger);
   const elemenRef = useRef(null);
   const [openModal, setOpenModal] = useState(false);
   const [dataModal, setDataModal] = useState({});
   const [dataClass, setDataClass] = useState(null);
+  const isSmall = useMediaQuery("(max-width: 640px)");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -195,10 +197,12 @@ const Section3 = ({ setOnHover }) => {
       //   });
       // });
     },
-    { scope: elemenRef, dependencies: [dataClass] }
+    { scope: elemenRef, dependencies: [elemenRef] }
   );
 
   const modalClick = (data) => {
+    console.log(data);
+    if (data === null) return;
     setOpenModal(!openModal);
     setDataModal(data);
   };
@@ -220,27 +224,33 @@ const Section3 = ({ setOnHover }) => {
               <div
                 className="group class-card translate-y-full opacity-0 cursor-none"
                 onClick={() => modalClick(data)}
-                onMouseEnter={() => setOnHover(true)}
+                onMouseEnter={() => !isSmall && setOnHover(true)}
                 onMouseLeave={() => setOnHover(false)}
               >
-                <div className="max-sm:p-0 max-sm:h-auto max-sm:gap-y-[20px] p-[48px] w-full h-[669px] flex flex-col justify-between  bg-white-ivory max-sm:rounded-[25px] rounded-[50px] group-hover:bg-soft-tosca duration-500 transition-all">
+                <div className="max-sm:p-0 max-sm:h-auto max-sm:gap-y-[20px] p-[48px] w-full h-[669px] flex flex-col justify-between  bg-white-ivory max-sm:rounded-[25px] rounded-[50px] sm:group-hover:bg-soft-tosca duration-500 transition-all">
                   <div className="w-full flex justify-between items-center ">
                     <div className="flex flex-col">
-                      <div className="font-helixa max-sm:text-[32px] text-[48px] text-sunset-coral group-hover:text-white-ivory transition-all duration-500">
+                      <div className="font-helixa max-sm:text-[32px] text-[48px] text-sunset-coral sm:group-hover:text-white-ivory transition-all duration-500">
                         {data.className}
                       </div>
-                      <div className="max-sm:text-[16px] text-[28px] font-helixa text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                      <div className="max-sm:text-[16px] text-[28px] font-helixa text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                         {data.age}
                       </div>
                     </div>
                     <div className="max-sm:hidden">
-                      <div className="relative w-[203px] h-[76px] flex items-center">
+                      <div
+                        className="relative w-[203px] h-[76px] flex items-center "
+                        onMouseEnter={() => setOnHover(false)}
+                        onMouseLeave={() => setOnHover(true)}
+                        onClick={() => {
+                          console.log("tes");
+                          modalClick(null);
+                        }}
+                      >
                         <Link
                           href={"https://wa.me/6281130910001"}
                           target="_blank"
-                          className="cursor-pointer w-0 group-hover:w-[301px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[76px] bg-white-ivory rounded-[38px] absolute right-0 overflow-hidden"
-                          onMouseEnter={() => setOnHover(false)}
-                          onMouseLeave={() => setOnHover(true)}
+                          className="cursor-pointer  w-0 group-hover:w-[301px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[76px] max-sm:bg-[#EEE7D9] bg-white-ivory rounded-[38px] absolute right-0 overflow-hidden"
                         >
                           <div className="relative w-full h-full flex items-center">
                             <div className="font-helixa font-bold text-[28px] text-[#404040] ml-0 group-hover:ml-8 opacity-0 group-hover:opacity-100 duration-1000 transition-all text-nowrap">
@@ -248,7 +258,7 @@ const Section3 = ({ setOnHover }) => {
                             </div>
                           </div>
                         </Link>
-                        <div className="flex justify-center items-center">
+                        <div className="flex justify-center items-center pointer-events-none">
                           <div className="w-[76px] h-[76px] group-hover:w-[62px] group-hover:h-[62px] transition-all duration-1000 bg-sunset-coral rounded-full flex justify-center items-center absolute right-[5%] z-10">
                             <svg
                               width="20"
@@ -286,18 +296,18 @@ const Section3 = ({ setOnHover }) => {
                   <div className="w-full flex max-sm:flex-col max-sm:gap-y-[20px] justify-between">
                     <div className=" flex max-sm:w-full w-[55%] justify-between">
                       <div className="flex flex-col">
-                        <div className="font-helixa max-sm:text-[16px] text-[24px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa max-sm:text-[16px] text-[24px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           Time
                         </div>
-                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           {data.time}
                         </div>
                       </div>
                       <div className="flex flex-col">
-                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           Days
                         </div>
-                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           {data.days}
                         </div>
                       </div>
@@ -305,10 +315,10 @@ const Section3 = ({ setOnHover }) => {
 
                     <div className="flex max-sm:flex-row max-sm:justify-between max-sm:items-center flex-col ">
                       <div>
-                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040]  group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040]  sm:group-hover:text-white-ivory transition-all duration-500">
                           Limited Seats
                         </div>
-                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           {`${data.seat} Seats Left`}
                         </div>
                       </div>
@@ -317,7 +327,7 @@ const Section3 = ({ setOnHover }) => {
                           <Link
                             href={"https://wa.me/6281130910001"}
                             target="_blank"
-                            className="cursor-pointer w-0 group-hover:w-[183px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[40px] bg-white-ivory rounded-[20px] absolute right-0 overflow-hidden"
+                            className="cursor-pointer w-0 group-hover:w-[183px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[40px] max-sm:bg-[#EEE7D9] bg-white-ivory rounded-[20px] absolute right-0 overflow-hidden"
                             onMouseEnter={() => setOnHover(false)}
                             onMouseLeave={() => setOnHover(true)}
                           >

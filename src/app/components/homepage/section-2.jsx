@@ -581,7 +581,7 @@ const Section2 = () => {
   return (
     <div>
       <section
-        className="h-dvh  place-content-center bg-soft-tosca section flex justify-center items-center section-swiper max-sm:hidden "
+        className="min-h-[105dvh]  place-content-center bg-soft-tosca section flex justify-center items-center section-swiper max-sm:hidden "
         ref={container}
       >
         <div className="w-[85%] h-[80%] flex gap-x-14 ">
@@ -649,7 +649,7 @@ const Section2 = () => {
                       <div className="font-helixa text-white-ivory text-[72px] leading-[75px] petik-dua">
                         "
                       </div>
-                      <div className="font-helixa text-white-ivory text-[48px] leading-[58px] quotes">
+                      <div className="font-helixa text-white-ivory text-[48px] leading-[58px] tracking-[-3px] quotes">
                         It is a wonderful milestone for our organization to
                         facilitate Early Childhood Education with strong will in
                         nurturing future leaders.
@@ -710,7 +710,7 @@ const Section2 = () => {
                       <div className="font-helixa text-white-ivory text-[72px] leading-[75px] petik-dua">
                         "
                       </div>
-                      <div className="font-helixa text-white-ivory text-[48px] leading-[58px] quotes">
+                      <div className="font-helixa text-white-ivory text-[48px] leading-[58px] quotes tracking-[-3px]">
                         Continuum education from early childhood to higher
                         education must ensure the quality of both process and
                         outcomes. I believe WIN School is fully on the right
@@ -772,7 +772,7 @@ const Section2 = () => {
                       <div className="font-helixa text-white-ivory text-[72px] leading-[75px] petik-dua">
                         "
                       </div>
-                      <div className="font-helixa text-white-ivory text-[48px] leading-[58px] quotes">
+                      <div className="font-helixa text-white-ivory text-[48px] leading-[58px] quotes tracking-[-3px]">
                         Our school offers so much value, and it goes beyond
                         simply providing access to top-notch learning resources;
                         it also fosters a vibrant community where dreams come
@@ -833,7 +833,7 @@ const Section2 = () => {
                       <div className="font-helixa text-white-ivory text-[72px] leading-[75px] petik-dua">
                         "
                       </div>
-                      <div className="font-helixa text-white-ivory text-[48px] leading-[58px] quotes">
+                      <div className="font-helixa text-white-ivory text-[48px] leading-[58px] quotes tracking-[-3px]">
                         Children’s learning is dynamic, complex and holistic. A
                         well designed play based learning environment allow
                         children to make connections between prior experiences
@@ -883,8 +883,9 @@ const Section2 = () => {
                   </div>
 
                   <buttom
-                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute left-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute left-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center opacity-50 pointer-events-none"
                     onClick={swiperPrevSlide}
+                    disabled
                   >
                     <svg
                       width="17"
@@ -1110,8 +1111,9 @@ const Section2 = () => {
                     </svg>
                   </buttom>
                   <button
-                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute right-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center"
+                    className="w-[9.302vw] h-[9.302vw] rounded-full border-white-ivory  border-[1px] absolute right-[-15%] top-[50%] translate-y-[-50%] flex justify-center items-center opacity-50 pointer-events-none"
                     onClick={swiperNextSlide}
+                    disabled
                   >
                     <svg
                       width="17"

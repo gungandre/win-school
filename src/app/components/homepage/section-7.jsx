@@ -115,10 +115,10 @@ const Section7 = () => {
         ref={container}
       >
         <div className="h-full w-full flex justify-between px-24">
-          <div className="font-helixa text-[6.667vw] text-sunset-coral leading-[6.771vw]">
-            <div className="text-we-provide"> We provides an</div>
-            <div className="text-we-provide">excellent selection</div>
-            <div className="text-we-provide">of classes</div>
+          <div className="font-helixa text-[6.667vw] tracking-[-3px] text-sunset-coral leading-[6.771vw]">
+            <div className="text-we-provide"> We Provides an</div>
+            <div className="text-we-provide">Excellent Selection</div>
+            <div className="text-we-provide">of Classes</div>
           </div>
           <div className="flex flex-col justify-end">
             <div className="">
@@ -149,10 +149,10 @@ const Section7 = () => {
                   </div>
                 </div>
                 <Image
-                  src={"/assets/images/home/Image1.png"}
+                  src={"/assets/images/home/daycare-photo.png"}
                   width={541}
                   height={565}
-                  className="absolute top-[-39.5%] right-0"
+                  className="absolute bottom-0 right-0"
                 />
                 <div className="absolute bottom-[5%] right-[2%] ">
                   <div className="relative w-[203px] h-[76px] flex items-center">
@@ -202,10 +202,10 @@ const Section7 = () => {
                   </div>
                 </div>
                 <Image
-                  src={"/assets/images/home/Image2.png"}
+                  src={"/assets/images/home/playschool-photo.png"}
                   width={541}
                   height={565}
-                  className="absolute top-[-39.5%] right-0"
+                  className="absolute bottom-0 right-0"
                 />
                 <div className="absolute bottom-[5%] right-[2%] ">
                   <div className="relative w-[203px] h-[76px] flex items-center">
@@ -247,7 +247,7 @@ const Section7 = () => {
         <div className="w-full flex justify-center section-register">
           <div className="flex w-[1354px] flex-col gap-y-[140px]">
             <div className="font-helixa text-[6.667vw] text-sunset-coral text-center content-register-1 ">
-              I would like to register!
+              How to Register
             </div>
             <div className="w-full flex justify-between content-register-2">
               <div className="w-[540px] flex gap-x-[32px]">
@@ -301,9 +301,9 @@ const Section7 = () => {
           </div>
         </div>
       </section>
-      {/* <div className="max-sm:block hidden">
+      <div className="max-sm:block hidden">
         <Section7Mobile />
-      </div> */}
+      </div>
     </div>
   );
 };

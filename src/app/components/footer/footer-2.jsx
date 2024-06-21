@@ -17,6 +17,8 @@ const Footer = ({ tlComplete }) => {
 
   useGSAP(
     () => {
+      console.log({ tlComplete });
+
       const wText = document.getElementById("w-text");
       const iText = document.getElementById("i-text");
       const nText = document.getElementById("n-text");
@@ -71,54 +73,14 @@ const Footer = ({ tlComplete }) => {
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: "footer",
+            trigger: elemenRef.current,
 
             scrub: true,
-            start: "top top",
-            onEnter: () => {
-              gsap.to(
-                [
-                  wText,
-                  iText,
-                  nText,
-                  sText,
-                  cText,
-                  hText,
-                  oText1,
-                  oText2,
-                  lText,
-                ],
-                {
-                  y: 0,
-                  stagger: 0.1,
-                },
-                "<"
-              );
-            },
-            onLeaveBack: () => {
-              gsap.to(
-                [
-                  wText,
-                  iText,
-                  nText,
-                  sText,
-                  cText,
-                  hText,
-                  oText1,
-                  oText2,
-                  lText,
-                ],
-                {
-                  y: "150%",
-                  stagger: 0.1,
-                },
-                "<"
-              );
-            },
+            start: "top bottom",
           },
         })
         .from(
-          "footer",
+          elemenRef.current,
 
           {
             y: "-100%",
@@ -128,11 +90,11 @@ const Footer = ({ tlComplete }) => {
         );
 
       ScrollTrigger.create({
-        trigger: ".footer",
+        trigger: elemenRef.current,
         scrub: true,
 
         start: "center center",
-        end: "+=1000",
+        end: "bottom",
 
         onEnter: () => {
           gsap.to(
@@ -147,7 +109,7 @@ const Footer = ({ tlComplete }) => {
       });
 
       ScrollTrigger.create({
-        trigger: ".footer",
+        trigger: elemenRef.current,
         scrub: true,
 
         start: "bottom center",
@@ -226,14 +188,17 @@ const Footer = ({ tlComplete }) => {
 
   return (
     <div>
-      <footer className="h-dvh  relative  flex flex-col justify-end bg-white-ivory   footer after:w-full section after:bg-sunset-coral after:h-[120px] after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:top-0  z-10 section max-sm:hidden ">
+      <footer
+        className="h-dvh  relative  flex flex-col justify-end bg-white-ivory   footer after:w-full section after:bg-sunset-coral after:h-[120px] after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:top-0  z-10 section max-sm:hidden "
+        ref={elemenRef}
+      >
         <div className="h-[120px]"></div>
         <div className="px-15 sm:pt-[160px] space-y-[10.417vw] h-full">
           <div className="grid grid-cols-12">
             <div className="col-span-6">
               <div className="flex flex-col sm:space-y-[68px]">
                 <h2 className="whitespace-pre-line text-64-headings text-dark-tosca">
-                  Subscribe to Our newsletter
+                  Subscribe to <br /> Our newsletter
                 </h2>
                 <form action="" id="newsletter">
                   <label
@@ -272,8 +237,8 @@ const Footer = ({ tlComplete }) => {
             <div className="col-span-6 flex justify-between">
               <div className="whitespace-pre-line flex flex-col justify-between max-w-[269px]">
                 <p className="text-24-body-text">
-                  Gatot Subroto Timur Jl. Kecak Nomor 12 Tonja Denpasar Utara
-                  Kota Denpasar Bali 80239
+                  Gatot Subroto Timur <br /> Jl. Kecak Nomor 12 Tonja <br />{" "}
+                  Denpasar Utara <br /> Kota Denpasar Bali 80239
                 </p>
                 <Button
                   className={""}
@@ -316,11 +281,7 @@ const Footer = ({ tlComplete }) => {
               </div>
             </div>
           </div>
-          <div
-            id="win-text-footer"
-            className="z-[1000] relative"
-            ref={elemenRef}
-          >
+          <div id="win-text-footer" className="z-[1000] relative">
             <svg
               className="overflow-visible"
               width={1802}

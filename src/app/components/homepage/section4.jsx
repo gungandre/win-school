@@ -81,6 +81,8 @@ const Section4 = () => {
                 ease: "power1.out",
               }
             );
+
+            ScrollTrigger.refresh();
           },
         });
     },
@@ -115,17 +117,17 @@ const Section4 = () => {
                 />
               </div>
               <div className="we-are-leading">
-                We are leading
+                We Are Leading
                 <br />
-                early childhood education
+                Early Childhood education
                 <br />
-                center in Bali
+                Center in Bali
               </div>
             </div>
           </div>
 
           <div className="w-full flex flex-nowrap gap-x-8 mt-[250px] translate-x-[95%] section-the-biggest">
-            <div className="w-[560px] h-[526px]  bg-almond-cream p-15 flex flex-col  rounded-3xl justify-between">
+            <div className="w-[560px] h-[526px]  bg-almond-cream p-15 flex flex-col rounded-[50px] justify-between">
               <div className="w-full font-helixa text-[48px] leading-[55px] font-bold">
                 The Biggest
                 <br />
@@ -139,7 +141,7 @@ const Section4 = () => {
                 environment for children to grow and explore
               </div>
             </div>
-            <div className="w-[560px] h-[526px] translate-y-[100px] bg-almond-cream p-15 flex flex-col  rounded-3xl justify-between">
+            <div className="w-[560px] h-[526px] translate-y-[100px] bg-almond-cream p-15 flex flex-col rounded-[50px] justify-between">
               <div className="w-full font-helixa text-[48px] leading-[55px] font-bold">
                 An Integrated
                 <br />
@@ -152,7 +154,7 @@ const Section4 = () => {
                 cognitive development at every stage.
               </div>
             </div>
-            <div className="w-[560px] h-[526px]  translate-y-[50px] bg-almond-cream p-15 flex flex-col  rounded-3xl justify-between">
+            <div className="w-[560px] h-[526px]  translate-y-[50px] bg-almond-cream p-15 flex flex-col rounded-[50px] justify-between">
               <div className="w-full font-helixa text-[48px] leading-[55px] font-bold">
                 A Responsive
                 <br />

@@ -27,7 +27,7 @@ const BeforeFooter = ({ tlComplete }) => {
             pinSpacing: true,
           },
         })
-        .from(".circle-before-footer", {
+        .from(elemenRef.current, {
           duration: 1,
           ease: "power1.out",
           "--r": `${windowWidth}px`,
@@ -131,7 +131,8 @@ const BeforeFooter = ({ tlComplete }) => {
             </div>
             <div className="flex justify-center">
               <a
-                href=""
+                href="https://wa.me/6281130910001"
+                target="_blank"
                 className="text-helixa text-[20px] px-[16px] py-[7px] rounded-[21px] text-white-ivory border-white-ivory border-[1px] "
               >
                 Get Special Offer

@@ -26,6 +26,7 @@ const Section2 = ({ setTlComplete, small }) => {
           transform: "translateX(-100%)",
           onComplete: () => {
             setTlComplete(true);
+            ScrollTrigger.refresh();
           },
         });
     },

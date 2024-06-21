@@ -96,7 +96,7 @@ const HeroMobile = () => {
                 </div>
               </div>
               <div className="overflow-hidden">
-                <div className="font-helixa text-[24px] text-soft-tosca translate-y-full desc-hero-mobile">
+                <div className="font-helixa text-[24px] text-soft-tosca translate-y-full desc-hero-mobile font-bold">
                   20 months - 6 years old
                 </div>
               </div>
@@ -108,7 +108,7 @@ const HeroMobile = () => {
                 </div>
               </div>
 
-              <div className="font-helixa text-[24px] text-soft-tosca ">
+              <div className="font-helixa text-[24px] text-soft-tosca font-bold">
                 <div className="overflow-hidden">
                   <div className="translate-y-full desc-hero-mobile">
                     Available from

@@ -57,6 +57,9 @@ const WinnerClasses = () => {
             opacity: 0,
             ease: "power1.out",
             duration: 1,
+            onComplete: () => {
+              ScrollTrigger.refresh();
+            },
           });
         },
       });

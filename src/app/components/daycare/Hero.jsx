@@ -40,38 +40,7 @@ const Hero = () => {
         duration: 1,
       });
 
-      ScrollTrigger.create({
-        trigger: ".we-provide",
-
-        onEnter: () => {
-          gsap.to(".we-provide", {
-            opacity: 1,
-            transform: "translateY(0)",
-            duration: 1,
-          });
-        },
-      });
-
       const aboveAllSplit = new SplitText(".above-all", { type: "lines" });
-
-      ScrollTrigger.create({
-        trigger: ".above-all",
-        onEnter: () => {
-          gsap.fromTo(
-            aboveAllSplit.lines,
-            {
-              transform: "translateY(100%)",
-              opacity: 0,
-            },
-            {
-              opacity: 1,
-              transform: "translateY(0)",
-              duration: 1,
-              stagger: 0.1,
-            }
-          );
-        },
-      });
 
       const ourDaycareSplit = new SplitText(".our-daycare", { type: "lines" });
 
@@ -117,6 +86,40 @@ const Hero = () => {
             top: "20%",
             width: "100%",
             height: "684px",
+            onComplete: () => {
+              ScrollTrigger.create({
+                trigger: ".above-all",
+                once: true,
+
+                onEnter: () => {
+                  gsap.fromTo(
+                    aboveAllSplit.lines,
+                    {
+                      transform: "translateY(100%)",
+                      opacity: 0,
+                    },
+                    {
+                      opacity: 1,
+                      transform: "translateY(0)",
+                      duration: 1,
+                      stagger: 0.1,
+                    }
+                  );
+                  ScrollTrigger.create({
+                    trigger: ".we-provide",
+                    once: true,
+
+                    onEnter: () => {
+                      gsap.to(".we-provide", {
+                        opacity: 1,
+                        transform: "translateY(0)",
+                        duration: 1,
+                      });
+                    },
+                  });
+                },
+              });
+            },
           },
           "<"
         );
@@ -207,16 +210,16 @@ const Hero = () => {
         <div className=" relative img-container-hero">
           <div className=" relative  flex">
             <div className="w-[60%]"></div>
-            <div className="flex flex-col w-[40%]  items-center daycare-hero-desc z-10">
-              <div>
-                <div className="flex flex-col ">
+            <div className="flex flex-col w-[40%]  items-center daycare-hero-desc z-10 ">
+              <div className="flex flex-col gap-y-[72px]">
+                <div className="flex flex-col gap">
                   <div className="overflow-hidden">
                     <div className="font-helixa text-[28px] text-[#5e5e5e] translate-y-full daycare-text-desc">
                       For children aged
                     </div>
                   </div>
                   <div className="overflow-hidden">
-                    <div className="font-helixa text-[48px] text-soft-tosca translate-y-full daycare-text-desc">
+                    <div className="font-helixa text-[48px] text-soft-tosca translate-y-full daycare-text-desc font-bold">
                       3 - 6 years old
                     </div>
                   </div>
@@ -227,7 +230,7 @@ const Hero = () => {
                       Days and hours
                     </div>
                   </div>
-                  <div className="font-helixa text-[48px] text-soft-tosca">
+                  <div className="font-helixa text-[48px] text-soft-tosca font-bold">
                     <div className="overflow-hidden">
                       <div className="translate-y-full daycare-text-desc-2">
                         Monday - Friday
@@ -253,15 +256,13 @@ const Hero = () => {
           <div className="w-[1042px] h-[514px] overflow-hidden rounded-[50px]   bg-no-repeat bg-cover  "></div>
         </div>
         <div className="w-full mt-[132px] mb-[132px]" ref={sectionRef}>
-          <div className="font-helixa text-sunset-coral text-[6.667vw] leading-[6.771vw] text-center">
+          <div className="font-helixa text-sunset-coral text-[6.667vw] leading-[6.771vw] text-center tracking-[-3px]">
             <div className="we-provide translate-y-full opacity-0">
-              {" "}
-              We provide a secure and{" "}
+              We Provide a Secure and
             </div>
 
             <div className="we-provide translate-y-full opacity-0">
-              {" "}
-              nurturing environment.
+              Nurturing Environment
             </div>
           </div>
           <div className="w-full flex justify-end mt-[56px]">

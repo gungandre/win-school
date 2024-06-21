@@ -58,8 +58,35 @@ const menuList = [
 const Header = ({ navbarColor }) => {
   const { preloaderComplete } = useContext(preloaderContext);
   const [menuShow, setMenuShow] = useState(false);
+  const [menuIndex, setMenuIndex] = useState(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(null);
   const elemenRef = useRef(null);
   const container = useRef();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setPrevScrollPos(window.pageYOffset);
+      const currentScrollPos = window.pageYOffset;
+      const headerElement = container.current;
+
+      if (prevScrollPos > currentScrollPos) {
+        // Scroll up - show header
+        gsap.to(headerElement, { y: 0, opacity: 1, duration: 0.5 });
+      } else {
+        // Scroll down - hide header
+        gsap.to(headerElement, { y: "-100%", opacity: 0, duration: 0.5 });
+      }
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
   useGSAP(
     () => {
       if (navbarColor) {
@@ -362,11 +389,23 @@ const Header = ({ navbarColor }) => {
     });
   };
 
+  const { contextSafe } = useGSAP();
   // function mobile
 
-  const subMenuClick = (index) => {
+  const subMenuClick = contextSafe((index) => {
     menuList.forEach((_, i) => {
+      if (index === menuIndex) {
+        setMenuIndex(null);
+        return gsap.to(`.menu-${i}`, {
+          height: "0",
+          paddingBottom: "0",
+          duration: 0.5,
+        });
+      }
+
       if (i === index) {
+        setMenuIndex(index);
+        console.log("yang di klik", i);
         gsap.to(`.menu-${i}`, {
           height: "auto",
           paddingBottom: 5,
@@ -374,23 +413,23 @@ const Header = ({ navbarColor }) => {
           duration: 0.5,
         });
         gsap.to(`.arrow-mobile-${index}`, {
-          rotate: 60,
+          rotate: "180deg",
           duration: 0.5,
         });
       } else {
+        console.log("yang tidak klik", i);
         gsap.to(`.menu-${i}`, {
           height: "0",
           paddingBottom: "0",
           duration: 0.5,
         });
-
         gsap.to(`.arrow-mobile-${index}`, {
-          rotate: 0,
+          rotate: "0deg",
           duration: 0.5,
         });
       }
     });
-  };
+  });
 
   const menuClick = () => {
     setMenuShow(!menuShow);
@@ -717,7 +756,7 @@ const Header = ({ navbarColor }) => {
               >
                 <div className="flex items-center gap-x-[10px]">
                   <div>{item.name}</div>
-                  <div>
+                  <div className={`arrow-mobile-${index}`}>
                     <svg
                       width="15"
                       height="8"
@@ -727,7 +766,6 @@ const Header = ({ navbarColor }) => {
                     >
                       <path
                         d="M1 1.5L8.25926 6.5L15 1.5"
-                        className={`arrow-mobile-${index}`}
                         stroke="#19918E"
                         stroke-width="2"
                       />

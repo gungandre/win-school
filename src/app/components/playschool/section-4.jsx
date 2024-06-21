@@ -238,7 +238,7 @@ const Section4 = () => {
         </div>
       </div>
       <div
-        className="w-full min-h-dvh bg-white-ivory px-[32px]"
+        className="w-full min-h-dvh bg-white-ivory px-[32px] max-sm:block hidden"
         ref={elemenRefMobile}
       >
         <div className="font-helixa text-[48px] leading-[50px] text-sunset-coral text-center mt-[120px]">
@@ -255,49 +255,49 @@ const Section4 = () => {
         </div>
 
         <div className="grid grid-cols-2 mt-[60px]">
-          <div className="w-full flex flex-col gap-[20px]  items-center">
-            <div className="max-w-[173px] h-[233px] rounded-[25px] overflow-hidden translate-x-[-100vw] img-photo-gallery">
+          <div className="w-full flex flex-col gap-[20px]  ">
+            <div className="w-[40.233vw] h-[54.186vw] rounded-[25px] overflow-hidden translate-x-[-100vw] img-photo-gallery">
+              <img
+                src="assets/images/playschool/gallery/Image 6.png"
+                className="w-full h-full object-cover"
+                alt=""
+              />
+            </div>
+            <div className="w-[40.233vw] h-[37.442vw] rounded-[25px] overflow-hidden translate-x-[-100vw] img-photo-gallery">
               <img
                 src="assets/images/playschool/gallery/Image 2.png"
                 className="w-full h-full object-cover"
                 alt=""
               />
             </div>
-            <div className="max-w-[173px] h-[161px] rounded-[25px] overflow-hidden translate-x-[-100vw] img-photo-gallery">
+            <div className="w-[40.233vw] h-[54.186vw] rounded-[25px] overflow-hidden translate-x-[-100vw] img-photo-gallery">
               <img
-                src="assets/images/playschool/gallery/Image 2.png"
-                className="w-full h-full object-cover"
-                alt=""
-              />
-            </div>
-            <div className="max-w-[173px] h-[233px] rounded-[25px] overflow-hidden translate-x-[-100vw] img-photo-gallery">
-              <img
-                src="assets/images/playschool/gallery/Image 2.png"
+                src="assets/images/playschool/gallery/Image 5.png"
                 className="w-full h-full object-cover"
                 alt=""
               />
             </div>
           </div>
           <div className="w-full flex flex-col gap-y-[20px] items-center">
-            <div className="max-w-[173px] h-[233px] rounded-[25px] overflow-hidden translate-x-[100vw] img-photo-gallery">
+            <div className="w-[40.233vw] h-[54.186vw] rounded-[25px] overflow-hidden translate-x-[100vw] img-photo-gallery">
               <img
-                src="assets/images/playschool/gallery/Image 2.png"
+                src="assets/images/playschool/gallery/Image 4.png"
                 className="w-full h-full object-cover"
                 alt=""
               />
             </div>
 
-            <div className="max-w-[173px] h-[233px] rounded-[25px] overflow-hidden translate-x-[100vw] img-photo-gallery">
+            <div className="w-[40.233vw] h-[54.186vw] rounded-[25px] overflow-hidden translate-x-[100vw] img-photo-gallery">
               <img
-                src="assets/images/playschool/gallery/Image 2.png"
+                src="assets/images/playschool/gallery/Image 1.png"
                 className="w-full h-full object-cover"
                 alt=""
               />
             </div>
-            <div className="max-w-[173px] h-[161px] rounded-[25px] overflow-hidden translate-x-[100vw] img-photo-gallery">
+            <div className="w-[40.233vw] h-[37.442vw] rounded-[25px] overflow-hidden translate-x-[100vw] img-photo-gallery">
               <img
-                src="assets/images/playschool/gallery/Image 2.png"
-                className="w-full h-full object-cover"
+                src="assets/images/playschool/gallery/Image 3.png"
+                className="w-full h-full object-cover object-top"
                 alt=""
               />
             </div>

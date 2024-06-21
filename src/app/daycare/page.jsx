@@ -45,7 +45,13 @@ const page = () => {
 
       <BeforeFooter tlComplete={tlComplete} />
 
-      <div>{small === false ? <Footer /> : <FooterMobile />}</div>
+      <div>
+        {small === false ? (
+          <Footer tlComplete={tlComplete} />
+        ) : (
+          <FooterMobile />
+        )}
+      </div>
     </>
   );
 };

@@ -2,7 +2,7 @@
 
 import Header from "./components/header/Header";
 
-import Footer from "./components/footer/footer-2";
+import Footer from "./components/footer/footer";
 
 import useNavColor from "./hook/useNavColor";
 import { Cursor } from "./components/cursor/Cursor";
@@ -78,10 +78,6 @@ export default function Home() {
     };
   }, [cursorRef.current]);
 
-  useGSAP(() => {
-    setTlMobile(true);
-  }, [small]);
-
   const cursorHover = (text) => {
     setCursorText(text);
     gsap.to(cursorRef.current, {
@@ -149,10 +145,9 @@ export default function Home() {
         <Section7 />
 
         <Section8 cursorHover={cursorHover} cursorLeave={cursorLeave} />
+        <Section9 />
 
-        {small ? <BeforeFooterMobile /> : <Section9 />}
-
-        <Footer />
+        <div>{!small ? <Footer /> : <FooterMobile />}</div>
       </div>
     </>
   );

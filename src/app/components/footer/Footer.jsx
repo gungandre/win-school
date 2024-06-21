@@ -160,7 +160,7 @@ const Footer = () => {
           <div className="col-span-6">
             <div className="flex flex-col sm:space-y-[68px]">
               <h2 className="whitespace-pre-line text-64-headings text-dark-tosca">
-                Subscribe to Our newsletter
+                Subscribe to <br /> Our newsletter
               </h2>
               <form action="" id="newsletter">
                 <label
@@ -199,8 +199,8 @@ const Footer = () => {
           <div className="col-span-6 flex justify-between">
             <div className="whitespace-pre-line flex flex-col justify-between max-w-[269px]">
               <p className="text-24-body-text">
-                Gatot Subroto Timur Jl. Kecak Nomor 12 Tonja Denpasar Utara Kota
-                Denpasar Bali 80239
+                Gatot Subroto Timur <br /> Jl. Kecak Nomor 12 Tonja <br />{" "}
+                Denpasar Utara <br /> Kota Denpasar Bali 80239
               </p>
               <Button
                 buttonType="a"

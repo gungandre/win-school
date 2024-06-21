@@ -18,7 +18,7 @@ const SectionVideo = ({
       gsap
         .timeline({
           scrollTrigger: {
-            trigger: ".section-video",
+            trigger: container.current,
             start: "top center",
             end: "bottom center",
           },
@@ -49,10 +49,10 @@ const SectionVideo = ({
         className="w-full h-dvh   bg-white-ivory section-video relative section max-sm:hidden block"
         ref={container}
       >
-        <div className="w-[737px] h-[515px] video-container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="w-[737px] h-[515px] video-container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50px] overflow-hidden">
           <video
             muted
-            className="rounded-[50px] cursor-none w-full h-full"
+            className=" cursor-none w-full h-full"
             loop={true}
             onMouseEnter={() => cursorHover(null)}
             onMouseLeave={cursorLeave}

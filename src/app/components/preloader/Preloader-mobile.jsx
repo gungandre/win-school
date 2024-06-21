@@ -4,89 +4,94 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useContext } from "react";
 import { preloaderContext } from "@/app/context/preloaderContext";
+import { useRef } from "react";
 
 const PreloaderMobile = () => {
   const { preloaderComplete, setPreloaderComplete } =
     useContext(preloaderContext);
-  useGSAP(() => {
-    gsap.to(".logo-svg", {
-      transform: "translateY(0)",
-      opacity: 1,
-      ease: "ease.out1",
-      duration: 1,
+  const container = useRef();
+  useGSAP(
+    () => {
+      gsap.to(".logo-svg", {
+        transform: "translateY(0)",
+        opacity: 1,
+        ease: "ease.out1",
+        duration: 1,
 
-      onComplete: () => {
-        gsap.to(".loading-mobile", {
-          width: "100%",
+        onComplete: () => {
+          gsap.to(".loading-mobile", {
+            width: "100%",
 
-          ease: "ease.out1",
-          duration: 2,
-        });
+            ease: "ease.out1",
+            duration: 2,
+          });
 
-        gsap.to(".counter-3", {
-          transform: "translateY(-96.8%)",
-          duration: 2,
-          ease: "ease.out1",
-        });
+          gsap.to(".counter-3", {
+            transform: "translateY(-96.8%)",
+            duration: 2,
+            ease: "ease.out1",
+          });
 
-        gsap.to(".counter-2", {
-          delay: 0.2,
-          transform: "translateY(-96.8%)",
-          duration: 1.8,
-          ease: "ease.out1",
-        });
+          gsap.to(".counter-2", {
+            delay: 0.2,
+            transform: "translateY(-96.8%)",
+            duration: 1.8,
+            ease: "ease.out1",
+          });
 
-        gsap.to(".counter-1", {
-          delay: 1.5,
-          transform: "translateY(-50%)",
-          duration: 0.5,
-          ease: "ease.out1",
+          gsap.to(".counter-1", {
+            delay: 1.5,
+            transform: "translateY(-50%)",
+            duration: 0.5,
+            ease: "ease.out1",
 
-          onComplete: () => {
-            gsap.to(".bg-tosca", {
-              delay: 0.5,
-              transform: "translateY(-100%)",
-              ease: "ease.out1",
-              duration: 1,
-            });
+            onComplete: () => {
+              gsap.to(".bg-tosca", {
+                delay: 0.5,
+                transform: "translateY(-100%)",
+                ease: "ease.out1",
+                duration: 1,
+              });
 
-            gsap.to(".container-preloader-mobile", {
-              delay: 0.5,
-              display: "none",
-            });
+              gsap.to(".container-preloader-mobile", {
+                delay: 0.5,
+                display: "none",
+              });
 
-            gsap.to(".bg-yellow", {
-              delay: 0.6,
-              transform: "translateY(-100%)",
-              ease: "ease.out1",
-              duration: 1,
-            });
+              gsap.to(".bg-yellow", {
+                delay: 0.6,
+                transform: "translateY(-100%)",
+                ease: "ease.out1",
+                duration: 1,
+              });
 
-            gsap.to(".bg--white", {
-              delay: 0.7,
-              transform: "translateY(-100%)",
-              ease: "ease.out1",
-              duration: 1,
-              onComplete: () => {
-                setPreloaderComplete(true);
-              },
-            });
-          },
-        });
-      },
-    });
+              gsap.to(".bg--white", {
+                delay: 0.7,
+                transform: "translateY(-100%)",
+                ease: "ease.out1",
+                duration: 1,
+                onComplete: () => {
+                  setPreloaderComplete(true);
+                },
+              });
+            },
+          });
+        },
+      });
 
-    gsap.to([".counter-3-container", ".percen-mobile"], {
-      opacity: 1,
+      gsap.to([".counter-3-container", ".percen-mobile"], {
+        opacity: 1,
 
-      transform: "translateY(0)",
-      ease: "ease.out1",
-      stagger: 0.1,
-    });
-  }, []);
+        transform: "translateY(0)",
+        ease: "ease.out1",
+        stagger: 0.1,
+      });
+    },
+    { scope: container }
+  );
 
   return (
-    <>
+    <div ref={container}>
       <div className="bg-white-ivory top-0 w-full fixed h-dvh z-[10000] flex justify-center items-center relative container-preloader-mobile">
         <div className="">
           <svg
@@ -446,7 +451,7 @@ const PreloaderMobile = () => {
       <div className="w-full h-full z-[11502] bg-soft-tosca absolute top-0 bg-tosca rounded-tl-[25px] rounded-tr-[25px] translate-y-full"></div>
       <div className="w-full h-full z-[11502] bg-[#FFC127] absolute top-0 bg-yellow rounded-tl-[25px] rounded-tr-[25px] translate-y-full"></div>
       <div className="w-full h-full z-[11502] bg-[#FFFBF3] absolute top-0 bg--white rounded-tl-[25px] rounded-tr-[25px] translate-y-full"></div>
-    </>
+    </div>
   );
 };
 
