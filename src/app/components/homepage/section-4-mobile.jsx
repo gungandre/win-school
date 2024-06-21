@@ -3,8 +3,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/SplitText";
 import gsap from "gsap";
+import { useRef } from "react";
 
 const Section4mobile = () => {
+  const container = useRef();
+
   useGSAP(() => {
     const weAreLeading = new SplitText(".we-are-leading", { type: "lines" });
 
@@ -47,7 +50,10 @@ const Section4mobile = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-dvh  flex bg-white-ivory section section-we-are-leading  py-[120px] flex-col">
+    <div
+      className="w-full min-h-dvh  flex bg-white-ivory section section-we-are-leading  py-[120px] flex-col"
+      ref={container}
+    >
       <div className="w-full h-[60vh] relative flex items-center justify-center">
         <div className="font-helixa text-[50px] leading-[48px] text-sunset-coral text-center we-are-leading flex  flex-col ">
           We are leading

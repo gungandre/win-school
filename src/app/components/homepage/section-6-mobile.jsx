@@ -1,27 +1,36 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const Section6Mobile = ({ tlMobile }) => {
-  gsap.registerPlugin(ScrollTrigger);
-  useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".card-building-mobile",
-      once: true,
+  const container = useRef();
 
-      onEnter: () => {
-        gsap.to(".card-building-mobile", {
-          transform: "translateY(0)",
-          opacity: 1,
-          ease: "power1.out",
-          duration: 1,
-          stagger: 0.1,
-        });
-      },
-    });
-  }, [tlMobile]);
+  gsap.registerPlugin(ScrollTrigger);
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: ".card-building-mobile",
+        once: true,
+
+        onEnter: () => {
+          gsap.to(".card-building-mobile", {
+            transform: "translateY(0)",
+            opacity: 1,
+            ease: "power1.out",
+            duration: 1,
+            stagger: 0.1,
+          });
+        },
+      });
+    },
+    { scope: container, dependencies: [tlMobile] }
+  );
   return (
-    <div className="w-full min-h-dvh bg-white-ivory px-[32px] py-[120px]">
+    <div
+      className="w-full min-h-dvh bg-white-ivory px-[32px] py-[120px]"
+      ref={container}
+    >
       <div className="w-ful h-full flex flex-col gap-y-[16px] justify-center items-center">
         <div className="max-[430px]:w-[330px] max-[430px]:h-[240px] w-[366px] h-[240px] rounded-[25px] bg-[#EEE7D9] relative p-[32px] card-building-mobile translate-y-full opacity-0">
           <div className="font-helixa text-[60px] leading-[70px] text-[#404040]">

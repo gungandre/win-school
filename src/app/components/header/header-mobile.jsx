@@ -61,12 +61,22 @@ const HeaderMobile = () => {
         gsap.to(`.menu-${i}`, {
           height: "auto",
           paddingBottom: 5,
+
+          duration: 0.5,
+        });
+        gsap.to(`.arrow-mobile-${index}`, {
+          rotate: 60,
           duration: 0.5,
         });
       } else {
         gsap.to(`.menu-${i}`, {
           height: "0",
           paddingBottom: "0",
+          duration: 0.5,
+        });
+
+        gsap.to(`.arrow-mobile-${index}`, {
+          rotate: 0,
           duration: 0.5,
         });
       }
@@ -101,7 +111,7 @@ const HeaderMobile = () => {
   }, [menuShow]);
 
   return (
-    <>
+    <div>
       <nav className="w-full fixed top-0  py-[40px] px-[32px] flex items-center justify-between z-[1000]">
         <Link href={"/"}>
           <div className="logo-mobile ">
@@ -232,6 +242,7 @@ const HeaderMobile = () => {
                   >
                     <path
                       d="M1 1.5L8.25926 6.5L15 1.5"
+                      className={`arrow-mobile-${index}`}
                       stroke="#19918E"
                       stroke-width="2"
                     />
@@ -253,7 +264,7 @@ const HeaderMobile = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

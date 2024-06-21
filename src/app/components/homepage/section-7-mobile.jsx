@@ -11,96 +11,100 @@ import { useRef } from "react";
 const Section7Mobile = () => {
   const titleRef = useRef(null);
   const descRef = useRef(null);
+  const container = useRef(null);
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  useGSAP(() => {
-    const title = new SplitText(titleRef.current, {
-      type: "lines",
-      linesClass: "title-line",
-    });
+  useGSAP(
+    () => {
+      const title = new SplitText(titleRef.current, {
+        type: "lines",
+        linesClass: "title-line",
+      });
 
-    const desc = new SplitText(descRef.current, {
-      type: "lines",
-      linesClass: "desc-line",
-    });
+      const desc = new SplitText(descRef.current, {
+        type: "lines",
+        linesClass: "desc-line",
+      });
 
-    ScrollTrigger.create({
-      trigger: titleRef.current,
+      ScrollTrigger.create({
+        trigger: titleRef.current,
 
-      onEnter: () => {
-        gsap.from(title.lines, {
-          opacity: 0,
-          transform: "translateY(100%)",
-          stagger: 0.1,
-        });
+        onEnter: () => {
+          gsap.from(title.lines, {
+            opacity: 0,
+            transform: "translateY(100%)",
+            stagger: 0.1,
+          });
 
-        gsap.from(desc.lines, {
-          opacity: 0,
-          transform: "translateY(100%)",
-          stagger: 0.1,
-        });
-      },
-    });
+          gsap.from(desc.lines, {
+            opacity: 0,
+            transform: "translateY(100%)",
+            stagger: 0.1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: desc.current,
+      ScrollTrigger.create({
+        trigger: desc.current,
 
-      onEnter: () => {
-        gsap.from(desc.lines, {
-          opacity: 0,
-          transform: "translateY(100%)",
-          stagger: 0.1,
-        });
-      },
-    });
+        onEnter: () => {
+          gsap.from(desc.lines, {
+            opacity: 0,
+            transform: "translateY(100%)",
+            stagger: 0.1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: ".how-to-register-mobile",
+      ScrollTrigger.create({
+        trigger: ".how-to-register-mobile",
 
-      onEnter: () => {
-        gsap.from(".how-to-register-mobile", {
-          y: "100%",
-          opacity: 0,
-          ease: "power1.out",
-          duration: 1,
-        });
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: ".further-mobile",
-
-      onEnter: () => {
-        gsap.from(".further-mobile", {
-          y: "100%",
-          opacity: 0,
-          ease: "power1.out",
-          stagger: 0.1,
-          duration: 1,
-        });
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: ".card-daycare",
-      onEnter: () => {
-        gsap.to(
-          ".card-daycare",
-
-          {
-            transform: "translateY(0)",
-            opacity: 1,
-            duration: 1,
-            stagger: 0.05,
+        onEnter: () => {
+          gsap.from(".how-to-register-mobile", {
+            y: "100%",
+            opacity: 0,
             ease: "power1.out",
-          }
-        );
-      },
-    });
-  }, []);
+            duration: 1,
+          });
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: ".further-mobile",
+
+        onEnter: () => {
+          gsap.from(".further-mobile", {
+            y: "100%",
+            opacity: 0,
+            ease: "power1.out",
+            stagger: 0.1,
+            duration: 1,
+          });
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: ".card-daycare",
+        onEnter: () => {
+          gsap.to(
+            ".card-daycare",
+
+            {
+              transform: "translateY(0)",
+              opacity: 1,
+              duration: 1,
+              stagger: 0.05,
+              ease: "power1.out",
+            }
+          );
+        },
+      });
+    },
+    { scope: container }
+  );
 
   return (
-    <div className="w-full min-h-dvh px-[32px] bg-white-ivory">
+    <div className="w-full min-h-dvh px-[32px] bg-white-ivory" ref={container}>
       <div className="w-full flex flex-col gap-y-[60px]">
         <div
           className="w-full font-helixa text-[48px] leading-[48px] text-sunset-coral title"

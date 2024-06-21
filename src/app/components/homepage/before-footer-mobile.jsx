@@ -10,26 +10,29 @@ const BeforeFooterMobile = () => {
 
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom bottom",
-          scrub: true,
-        },
-      })
-      .from(containerRef.current, {
-        duration: 1,
-        ease: "power1.out",
-        "--r": `${windowWidth}px`,
-        "--y": `${windowHeight}px`,
-        "--x": "50%",
-      });
-  }, []);
+  useGSAP(
+    () => {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+          },
+        })
+        .from(containerRef.current, {
+          duration: 1,
+          ease: "power1.out",
+          "--r": `${windowWidth}px`,
+          "--y": `${windowHeight}px`,
+          "--x": "50%",
+        });
+    },
+    { scope: containerRef }
+  );
 
   return (
     <div className="bg-white-ivory z-10 relative after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:bottom-0 after:left-0 after:bg-red after:h-[60px] after:w-full">

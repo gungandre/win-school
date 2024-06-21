@@ -2,7 +2,7 @@
 
 import Header from "./components/header/Header";
 
-import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/footer-2";
 
 import useNavColor from "./hook/useNavColor";
 import { Cursor } from "./components/cursor/Cursor";
@@ -126,53 +126,34 @@ export default function Home() {
 
   return (
     <>
-      {small === false ? (
-        <div>
-          <Cursor
-            cursorRef={cursorRef}
-            videoPause={videoPause}
-            cursorText={cursorText}
-          />
-          <Header navbarColor={navbarColor} />
-          <Hero />
-          <Section2 />
+      <div>
+        <Cursor
+          cursorRef={cursorRef}
+          videoPause={videoPause}
+          cursorText={cursorText}
+        />
+        <Header navbarColor={navbarColor} />
+        <Hero />
+        <Section2 />
 
-          <SectionAfterSwiper />
-          <Section4 />
+        <SectionAfterSwiper />
+        <Section4 />
 
-          <SectionVideo
-            cursorLeave={cursorLeave}
-            videoRef={videoRef}
-            videoPlayback={videoPlayback}
-            cursorHover={cursorHover}
-          />
-          <Section6 />
-          <Section7 />
+        <SectionVideo
+          cursorLeave={cursorLeave}
+          videoRef={videoRef}
+          videoPlayback={videoPlayback}
+          cursorHover={cursorHover}
+        />
+        <Section6 />
+        <Section7 />
 
-          <Section8 cursorHover={cursorHover} cursorLeave={cursorLeave} />
-          <Section9 />
+        <Section8 cursorHover={cursorHover} cursorLeave={cursorLeave} />
 
-          <Footer />
-        </div>
-      ) : (
-        <>
-          <HeaderMobile />
-          <HeroMobile />
-          <Section2Mobile />
+        {small ? <BeforeFooterMobile /> : <Section9 />}
 
-          <SectionAfterSwiper />
-          <Section4mobile />
-
-          <SectionVideoMobile />
-
-          <Section6Mobile tlMobile={tlMobile} />
-          <Section7Mobile />
-
-          <WinnerClasses />
-          <BeforeFooterMobile />
-          <FooterMobile />
-        </>
-      )}
+        <Footer />
+      </div>
     </>
   );
 }

@@ -3,64 +3,72 @@ import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const WinnerClasses = () => {
   gsap.registerPlugin(ScrollTrigger);
+  const container = useRef();
 
-  useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".winner-classes-mobile",
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: ".winner-classes-mobile",
 
-      onEnter: () => {
-        gsap.from(".winner-mobile", {
-          transform: "translateX(100vw)",
-          ease: "power1.out",
-          duration: 1,
-          stagger: 0.1,
-        });
-      },
-    });
+        onEnter: () => {
+          gsap.from(".winner-mobile", {
+            transform: "translateX(100vw)",
+            ease: "power1.out",
+            duration: 1,
+            stagger: 0.1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: ".class-mobile",
-      onEnter: () => {
-        gsap.from(".class-mobile", {
-          transform: "translateY(100%)",
-          opacity: 0,
-          ease: "power1.out",
-          duration: 1,
-          stagger: 0.1,
-        });
-      },
-    });
+      ScrollTrigger.create({
+        trigger: ".class-mobile",
+        onEnter: () => {
+          gsap.from(".class-mobile", {
+            transform: "translateY(100%)",
+            opacity: 0,
+            ease: "power1.out",
+            duration: 1,
+            stagger: 0.1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: ".text-register-2-mobile",
-      onEnter: () => {
-        gsap.from(".text-register-2-mobile", {
-          transform: "translateY(100%)",
-          opacity: 0,
-          ease: "power1.out",
-          duration: 1,
-        });
-      },
-    });
+      ScrollTrigger.create({
+        trigger: ".text-register-2-mobile",
+        onEnter: () => {
+          gsap.from(".text-register-2-mobile", {
+            transform: "translateY(100%)",
+            opacity: 0,
+            ease: "power1.out",
+            duration: 1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: ".card-register-mobile",
-      onEnter: () => {
-        gsap.from(".card-register-mobile", {
-          transform: "translateY(100%)",
-          opacity: 0,
-          ease: "power1.out",
-          duration: 1,
-        });
-      },
-    });
-  }, []);
+      ScrollTrigger.create({
+        trigger: ".card-register-mobile",
+        onEnter: () => {
+          gsap.from(".card-register-mobile", {
+            transform: "translateY(100%)",
+            opacity: 0,
+            ease: "power1.out",
+            duration: 1,
+          });
+        },
+      });
+    },
+    { scope: container }
+  );
 
   return (
-    <div className="w-full min-h-dvh flex flex-col justify-center px-[32] py-[120px] bg-white-ivory">
+    <div
+      className="w-full min-h-dvh flex flex-col justify-center px-[32] py-[120px] bg-white-ivory"
+      ref={container}
+    >
       <div className="w-full h-full ">
         <div className="w-full text-[80px] leading-[90px] text-sunset-coral  flex flex-col items-center mt-[120px] winner-classes-mobile">
           <div className="winner-mobile">WINner</div>
