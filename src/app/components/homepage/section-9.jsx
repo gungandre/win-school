@@ -28,7 +28,7 @@ const Section9 = () => {
             trigger: container.current,
             start: "top top",
             end: "+=4000",
-            // anticipatePin: 1,
+            anticipatePin: 1,
             scrub: true,
             pin: true,
           },
@@ -140,17 +140,6 @@ const Section9 = () => {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
 
-      // gsap.timeline({
-      //   scrollTrigger: {
-      //     trigger: containerRef.current,
-      //     start: "top bottom",
-      //     end: "bottom bottom",
-      //     scrub: 1,
-      //     fastScrollEnd: true,
-      //     invalidateOnRefresh: true,
-      //   },
-      // });
-
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top bottom",
@@ -169,7 +158,7 @@ const Section9 = () => {
         }),
       });
     },
-    { scope: containerRef, dependencies: [isSmall] }
+    { scope: containerRef }
   );
 
   return (

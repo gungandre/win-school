@@ -22,15 +22,14 @@ const FooterMobile = () => {
       const oText2 = document.getElementById("o-text_2");
       const lText = document.getElementById("l-text");
 
-      // gsap
-      //   .timeline({
-      //     scrollTrigger: {
-      //       trigger: elemenRef.current,
-      //       start: "top top",
-      //       end: "bottom top",
-      //       scrub: true,
-      //     },
-      //   })
+      // gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: elemenRef.current,
+      //     start: "top top",
+      //     end: "bottom top",
+      //     scrub: true,
+      //   },
+      // });
       ScrollTrigger.create({
         trigger: elemenRef.current,
         start: "top top",
