@@ -79,7 +79,7 @@ const WinnerClasses = () => {
         </div>
       </div>
       <div className="flex w-full flex-col items-center mt-[80px] gap-y-[50px]">
-        <Link href={"/daycare"}>
+        <Link href={"/coming-soon"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
             <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
@@ -132,7 +132,7 @@ const WinnerClasses = () => {
             </div>
           </div>
         </Link>
-        <Link href={"/daycare"}>
+        <Link href={"/coming-soon"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
             <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
@@ -185,7 +185,7 @@ const WinnerClasses = () => {
             </div>
           </div>
         </Link>
-        <Link href={"/daycare"}>
+        <Link href={"/coming-soon"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
             <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
@@ -238,7 +238,7 @@ const WinnerClasses = () => {
             </div>
           </div>
         </Link>
-        <Link href={"/daycare"}>
+        <Link href={"/coming-soon"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
             <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">

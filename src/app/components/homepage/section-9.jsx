@@ -140,24 +140,36 @@ const Section9 = () => {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
 
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top bottom",
-            end: "bottom bottom",
-            scrub: true,
-          },
-        })
-        .from(containerRef.current, {
+      // gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: containerRef.current,
+      //     start: "top bottom",
+      //     end: "bottom bottom",
+      //     scrub: 1,
+      //     fastScrollEnd: true,
+      //     invalidateOnRefresh: true,
+      //   },
+      // });
+
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        start: "top bottom",
+        end: "bottom bottom",
+        scrub: true,
+
+        animation: gsap.from(containerRef.current, {
           duration: 1,
           ease: "power1.out",
           "--r": `${windowWidth}px`,
           "--y": `${windowHeight}px`,
           "--x": "50%",
-        });
+          onComplete: () => {
+            ScrollTrigger.refresh();
+          },
+        }),
+      });
     },
-    { scope: containerRef, dependencies: [] }
+    { scope: containerRef, dependencies: [isSmall] }
   );
 
   return (

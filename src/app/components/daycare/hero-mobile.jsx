@@ -97,7 +97,7 @@ const HeroMobile = () => {
               </div>
               <div className="overflow-hidden">
                 <div className="font-helixa text-[24px] text-soft-tosca translate-y-full desc-hero-mobile font-bold">
-                  20 months - 6 years old
+                  3 - 6 years old
                 </div>
               </div>
             </div>
@@ -111,12 +111,12 @@ const HeroMobile = () => {
               <div className="font-helixa text-[24px] text-soft-tosca font-bold">
                 <div className="overflow-hidden">
                   <div className="translate-y-full desc-hero-mobile">
-                    Available from
+                    Monday - Friday
                   </div>
                 </div>
                 <div className="overflow-hidden">
                   <div className="translate-y-full desc-hero-mobile">
-                    Monday - Friday
+                    08:00 AM - 04:00 PM
                   </div>
                 </div>
               </div>
@@ -156,10 +156,9 @@ const HeroMobile = () => {
         </div>
         <div className="w-full flex justify-end">
           <div className="max-w-[217px] font-helixa text-[16px] leading-[19px] text-[#5E5E5E] desc-sec-2-mobile">
-            Above all, our playschool program aims to instill a lifelong love of
-            learning. By creating a positive and enjoyable early educational
-            experience, we help children view learning as a rewarding and
-            exciting journey.
+            Daycare program offers a safe and nurturing environment with
+            experienced staff dedicated to a comprehensive curriculum and
+            engaging activities.
           </div>
         </div>
       </div>

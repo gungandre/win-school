@@ -65,8 +65,12 @@ const Section2 = ({ setTlComplete }) => {
         ref={elemenRefMobile}
       >
         <div className="max-sm:block hidden" ref={elemenRefMobile}>
-          <div className="daycare-mobile translate-x-[100vw]">Daycare</div>
-          <div className="daycare-mobile translate-x-[100vw]">Classes</div>
+          <div className="daycare-mobile translate-x-[100vw] text-center">
+            Playschool
+          </div>
+          <div className="daycare-mobile translate-x-[100vw] text-center">
+            Classes
+          </div>
         </div>
       </div>
     </>

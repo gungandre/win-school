@@ -3,10 +3,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import useMediaQuery from "@/app/utils/useMediaQuery";
 
 const FooterMobile = () => {
   gsap.registerPlugin(ScrollTrigger);
   const elemenRef = useRef(null);
+  const isSmall = useMediaQuery("(max-width: 640px)");
 
   useGSAP(
     () => {
@@ -20,19 +22,26 @@ const FooterMobile = () => {
       const oText2 = document.getElementById("o-text_2");
       const lText = document.getElementById("l-text");
 
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: elemenRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        })
-        .to(elemenRef.current, {
-          transform: "translateY(0)",
+      // gsap
+      //   .timeline({
+      //     scrollTrigger: {
+      //       trigger: elemenRef.current,
+      //       start: "top top",
+      //       end: "bottom top",
+      //       scrub: true,
+      //     },
+      //   })
+      ScrollTrigger.create({
+        trigger: elemenRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+
+        animation: gsap.from(elemenRef.current, {
+          transform: "translateY(-100%)",
           ease: "none",
-        });
+        }),
+      });
 
       ScrollTrigger.create({
         trigger: elemenRef.current,
@@ -61,12 +70,12 @@ const FooterMobile = () => {
         },
       });
     },
-    { scope: elemenRef }
+    { scope: elemenRef, dependencies: [isSmall] }
   );
 
   return (
     <div
-      className="w-full min-h-dvh relative   section   section px-[32px] pt-[160px] pb-[30px] -translate-y-full z-[0]"
+      className="w-full min-h-dvh relative   section   section px-[32px] pt-[160px] pb-[30px]  z-[0]"
       ref={elemenRef}
     >
       <div className="w-full flex flex-col  gap-y-[32px]">
