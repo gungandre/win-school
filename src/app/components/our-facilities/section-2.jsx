@@ -26,10 +26,6 @@ const Section2 = ({ tlComplete }) => {
     ).clientWidth;
     const cardSmall = document.querySelector(".card-small").clientWidth;
 
-    console.log(
-      "swiperSlideContainerWidth",
-      swiperSlideContainerWidth - cardSmall
-    );
     setSwiperSlideContainerWidth(swiperSlideContainerWidth - cardSmall);
   }, [tlComplete]);
 

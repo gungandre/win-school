@@ -48,9 +48,7 @@ const Hero = () => {
         duration: 1,
         stagger: 0.1,
         ease: "power1.out",
-        onComplete: () => {
-          console.log("testing");
-        },
+        onComplete: () => {},
       });
       gsap.to(".leaders", {
         transform: "translateY(0)",

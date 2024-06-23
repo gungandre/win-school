@@ -405,7 +405,7 @@ const Header = ({ navbarColor }) => {
 
       if (i === index) {
         setMenuIndex(index);
-        console.log("yang di klik", i);
+
         gsap.to(`.menu-${i}`, {
           height: "auto",
           paddingBottom: 5,
@@ -417,7 +417,6 @@ const Header = ({ navbarColor }) => {
           duration: 0.5,
         });
       } else {
-        console.log("yang tidak klik", i);
         gsap.to(`.menu-${i}`, {
           height: "0",
           paddingBottom: "0",
@@ -433,7 +432,6 @@ const Header = ({ navbarColor }) => {
 
   const menuClick = () => {
     setMenuShow(!menuShow);
-    console.log(menuShow);
   };
 
   useEffect(() => {

@@ -14,7 +14,6 @@ function useNavColor(navbarColors, sectionSelector) {
     const sections = gsap.utils.toArray(sectionSelector);
 
     sections.forEach(function (section, index) {
-      console.log(index, navbarColors[index]);
       ScrollTrigger.create({
         trigger: section,
         start: "top 128px",

@@ -17,8 +17,6 @@ const Footer = ({ tlComplete }) => {
 
   useGSAP(
     () => {
-      console.log({ tlComplete });
-
       const wText = document.getElementById("w-text");
       const iText = document.getElementById("i-text");
       const nText = document.getElementById("n-text");

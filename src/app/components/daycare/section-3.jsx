@@ -56,30 +56,24 @@ const Section3 = ({ setOnHover }) => {
   const [activitiesData, setActivitiesData] = useState(null);
 
   useEffect(() => {
-    // const fetchData = async () => {
-    //   try {
-    //     const fetchingData = await fetch(
-    //       "http://localhost:1337/api/daycare?populate=*"
-    //     );
-    //     const result = await fetchingData.json();
-    //     console.log(result.data.attributes.Activities);
+    const fetchData = async () => {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      try {
+        const fetchingData = await fetch(`${apiUrl}/api/daycare?populate=*`);
+        const result = await fetchingData.json();
 
-    //   } catch (error) {
-    //     console.log("Gagal mengambil data:", error);
-    //   }
-    // };
+        setActivitiesData(result.data.attributes.Activities);
+      } catch (error) {
+        console.log("Gagal mengambil data:", error);
+      }
+    };
 
-    // fetchData();
-
-    setActivitiesData(data);
+    fetchData();
   }, []);
 
   useGSAP(
     () => {
-      console.log(activitiesData);
       activitiesData?.map((item, index) => {
-        console.log("index item", index);
-
         ScrollTrigger.create({
           trigger: `.timetable-${index}`,
 
@@ -121,8 +115,6 @@ const Section3 = ({ setOnHover }) => {
       >
         {activitiesData &&
           activitiesData.map((item, index) => {
-            console.log("index elemen", index);
-
             return (
               <div
                 className={`w-full group relative overflow-hidden timetable-${index}`}

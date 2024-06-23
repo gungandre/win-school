@@ -132,15 +132,13 @@ const Section3 = ({ setOnHover, tlComplete }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       try {
-        const isFetching = await fetch(
-          "http://localhost:1337/api/playschool?populate=*"
-        );
+        const isFetching = await fetch(`${apiUrl}/api/playschool?populate=*`);
         const response = await isFetching.json();
 
         response.data.attributes.Class_Seat.forEach((data) => {
           datas.forEach((item) => {
-            console.log(data.ClassName, item.className);
             if (item.className === data.ClassName) {
               item.seat = data.Seat;
             }
@@ -157,9 +155,6 @@ const Section3 = ({ setOnHover, tlComplete }) => {
 
   useGSAP(
     () => {
-      let getRatio = (el) =>
-        window.innerHeight / (window.innerHeight + el?.offsetHeight);
-
       ScrollTrigger.create({
         trigger: elemenRef.current,
         start: "top bottom",
@@ -175,33 +170,11 @@ const Section3 = ({ setOnHover, tlComplete }) => {
           });
         },
       });
-
-      // datas.forEach((data, index) => {
-      //   gsap.to(`.playschool-img-thumbail-${index}`, {
-      //     objectPosition: `50% ${
-      //       -window.innerHeight *
-      //       (1 -
-      //         getRatio(
-      //           document.querySelector(`.playschool-img-thumbail-${index}`)
-      //         ))
-      //     }px`,
-      //     ease: "power1.out",
-      //     scrollTrigger: {
-      //       trigger: `.playschool-img-thumbail-${index}`,
-      //       start: "top bottom+=50%",
-      //       end: "bottom top-=30%",
-
-      //       scrub: true,
-      //       invalidateOnRefresh: true, // to make it responsive
-      //     },
-      //   });
-      // });
     },
     { scope: elemenRef, dependencies: [elemenRef] }
   );
 
   const modalClick = (data) => {
-    console.log(data);
     if (data === null) return;
     setOpenModal(!openModal);
     setDataModal(data);
@@ -243,7 +216,6 @@ const Section3 = ({ setOnHover, tlComplete }) => {
                         onMouseEnter={() => setOnHover(false)}
                         onMouseLeave={() => setOnHover(true)}
                         onClick={() => {
-                          console.log("tes");
                           modalClick(null);
                         }}
                       >

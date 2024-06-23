@@ -85,7 +85,6 @@ const HeaderMobile = () => {
 
   const menuClick = () => {
     setMenuShow(!menuShow);
-    console.log(menuShow);
   };
 
   useEffect(() => {

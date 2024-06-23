@@ -6,16 +6,14 @@ import { useGSAP } from "@gsap/react";
 
 const HeroMobile = () => {
   gsap.registerPlugin(ScrollTrigger);
-  console.log("ceve");
+
   useGSAP(() => {
     gsap.to(".school", {
       transform: "translateY(0)",
       duration: 1,
       stagger: 0.1,
       ease: "power1.out",
-      onComplete: () => {
-        console.log("testing");
-      },
+      onComplete: () => {},
     });
     gsap.to(".leaders", {
       transform: "translateY(0)",
