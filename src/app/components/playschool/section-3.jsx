@@ -18,7 +18,7 @@ const datas = [
     activities: "Sensory Play, Arts & Craft",
     duration: "90 Minutes",
     number_of_participants: "Maximum 8 Kids and Parents",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Stimulation Class.png",
     image: "assets/images/playschool/class-image/stimulation_class.png",
@@ -39,7 +39,7 @@ one! Sign up now and watch them blossom with us.`,
     number_of_participants: "Maximum 8 Kids",
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Playful Music.png",
-    seat: 10,
+
     image: "assets/images/playschool/class-image/Playful Music.png",
     desc: `Let the Magic Begin with Playful Music & Craft Class! Join us for a delightful journey of music, storytelling, and creativity in our Playful Music & Craft Class! Perfect for children who love to sing, listen to stories, and get crafty! Enroll your child in a world of musical adventure, storytelling magic, and crafty fun! Limited spots available reserve yours today!`,
   },
@@ -52,7 +52,7 @@ one! Sign up now and watch them blossom with us.`,
     activities: "Arts & Craft, Literacy",
     duration: "120 Minutes",
     number_of_participants: "Maximum 10 Kids",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Crafty Kiddos.png",
     image: "assets/images/playschool/class-image/Crafty Kiddos.png",
@@ -67,7 +67,7 @@ one! Sign up now and watch them blossom with us.`,
     activities: "Understanding the World, Creative Expression",
     duration: "120 Minutes",
     number_of_participants: "Maximum 8 Kids",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Joyful Green Journey.png",
     image: "assets/images/playschool/class-image/Joyful Green Journey.png",
@@ -82,7 +82,7 @@ one! Sign up now and watch them blossom with us.`,
     activities: "Physical Development, Understanding the World, Literacy",
     duration: "120 Minutes",
     number_of_participants: "Maximum 8 Kids",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_WIN Little Explorer.png",
     image: "assets/images/playschool/class-image/WIN Little Explorer.png",
@@ -97,7 +97,7 @@ one! Sign up now and watch them blossom with us.`,
     days_detail: `2 Times a Week (Tuesday & Thursday)`,
     activities: "Understanding the World, Literacy, Critical Thinking, Crafts",
     duration: "120 Minutes",
-    seat: 10,
+
     number_of_participants: "Maximum 8 Kids",
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_World Adventurers.png",
@@ -114,7 +114,7 @@ one! Sign up now and watch them blossom with us.`,
       "Understanding the World, Literacy, Critical Thinking, Crafts Team Building, Creative Expression",
     duration: "90 Minutes",
     number_of_participants: "Maximum 10 Kids with Parents",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Creative Connection.png",
     image: "assets/images/playschool/class-image/Creative Connection.png",
