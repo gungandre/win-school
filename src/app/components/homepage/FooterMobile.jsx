@@ -8,7 +8,6 @@ import useMediaQuery from "@/app/utils/useMediaQuery";
 const FooterMobile = () => {
   gsap.registerPlugin(ScrollTrigger);
   const elemenRef = useRef(null);
-  const isSmall = useMediaQuery("(max-width: 640px)");
 
   useGSAP(
     () => {
@@ -71,7 +70,7 @@ const FooterMobile = () => {
         },
       });
     },
-    { scope: elemenRef, dependencies: [isSmall] }
+    { scope: elemenRef }
   );
 
   return (
