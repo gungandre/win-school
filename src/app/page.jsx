@@ -39,8 +39,11 @@ import BeforeFooterMobile from "./components/homepage/before-footer-mobile";
 import FooterMobile from "./components/homepage/FooterMobile";
 import useMediaQuery from "./utils/useMediaQuery";
 import Preloader from "./components/preloader/Preloader";
+import PreloaderMobile from "./components/preloader/Preloader-mobile";
 export default function Home() {
   gsap.registerPlugin(SplitText);
+
+  const [footerMobilePlay, setFooterMobilePlay] = useState(false);
 
   const [navbarAnimationPlay, setNavbarAnimationPlay] = useState(false);
 
@@ -144,7 +147,7 @@ export default function Home() {
         <Section7 />
 
         <Section8 cursorHover={cursorHover} cursorLeave={cursorLeave} />
-        <Section9 />
+        <Section9 setFooterMobilePlay={setFooterMobilePlay} />
 
         <div>{!small ? <Footer /> : <FooterMobile />}</div>
       </div>

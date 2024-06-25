@@ -50,7 +50,7 @@ const menuList = [
   },
   {
     id: 4,
-    name: "Contact Us",
+    name: "Find Us Here",
     submenu: [{ name: "Our Location", link: "/our-location" }],
   },
 ];

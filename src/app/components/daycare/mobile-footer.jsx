@@ -12,8 +12,6 @@ const FooterMobile = () => {
 
   useGSAP(
     () => {
-      ScrollTrigger.refresh();
-
       const wText = document.getElementById("w-text");
       const iText = document.getElementById("i-text");
       const nText = document.getElementById("n-text");

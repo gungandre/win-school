@@ -17,7 +17,7 @@ import useMediaQuery from "../utils/useMediaQuery";
 import HeroMobile from "../components/daycare/hero-mobile";
 import HeaderMobile from "../components/header/header-mobile";
 import Section4Mobile from "../components/daycare/section-4-mobile";
-import FooterMobile from "../components/homepage/FooterMobile";
+import FooterMobile from "../components/daycare/mobile-footer";
 const page = () => {
   const [onHover, setOnHover] = useState(false);
   const [tlComplete, setTlComplete] = useState(false);

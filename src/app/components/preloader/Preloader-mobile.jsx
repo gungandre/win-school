@@ -5,8 +5,10 @@ import { useGSAP } from "@gsap/react";
 import { useContext } from "react";
 // import { preloaderContext } from "@/app/context/preloaderContext";
 import { useRef } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const PreloaderMobile = () => {
+  gsap.registerPlugin(ScrollTrigger);
   // const { preloaderComplete, setPreloaderComplete } =
   //   useContext(preloaderContext);
   const container = useRef();
@@ -71,7 +73,7 @@ const PreloaderMobile = () => {
                 ease: "ease.out1",
                 duration: 1,
                 onComplete: () => {
-                  // setPreloaderComplete(true);
+                  ScrollTrigger.refresh();
                 },
               });
             },
@@ -92,7 +94,7 @@ const PreloaderMobile = () => {
 
   return (
     <div ref={container}>
-      <div className="bg-white-ivory top-0 w-full fixed h-dvh z-[10000] flex justify-center items-center relative container-preloader-mobile">
+      <div className="bg-white-ivory top-0 w-full relative h-dvh z-[10000] flex justify-center items-center  container-preloader-mobile">
         <div className="">
           <svg
             width="269"

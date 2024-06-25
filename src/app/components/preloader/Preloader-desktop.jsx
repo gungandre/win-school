@@ -14,6 +14,7 @@ import { SplitText } from "gsap/SplitText";
 import useMediaQuery from "@/app/utils/useMediaQuery";
 import PreloaderMobile from "./Preloader-mobile";
 import { useRef } from "react";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const PreloaderDesktop = () => {
   const [scroll, setScroll] = useState(false);
@@ -28,7 +29,9 @@ const PreloaderDesktop = () => {
   useGSAP(() => {
     gsap.registerPlugin(SplitText);
 
-    const splitTextChar1 = new SplitText(".win-school-text", { type: "chars" });
+    const splitTextChar1 = new SplitText(".win-school-text", {
+      type: "chars",
+    });
     const splitTextChar2 = new SplitText(".win-the-future-text", {
       type: "chars",
     });
@@ -272,6 +275,7 @@ const PreloaderDesktop = () => {
             setScroll(true);
             setStopScroll(false);
             setPreloaderComplete(true);
+            ScrollTrigger.refresh();
           },
         }
       );

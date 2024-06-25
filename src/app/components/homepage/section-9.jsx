@@ -11,7 +11,7 @@ import { preloaderContext } from "@/app/context/preloaderContext";
 import { useContext } from "react";
 import useMediaQuery from "@/app/utils/useMediaQuery";
 
-const Section9 = () => {
+const Section9 = ({ setFooterMobilePlay }) => {
   const container = useRef(null);
   const containerRef = useRef(null);
   const { preloaderComplete, setPreloaderComplete } =
@@ -152,8 +152,9 @@ const Section9 = () => {
           "--r": `${windowWidth}px`,
           "--y": `${windowHeight}px`,
           "--x": "50%",
-          onComplete: () => {
+          onStart: () => {
             ScrollTrigger.refresh();
+            setFooterMobilePlay(true);
           },
         }),
       });

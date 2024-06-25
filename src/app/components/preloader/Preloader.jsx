@@ -15,6 +15,7 @@ import useMediaQuery from "@/app/utils/useMediaQuery";
 import PreloaderMobile from "./Preloader-mobile";
 import { useRef } from "react";
 import PreloaderDesktop from "./Preloader-desktop";
+import PreloaderMobileTesting from "./Preloader-mobile-testing";
 
 const Preloader = () => {
   const small = useMediaQuery("(max-width: 640px)");
