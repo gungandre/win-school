@@ -165,7 +165,7 @@ const Section9 = ({ setFooterMobilePlay }) => {
   return (
     <>
       <section
-        className="h-dvh w-full bg-white-ivory flex justify-center items-center section relative z-10   after:w-full after:h-[120px] after:absolute after:bottom-0 after:bg-sunset-coral after:translate-y-full after:rounded-br-[30px] after:rounded-bl-[30px] section-register-2 max-sm:hidden "
+        className="h-svh w-full bg-white-ivory flex justify-center items-center section relative z-10   after:w-full after:h-[120px] after:absolute after:bottom-0 after:bg-sunset-coral after:translate-y-full after:rounded-br-[30px] after:rounded-bl-[30px] section-register-2 max-sm:hidden "
         ref={container}
       >
         <div className="w-[1354px] h-[704px] flex flex-col gap-y-[140px] ">
@@ -327,13 +327,13 @@ const Section9 = ({ setFooterMobilePlay }) => {
         </div>
 
         <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-dvh w-[110%] section-before-footer clip-mask"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 h-svh w-[110%] section-before-footer clip-mask"
           // style={{
           //   clipPath: "inset(50% 20% 0% 20% round 1000% 1000% 0% 0%)",
           // }}
         >
           <div className="z-[-1] w-[300px] h-[300px] absolute bottom-[-70%] section"></div>
-          <div className="h-dvh w-full bg-soft-tosca flex justify-center items-center  relative section-before-footer ">
+          <div className="h-svh w-full bg-soft-tosca flex justify-center items-center  relative section-before-footer ">
             <div className="flex flex-col gap-y-[50px] ">
               <div className="font-helixa text-[6.667vw] leading-[6.667vw] text-center text-white-ivory text-before-footer">
                 <div className="text-under-before-footer">
@@ -382,7 +382,7 @@ const Section9 = ({ setFooterMobilePlay }) => {
         className="bg-white-ivory z-10 relative after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:bottom-0 after:left-0 after:bg-red after:h-[60px] after:w-full max-sm:block hidden"
         ref={containerRef}
       >
-        <div className="w-full h-dvh bg-sunset-coral flex justify-center items-center flex-col clip-mask ">
+        <div className="w-full h-svh bg-sunset-coral flex justify-center items-center flex-col clip-mask ">
           <div className="flex flex-col gap-y-[55px]">
             <div className="text-center font-helixa text-[60px] leading-[70px] text-white-ivory">
               Take the <br /> First Step <br /> for a Brighter <br /> Future

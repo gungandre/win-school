@@ -151,7 +151,7 @@ const Section3 = ({ setRendered }) => {
 
   return (
     <div
-      className="min-h-dvh w-full bg-white-ivory section relative"
+      className="min-h-svh w-full bg-white-ivory section relative"
       ref={sectionRef}
     >
       <div className="w-full text-center text-[6.667vw] leading-[6.771vw] text-sunset-coral font-helixa title-section-3-container">
@@ -186,7 +186,7 @@ const Section3 = ({ setRendered }) => {
         </div>
       </div>
       <div className="absolute w-full top-0 translate-y-[100vh] container-next-section ">
-        <div className="w-full h-dvh relative ">
+        <div className="w-full h-svh relative ">
           <div className="w-[455px] h-[129px] bg-[#EEE7D9] rounded-[50px] px-[50px] flex   absolute left-[3%] top-[15%] card-container-1  duration-500 transition-all overflow-hidden">
             <div className="w-full h-[129px] flex justify-between items-center">
               <div className="font-helixa text-[48px] font-bold  title-card text-[#404040]">

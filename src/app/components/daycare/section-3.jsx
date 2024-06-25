@@ -112,7 +112,7 @@ const Section3 = ({ setOnHover }) => {
   return (
     <>
       <div
-        className="min-h-dvh w-full   bg-white-ivory flex flex-col section-timetable"
+        className="min-h-svh w-full   bg-white-ivory flex flex-col section-timetable"
         ref={elemenRef}
       >
         {activitiesData &&

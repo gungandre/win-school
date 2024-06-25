@@ -37,7 +37,7 @@ const BeforeFooterMobile = () => {
   return (
     <div className="bg-white-ivory z-10 relative after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:bottom-0 after:left-0 after:bg-red after:h-[60px] after:w-full">
       <div
-        className="w-full h-dvh bg-sunset-coral flex justify-center items-center flex-col clip-mask "
+        className="w-full h-svh bg-sunset-coral flex justify-center items-center flex-col clip-mask "
         ref={containerRef}
       >
         <div className="flex flex-col gap-y-[55px]">

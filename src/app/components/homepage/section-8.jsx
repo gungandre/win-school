@@ -42,11 +42,11 @@ const Section8 = ({ cursorHover, cursorLeave }) => {
         className="w-full h-auto flex items-center bg-white-ivory section section-winner-classes max-sm:hidden "
         ref={container}
       >
-        <div className="w-full h-dvh flex items-center flex-nowrap relative">
+        <div className="w-full h-svh flex items-center flex-nowrap relative">
           <div className="text-nowrap text-[13.333vw] text-sunset-coral translate-x-[120%] winner-classes">
             WINner Classes
           </div>
-          <div className="w-full h-dvh flex items-center bg-white-ivory section overflow-hidden translate-x-full section-class absolute flex-nowrap">
+          <div className="w-full h-svh flex items-center bg-white-ivory section overflow-hidden translate-x-full section-class absolute flex-nowrap">
             <div
               className="w-full h-full flex translate-x-[60px] cursor-none "
               onMouseEnter={() => cursorHover("MORE")}

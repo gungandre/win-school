@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="min-h-dvh w-full bg-white-ivory section">
+    <div className="min-h-svh w-full bg-white-ivory section">
       <div className="w-full flex justify-center flex-col items-center gap-20">
         <div className="mt-[8%]">
           <div className="font-seagull text-[5.313vw] leading-[5.313vw] text-sunset-coral">

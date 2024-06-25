@@ -111,7 +111,7 @@ const Section7 = () => {
   return (
     <div>
       <section
-        className="min-h-dvh w-full px-15 bg-white-ivory flex flex-col gap-y-[300px] section section-we-provides max-sm:hidden "
+        className="min-h-svh w-full px-15 bg-white-ivory flex flex-col gap-y-[300px] section section-we-provides max-sm:hidden "
         ref={container}
       >
         <div className="h-full w-full flex justify-between px-24">

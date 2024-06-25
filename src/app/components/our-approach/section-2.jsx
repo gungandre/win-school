@@ -52,7 +52,7 @@ const Section2 = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-dvh bg-white-ivory  px-15 pt-[160px] pb-[180px] section">
+    <div className="w-full min-h-svh bg-white-ivory  px-15 pt-[160px] pb-[180px] section">
       <div className="w-full flex justify-center ">
         <div className="text-center font-helixa  text-[6.667vw] text-sunset-coral leading-[6.667vw]">
           <div className="overflow-hidden">

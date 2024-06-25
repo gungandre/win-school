@@ -69,7 +69,7 @@ const WinnerClasses = () => {
 
   return (
     <div
-      className="w-full min-h-dvh flex flex-col justify-center px-[32] py-[120px] bg-white-ivory"
+      className="w-full min-h-svh flex flex-col justify-center px-[32] py-[120px] bg-white-ivory"
       ref={container}
     >
       <div className="w-full h-full ">

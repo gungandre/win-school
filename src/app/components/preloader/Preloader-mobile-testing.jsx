@@ -18,7 +18,7 @@ const PreloaderMobileTesting = () => {
 
   return (
     <div
-      className="w-full h-dvh fixed bg-white-ivory top-0 z-[10000]"
+      className="w-full h-svh fixed bg-white-ivory top-0 z-[10000]"
       ref={container}
     >
       <div className="w-full h-full flex justify-center items-center ">

@@ -2,7 +2,7 @@ import React from "react";
 
 const Section2 = () => {
   return (
-    <div className="w-full min-h-dvh bg-white-ivory p-[160px]">
+    <div className="w-full min-h-svh bg-white-ivory p-[160px]">
       <div className="flex flex-col w-full h-full">
         <div className="font-helixa text-[128px] leading-[130px] text-sunset-coral ">
           <div>We Are a Leading</div>

@@ -28,7 +28,7 @@ const Section6Mobile = () => {
   );
   return (
     <div
-      className="w-full min-h-dvh bg-white-ivory px-[32px] py-[120px]"
+      className="w-full min-h-svh bg-white-ivory px-[32px] py-[120px]"
       ref={container}
     >
       <div className="w-ful h-full flex flex-col gap-y-[16px] justify-center items-center">

@@ -53,7 +53,7 @@ const Section2 = ({ setTlComplete, small }) => {
   return (
     <>
       <div
-        className="h-dvh  w-full flex justify-center items-center bg-white-ivory section max-sm:hidden"
+        className="h-svh  w-full flex justify-center items-center bg-white-ivory section max-sm:hidden"
         ref={elemenRef}
       >
         <div className="font-helixa text-[13.333vw] text-sunset-coral text-nowrap translate-x-[100%] text-scroll">

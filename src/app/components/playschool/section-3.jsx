@@ -188,7 +188,7 @@ const Section3 = ({ setOnHover, tlComplete }) => {
         dataModal={dataModal}
       />
       <div
-        className="min-h-dvh w-full max-sm:px-[32px] px-15  bg-white-ivory section"
+        className="min-h-svh w-full max-sm:px-[32px] px-15  bg-white-ivory section"
         ref={elemenRef}
       >
         <div className="w-full grid max-sm:grid-cols-1 max-sm:gap-y-[80px] grid-cols-2 gap-5">

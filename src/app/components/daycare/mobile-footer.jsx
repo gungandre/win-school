@@ -74,7 +74,7 @@ const FooterMobile = () => {
 
   return (
     <div
-      className="w-full min-h-dvh relative  -translate-y-[80%] section   section px-[32px] pt-[160px] pb-[30px]  z-[0]"
+      className="w-full min-h-svh relative  -translate-y-[80%] section   section px-[32px] pt-[160px] pb-[30px]  z-[0]"
       ref={elemenRef}
     >
       <div className="w-full flex flex-col  gap-y-[32px]">

@@ -125,7 +125,7 @@ const Section4 = () => {
 
   return (
     <div
-      className="min-h-dvh w-full  py-[158px] bg-white-ivory relative section"
+      className="min-h-svh w-full  py-[158px] bg-white-ivory relative section"
       ref={elemenRef}
     >
       <div className="w-full">

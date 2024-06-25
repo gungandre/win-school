@@ -107,7 +107,7 @@ const Section7Mobile = () => {
   );
 
   return (
-    <div className="w-full min-h-dvh px-[32px] bg-white-ivory" ref={container}>
+    <div className="w-full min-h-svh px-[32px] bg-white-ivory" ref={container}>
       <div className="w-full flex flex-col gap-y-[60px]">
         <div
           className="w-full font-helixa text-[48px] leading-[48px] text-sunset-coral title"

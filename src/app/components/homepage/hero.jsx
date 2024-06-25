@@ -77,7 +77,7 @@ const Hero = () => {
   return (
     <>
       <section
-        className="h-dvh bg-white-ivory relative section overflow-hidden max-sm:hidden block"
+        className="h-svh bg-white-ivory relative section overflow-hidden max-sm:hidden block"
         ref={container}
       >
         <h1 className="sr-only">SCHOOL OF FUTURE LEADERS</h1>
@@ -248,7 +248,7 @@ const Hero = () => {
       </section>
 
       <div
-        className="w-full h-dvh max-sm:flex hidden justify-center items-center px-[32px] relative overflow-hidden"
+        className="w-full h-svh max-sm:flex hidden justify-center items-center px-[32px] relative overflow-hidden"
         ref={containerMobile}
       >
         <div className="flex flex-col gap-y-[60px]">

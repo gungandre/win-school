@@ -38,7 +38,7 @@ const HeroMobile = () => {
   }, []);
 
   return (
-    <div className="w-full h-dvh flex justify-center items-center px-[32px] relative overflow-hidden">
+    <div className="w-full h-svh flex justify-center items-center px-[32px] relative overflow-hidden">
       <div className="flex flex-col gap-y-[60px]">
         <div>
           <div className="font-seagull text-[24px] leading-[23px] text-sunset-coral flex ">

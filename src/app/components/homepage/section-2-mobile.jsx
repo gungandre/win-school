@@ -490,7 +490,7 @@ const Section2Mobile = () => {
   };
 
   return (
-    <div className="w-full min-h-dvh bg-soft-tosca flex justify-center items-center px-[32px]">
+    <div className="w-full min-h-svh bg-soft-tosca flex justify-center items-center px-[32px]">
       <Swiper
         // install Swiper modules
         modules={[Pagination]}

@@ -51,7 +51,7 @@ const Section4mobile = () => {
 
   return (
     <div
-      className="w-full min-h-dvh  flex bg-white-ivory section section-we-are-leading  py-[120px] flex-col"
+      className="w-full min-h-svh  flex bg-white-ivory section section-we-are-leading  py-[120px] flex-col"
       ref={container}
     >
       <div className="w-full h-[60vh] relative flex items-center justify-center">

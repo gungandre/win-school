@@ -94,7 +94,7 @@ const PreloaderMobile = () => {
 
   return (
     <div ref={container}>
-      <div className="bg-white-ivory top-0 w-full relative h-dvh z-[10000] flex justify-center items-center  container-preloader-mobile">
+      <div className="bg-white-ivory top-0 w-full relative h-svh z-[10000] flex justify-center items-center  container-preloader-mobile">
         <div className="">
           <svg
             width="269"

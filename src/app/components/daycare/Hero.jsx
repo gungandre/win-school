@@ -167,7 +167,7 @@ const Hero = () => {
   return (
     <>
       <div
-        className="min-h-dvh w-full flex flex-col px-15 relative bg-white-ivory section max-sm:hidden"
+        className="min-h-svh w-full flex flex-col px-15 relative bg-white-ivory section max-sm:hidden"
         ref={containerRef}
       >
         <div className="text-sunset-coral text-[11.979vw] leading-[11.979vw] font-seagull  mt-[80px]  flex mb-[5%] daycare-text ">

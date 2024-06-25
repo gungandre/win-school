@@ -89,10 +89,10 @@ const BeforeFooter = ({ tlComplete }) => {
 
   return (
     <div>
-      <div className="w-full h-dvh  relative  bg-white-ivory section z-[11] section max-sm:hidden block">
+      <div className="w-full h-svh  relative  bg-white-ivory section z-[11] section max-sm:hidden block">
         <div
           ref={elemenRef}
-          className="w-full h-dvh bg-sunset-coral clip-mask justify-center flex flex-col gap-y-[119px] relative bottom-0 circle-before-footer "
+          className="w-full h-svh bg-sunset-coral clip-mask justify-center flex flex-col gap-y-[119px] relative bottom-0 circle-before-footer "
         >
           <div className="flex flex-col w-full">
             <div className="text-center font-helixa text-[9.01vw] leading-[9.167vw] text-white-ivory">
@@ -122,7 +122,7 @@ const BeforeFooter = ({ tlComplete }) => {
 
       <div className="bg-white-ivory z-10 relative after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:bottom-0 after:left-0 after:bg-red after:h-[60px] after:w-full max-sm:block hidden">
         <div
-          className="w-full h-dvh bg-sunset-coral flex justify-center items-center flex-col clip-mask "
+          className="w-full h-svh bg-sunset-coral flex justify-center items-center flex-col clip-mask "
           ref={elemenRefMobile}
         >
           <div className="flex flex-col gap-y-[55px]">

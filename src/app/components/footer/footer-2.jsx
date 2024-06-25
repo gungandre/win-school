@@ -187,7 +187,7 @@ const Footer = ({ tlComplete }) => {
   return (
     <div>
       <footer
-        className="h-dvh  relative  flex flex-col justify-end bg-white-ivory   footer after:w-full section after:bg-sunset-coral after:h-[120px] after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:top-0  z-10 section max-sm:hidden "
+        className="h-svh  relative  flex flex-col justify-end bg-white-ivory   footer after:w-full section after:bg-sunset-coral after:h-[120px] after:rounded-bl-[30px] after:rounded-br-[30px] after:absolute after:top-0  z-10 section max-sm:hidden "
         ref={elemenRef}
       >
         <div className="h-[120px]"></div>
@@ -348,7 +348,7 @@ const Footer = ({ tlComplete }) => {
       </footer>
 
       <div
-        className="w-full min-h-dvh relative max-sm:block hidden  section   section px-[32px] pt-[160px] pb-[30px] -translate-y-full z-[0]"
+        className="w-full min-h-svh relative max-sm:block hidden  section   section px-[32px] pt-[160px] pb-[30px] -translate-y-full z-[0]"
         ref={elemenRefMobile}
       >
         <div className="w-full flex flex-col  gap-y-[32px]">

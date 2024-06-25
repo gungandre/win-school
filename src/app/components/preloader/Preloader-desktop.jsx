@@ -284,7 +284,7 @@ const PreloaderDesktop = () => {
   }, {});
   return (
     <div
-      className="preloader-container  bg-white-ivory top-0 w-full fixed h-dvh z-[500]  "
+      className="preloader-container  bg-white-ivory top-0 w-full fixed h-svh z-[500]  "
       ref={container}
     >
       <div className="relative w-full h-full px-15">

@@ -161,7 +161,7 @@ const Section4 = () => {
   return (
     <div>
       <div
-        className="min-h-dvh w-full  py-[158px] bg-white-ivory relative section max-sm:hidden block"
+        className="min-h-svh w-full  py-[158px] bg-white-ivory relative section max-sm:hidden block"
         ref={elemenRef}
       >
         <div className="w-full">
@@ -238,7 +238,7 @@ const Section4 = () => {
         </div>
       </div>
       <div
-        className="w-full min-h-dvh bg-white-ivory px-[32px] max-sm:block hidden"
+        className="w-full min-h-svh bg-white-ivory px-[32px] max-sm:block hidden"
         ref={elemenRefMobile}
       >
         <div className="font-helixa text-[48px] leading-[50px] text-sunset-coral text-center mt-[120px]">

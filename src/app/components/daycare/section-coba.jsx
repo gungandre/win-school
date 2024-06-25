@@ -15,7 +15,7 @@ const SectionCoba = () => {
     });
   });
 
-  return <div className="w-full h-dvh test">SectionCoba</div>;
+  return <div className="w-full h-svh test">SectionCoba</div>;
 };
 
 export default SectionCoba;

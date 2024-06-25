@@ -60,7 +60,7 @@ const ComingSoon = () => {
         <HeaderMobile />
       )}
 
-      <div className="h-dvh w-full bg-soft-tosca flex justify-center items-center section">
+      <div className="h-svh w-full bg-soft-tosca flex justify-center items-center section">
         <div className="flex flex-col">
           <div className="" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
             <svg

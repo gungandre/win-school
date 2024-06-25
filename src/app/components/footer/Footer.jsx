@@ -153,7 +153,7 @@ const Footer = () => {
   });
 
   return (
-    <footer className="h-dvh -translate-y-full relative  flex flex-col justify-end bg-white-ivory   footer ">
+    <footer className="h-svh -translate-y-full relative  flex flex-col justify-end bg-white-ivory   footer ">
       <div className="sm:h-[120px] bg-sunset-coral rounded-bl-[30px] rounded-br-[30px]  w-full"></div>
       <div className="px-15 sm:pt-[160px] space-y-[10.417vw] h-full">
         <div className="grid grid-cols-12">

@@ -29,7 +29,7 @@ const Section4 = ({ rendered }) => {
   // }, [rendered]);
 
   return (
-    <div className="w-full h-dvh bg-white-ivory flex flex-col px-15 section">
+    <div className="w-full h-svh bg-white-ivory flex flex-col px-15 section">
       <div className="w-full h-full flex justify-center items-start">
         <div className="w-[90%]  font-helixa text-[6.667vw] leading-[6.667vw] text-sunset-coral flex justify-between items-end">
           <div>

@@ -849,7 +849,7 @@ const Section2 = () => {
       </section>
 
       <div
-        className="w-full min-h-dvh bg-soft-tosca  justify-center items-center px-[32px] py-[32px] max-sm:flex hidden"
+        className="w-full min-h-svh bg-soft-tosca  justify-center items-center px-[32px] py-[32px] max-sm:flex hidden"
         ref={containerMobile}
       >
         <Swiper

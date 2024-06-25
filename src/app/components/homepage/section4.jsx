@@ -92,7 +92,7 @@ const Section4 = () => {
   return (
     <div>
       <section
-        className="w-full min-h-dvh px-[142px] py-[134px] flex bg-white-ivory section section-we-are-leading max-sm:hidden "
+        className="w-full min-h-svh px-[142px] py-[134px] flex bg-white-ivory section section-we-are-leading max-sm:hidden "
         ref={container}
       >
         <div className="w-full h-full py-[108px]">

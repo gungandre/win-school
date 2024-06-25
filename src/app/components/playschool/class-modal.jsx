@@ -46,7 +46,7 @@ const ClassModal = ({ openModal, setOpenModal, dataModal }) => {
   return (
     <>
       <div
-        className="bg-black opacity-0 z-[-2] fixed w-full h-dvh bottom-0  "
+        className="bg-black opacity-0 z-[-2] fixed w-full h-svh bottom-0  "
         ref={elemenRef}
         onClick={() => setOpenModal(false)}
       ></div>

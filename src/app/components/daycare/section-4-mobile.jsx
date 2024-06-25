@@ -39,7 +39,7 @@ const Section4Mobile = () => {
   );
 
   return (
-    <div className="w-full min-h-dvh bg-white-ivory px-[32px]" ref={container}>
+    <div className="w-full min-h-svh bg-white-ivory px-[32px]" ref={container}>
       <div className="font-helixa text-[48px] leading-[50px] text-sunset-coral text-center mt-[120px]">
         <div className="translate-y-full text-playscholl-photo opacity-0">
           Daycare

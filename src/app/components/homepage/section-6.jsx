@@ -37,7 +37,7 @@ const Section6 = () => {
   return (
     <>
       <section
-        className="w-full h-dvh  max-sm:hidden  bg-white-ivory section-video relative px-[59px] flex justify-center items-center section section-after-video"
+        className="w-full h-svh  max-sm:hidden  bg-white-ivory section-video relative px-[59px] flex justify-center items-center section section-after-video"
         ref={container}
       >
         <div className="w-full  flex justify-between mb-[20%]">
