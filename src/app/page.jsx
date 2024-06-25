@@ -125,11 +125,14 @@ export default function Home() {
   return (
     <>
       <div>
-        <Cursor
-          cursorRef={cursorRef}
-          videoPause={videoPause}
-          cursorText={cursorText}
-        />
+        {!small && (
+          <Cursor
+            cursorRef={cursorRef}
+            videoPause={videoPause}
+            cursorText={cursorText}
+          />
+        )}
+
         <Header navbarColor={navbarColor} />
         <Hero />
         <Section2 />
