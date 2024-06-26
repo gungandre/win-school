@@ -3,64 +3,75 @@ import Image from "next/image";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
 
 const WinnerClasses = () => {
   gsap.registerPlugin(ScrollTrigger);
+  const container = useRef();
 
-  useGSAP(() => {
-    ScrollTrigger.create({
-      trigger: ".winner-classes-mobile",
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: ".winner-classes-mobile",
 
-      onEnter: () => {
-        gsap.from(".winner-mobile", {
-          transform: "translateX(100vw)",
-          ease: "power1.out",
-          duration: 1,
-          stagger: 0.1,
-        });
-      },
-    });
+        onEnter: () => {
+          gsap.from(".winner-mobile", {
+            transform: "translateX(100vw)",
+            ease: "power1.out",
+            duration: 1,
+            stagger: 0.1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: ".class-mobile",
-      onEnter: () => {
-        gsap.from(".class-mobile", {
-          transform: "translateY(100%)",
-          opacity: 0,
-          ease: "power1.out",
-          duration: 1,
-          stagger: 0.1,
-        });
-      },
-    });
+      ScrollTrigger.create({
+        trigger: ".class-mobile",
+        onEnter: () => {
+          gsap.to(".class-mobile", {
+            transform: "translateY(0)",
+            opacity: 1,
+            ease: "power1.out",
+            duration: 1,
+            stagger: 0.1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: ".text-register-2-mobile",
-      onEnter: () => {
-        gsap.from(".text-register-2-mobile", {
-          transform: "translateY(100%)",
-          opacity: 0,
-          ease: "power1.out",
-          duration: 1,
-        });
-      },
-    });
+      ScrollTrigger.create({
+        trigger: ".text-register-2-mobile",
+        onEnter: () => {
+          gsap.from(".text-register-2-mobile", {
+            transform: "translateY(100%)",
+            opacity: 0,
+            ease: "power1.out",
+            duration: 1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: ".card-register-mobile",
-      onEnter: () => {
-        gsap.from(".card-register-mobile", {
-          transform: "translateY(100%)",
-          opacity: 0,
-          ease: "power1.out",
-          duration: 1,
-        });
-      },
-    });
-  }, []);
+      ScrollTrigger.create({
+        trigger: ".card-register-mobile",
+        onEnter: () => {
+          gsap.from(".card-register-mobile", {
+            transform: "translateY(100%)",
+            opacity: 0,
+            ease: "power1.out",
+            duration: 1,
+            onComplete: () => {
+              ScrollTrigger.refresh();
+            },
+          });
+        },
+      });
+    },
+    { scope: container }
+  );
 
   return (
-    <div className="w-full min-h-dvh flex flex-col justify-center px-[32] py-[120px] bg-white-ivory">
+    <div
+      className="w-full min-h-svh flex flex-col justify-center px-[32] py-[120px] bg-white-ivory"
+      ref={container}
+    >
       <div className="w-full h-full ">
         <div className="w-full text-[80px] leading-[90px] text-sunset-coral  flex flex-col items-center mt-[120px] winner-classes-mobile">
           <div className="winner-mobile">WINner</div>
@@ -68,9 +79,9 @@ const WinnerClasses = () => {
         </div>
       </div>
       <div className="flex w-full flex-col items-center mt-[80px] gap-y-[50px]">
-        <Link href={"/daycare"}>
+        <Link href={"/coming-soon"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
-            <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
                 <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                   Nursery
@@ -121,9 +132,9 @@ const WinnerClasses = () => {
             </div>
           </div>
         </Link>
-        <Link href={"/daycare"}>
+        <Link href={"/coming-soon"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
-            <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
                 <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                   Preschool
@@ -174,9 +185,9 @@ const WinnerClasses = () => {
             </div>
           </div>
         </Link>
-        <Link href={"/daycare"}>
+        <Link href={"/coming-soon"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
-            <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
                 <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                   Kindy A
@@ -227,9 +238,9 @@ const WinnerClasses = () => {
             </div>
           </div>
         </Link>
-        <Link href={"/daycare"}>
+        <Link href={"/coming-soon"}>
           <div className="group card-daycare translate-y-full opacity-0 class-mobile">
-            <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
               <div className="flex flex-col  absolute top-[7%] left-[7%]">
                 <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                   Kindy B

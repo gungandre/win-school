@@ -4,7 +4,10 @@ import Link from "next/link";
 import Header from "../components/header/Header";
 import useNavColor from "../hook/useNavColor";
 import gsap from "gsap";
+import useMediaQuery from "../utils/useMediaQuery";
+import HeaderMobile from "../components/header/header-mobile";
 const ComingSoon = () => {
+  const small = useMediaQuery("(max-width: 640px)");
   const navColorArray = ["#FFFBF3"];
   const { navbarColor } = useNavColor(navColorArray, ".section");
   const tiltAngles = {
@@ -51,17 +54,21 @@ const ComingSoon = () => {
 
   return (
     <>
-      <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
-      <div className="h-dvh w-full bg-soft-tosca flex justify-center items-center section">
+      {small === false ? (
+        <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
+      ) : (
+        <HeaderMobile />
+      )}
+
+      <div className="h-svh w-full bg-soft-tosca flex justify-center items-center section">
         <div className="flex flex-col">
           <div className="" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
             <svg
               width="1125"
-              height="535"
               viewBox="0 0 1125 535"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className=""
+              className="max-sm:w-[369px]"
             >
               <path
                 d="M57.0768 119.748C57.0768 153.256 80.0779 175.973 115.005 175.973C130.907 175.973 149.649 171.146 169.81 160.639L173.786 208.345C155.896 216.296 134.315 220.84 113.018 220.84C61.0523 220.84 8.80288 193.579 8.80288 120.316V119.181C8.80288 46.4857 64.7438 16.1016 116.425 16.1016C137.439 16.1016 157.884 21.2129 173.786 31.1517L169.81 78.8576C152.773 64.9434 134.599 58.9801 117.845 58.9801C84.6213 58.9801 57.0768 83.1171 57.0768 119.748Z"
@@ -115,7 +122,7 @@ const ComingSoon = () => {
               />
             </svg>
           </div>
-          <div className="text-center font-helixa text-[38px] text-white-ivory">
+          <div className="text-center font-helixa max-sm:text-[16px] text-[38px] text-white-ivory">
             <Link href={"/contact-us"} className="underline">
               Contact us
             </Link>{" "}

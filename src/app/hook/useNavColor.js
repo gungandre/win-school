@@ -2,19 +2,18 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useState } from "react";
+import useMediaQuery from "../utils/useMediaQuery";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function useNavColor(navbarColors, sectionSelector) {
   const [navbarColor, setNavbarColor] = useState([navbarColors[0]]);
+  const isSmall = useMediaQuery("(max-width: 640px)");
 
   useGSAP(() => {
     const sections = gsap.utils.toArray(sectionSelector);
 
-    console.log({ sections });
-
     sections.forEach(function (section, index) {
-      console.log(index, navbarColors[index]);
       ScrollTrigger.create({
         trigger: section,
         start: "top 128px",
@@ -31,7 +30,7 @@ function useNavColor(navbarColors, sectionSelector) {
         },
       });
     });
-  });
+  }, [isSmall]);
 
   return { navbarColor };
 }

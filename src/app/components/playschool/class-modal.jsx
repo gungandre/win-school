@@ -46,7 +46,7 @@ const ClassModal = ({ openModal, setOpenModal, dataModal }) => {
   return (
     <>
       <div
-        className="bg-black opacity-0 z-[-2] fixed w-full h-dvh bottom-0  "
+        className="bg-black opacity-0 z-[-2] fixed w-full h-svh bottom-0  "
         ref={elemenRef}
         onClick={() => setOpenModal(false)}
       ></div>
@@ -73,12 +73,12 @@ const ClassModal = ({ openModal, setOpenModal, dataModal }) => {
             </svg>
           </button>
           <div
-            className="max-sm:w-full max-sm:h-full max-sm:gap-y-[20px] max-sm:flex-col w-[1598px] h-[745px]  flex  justify-between overflow-x-hidden overflow-y-scroll"
+            className="max-sm:w-full max-sm:h-full max-sm:gap-y-[20px] max-sm:flex-col w-[1598px] h-[745px]  flex  justify-between overflow-x-hidden "
             data-lenis-prevent="true"
           >
             <div className="h-full flex flex-col max-sm:gap-y-[20px] justify-between">
               <div className=" flex flex-col max-sm:gap-2 gap-4">
-                <div className="font-seagull max-sm:text-[24px] text-[3.333vw] leading-[3.333vw] text-sunset-coral">
+                <div className="font-seagull max-sm:text-[24px] max-sm:leading-[24px] text-[3.333vw] leading-[3.333vw] text-sunset-coral">
                   {dataModal.className}
                 </div>
                 <div className="font-helixa max-sm:text-[16px] text-[28px] text-[#5E5E5E]">
@@ -171,10 +171,10 @@ const ClassModal = ({ openModal, setOpenModal, dataModal }) => {
                   </div>
                 </div>
                 {dataModal.seat > 0 && (
-                  <div className="h-full flex  items-center">
-                    <div className={`group `}>
+                  <div className="h-full flex max-sm:w-full items-center">
+                    <div className={`group max-sm:w-full`}>
                       <a href="https://wa.me/6281130910001" target="_blank">
-                        <div className="max-sm:w-full w-auto px-[32px] border-[#F96D49] border-[2px] rounded-[22px] h-auto font-helixa text-[28px]  overflow-hidden relative group">
+                        <div className="max-sm:w-full w-auto px-[32px] border-[#F96D49] border-[2px] rounded-[22px] h-auto font-helixa text-[28px]  overflow-hidden relative group max-sm:flex max-sm:justify-center">
                           <div className="w-[300px] h-[300px] bg-sunset-coral rounded-full absolute left-1/2 top-1/2 translate-y-full -translate-x-[50%] group-hover:translate-y-[-50%]  duration-1000 transition-all"></div>
                           <div
                             className="group-hover:text-white-ivory duration-10

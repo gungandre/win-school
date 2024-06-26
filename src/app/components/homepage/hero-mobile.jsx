@@ -6,16 +6,14 @@ import { useGSAP } from "@gsap/react";
 
 const HeroMobile = () => {
   gsap.registerPlugin(ScrollTrigger);
-  console.log("ceve");
+
   useGSAP(() => {
     gsap.to(".school", {
       transform: "translateY(0)",
       duration: 1,
       stagger: 0.1,
       ease: "power1.out",
-      onComplete: () => {
-        console.log("testing");
-      },
+      onComplete: () => {},
     });
     gsap.to(".leaders", {
       transform: "translateY(0)",
@@ -40,7 +38,7 @@ const HeroMobile = () => {
   }, []);
 
   return (
-    <div className="w-full h-dvh flex justify-center items-center px-[32px] relative overflow-hidden">
+    <div className="w-full h-svh flex justify-center items-center px-[32px] relative overflow-hidden">
       <div className="flex flex-col gap-y-[60px]">
         <div>
           <div className="font-seagull text-[24px] leading-[23px] text-sunset-coral flex ">

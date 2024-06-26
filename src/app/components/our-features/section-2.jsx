@@ -130,7 +130,7 @@ const Section2 = ({ tlComplete }) => {
   }, [tlComplete]);
 
   return (
-    <div className="w-full min-h-dvh bg-white-ivory flex py-[60px]">
+    <div className="w-full min-h-svh bg-white-ivory flex py-[60px]">
       <div className="w-full flex justify-center">
         <div className="w-[80%] flex flex-col gap-y-20">
           {datas.map((data, index) => (

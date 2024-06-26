@@ -153,14 +153,14 @@ const Footer = () => {
   });
 
   return (
-    <footer className="h-dvh -translate-y-full relative  flex flex-col justify-end bg-white-ivory   footer ">
+    <footer className="h-svh -translate-y-full relative  flex flex-col justify-end bg-white-ivory   footer ">
       <div className="sm:h-[120px] bg-sunset-coral rounded-bl-[30px] rounded-br-[30px]  w-full"></div>
       <div className="px-15 sm:pt-[160px] space-y-[10.417vw] h-full">
         <div className="grid grid-cols-12">
           <div className="col-span-6">
             <div className="flex flex-col sm:space-y-[68px]">
               <h2 className="whitespace-pre-line text-64-headings text-dark-tosca">
-                Subscribe to Our newsletter
+                Subscribe to <br /> Our newsletter
               </h2>
               <form action="" id="newsletter">
                 <label
@@ -199,8 +199,8 @@ const Footer = () => {
           <div className="col-span-6 flex justify-between">
             <div className="whitespace-pre-line flex flex-col justify-between max-w-[269px]">
               <p className="text-24-body-text">
-                Gatot Subroto Timur Jl. Kecak Nomor 12 Tonja Denpasar Utara Kota
-                Denpasar Bali 80239
+                Gatot Subroto Timur <br /> Jl. Kecak Nomor 12 Tonja <br />{" "}
+                Denpasar Utara <br /> Kota Denpasar Bali 80239
               </p>
               <Button
                 buttonType="a"

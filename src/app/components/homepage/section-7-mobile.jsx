@@ -11,96 +11,103 @@ import { useRef } from "react";
 const Section7Mobile = () => {
   const titleRef = useRef(null);
   const descRef = useRef(null);
+  const container = useRef(null);
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  useGSAP(() => {
-    const title = new SplitText(titleRef.current, {
-      type: "lines",
-      linesClass: "title-line",
-    });
+  useGSAP(
+    () => {
+      const title = new SplitText(titleRef.current, {
+        type: "lines",
+        linesClass: "title-line",
+      });
 
-    const desc = new SplitText(descRef.current, {
-      type: "lines",
-      linesClass: "desc-line",
-    });
+      const desc = new SplitText(descRef.current, {
+        type: "lines",
+        linesClass: "desc-line",
+      });
 
-    ScrollTrigger.create({
-      trigger: titleRef.current,
+      ScrollTrigger.create({
+        trigger: titleRef.current,
 
-      onEnter: () => {
-        gsap.from(title.lines, {
-          opacity: 0,
-          transform: "translateY(100%)",
-          stagger: 0.1,
-        });
+        onEnter: () => {
+          gsap.from(title.lines, {
+            opacity: 0,
+            transform: "translateY(100%)",
+            stagger: 0.1,
+          });
 
-        gsap.from(desc.lines, {
-          opacity: 0,
-          transform: "translateY(100%)",
-          stagger: 0.1,
-        });
-      },
-    });
+          gsap.from(desc.lines, {
+            opacity: 0,
+            transform: "translateY(100%)",
+            stagger: 0.1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: desc.current,
+      ScrollTrigger.create({
+        trigger: desc.current,
 
-      onEnter: () => {
-        gsap.from(desc.lines, {
-          opacity: 0,
-          transform: "translateY(100%)",
-          stagger: 0.1,
-        });
-      },
-    });
+        onEnter: () => {
+          gsap.from(desc.lines, {
+            opacity: 0,
+            transform: "translateY(100%)",
+            stagger: 0.1,
+          });
+        },
+      });
 
-    ScrollTrigger.create({
-      trigger: ".how-to-register-mobile",
+      ScrollTrigger.create({
+        trigger: ".how-to-register-mobile",
 
-      onEnter: () => {
-        gsap.from(".how-to-register-mobile", {
-          y: "100%",
-          opacity: 0,
-          ease: "power1.out",
-          duration: 1,
-        });
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: ".further-mobile",
-
-      onEnter: () => {
-        gsap.from(".further-mobile", {
-          y: "100%",
-          opacity: 0,
-          ease: "power1.out",
-          stagger: 0.1,
-          duration: 1,
-        });
-      },
-    });
-
-    ScrollTrigger.create({
-      trigger: ".card-daycare",
-      onEnter: () => {
-        gsap.to(
-          ".card-daycare",
-
-          {
-            transform: "translateY(0)",
-            opacity: 1,
-            duration: 1,
-            stagger: 0.05,
+        onEnter: () => {
+          gsap.from(".how-to-register-mobile", {
+            y: "100%",
+            opacity: 0,
             ease: "power1.out",
-          }
-        );
-      },
-    });
-  }, []);
+            duration: 1,
+          });
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: ".further-mobile",
+
+        onEnter: () => {
+          gsap.from(".further-mobile", {
+            y: "100%",
+            opacity: 0,
+            ease: "power1.out",
+            stagger: 0.1,
+            duration: 1,
+          });
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: ".card-daycare",
+        onEnter: () => {
+          gsap.to(
+            ".card-daycare",
+
+            {
+              transform: "translateY(0)",
+              opacity: 1,
+              duration: 1,
+              stagger: 0.05,
+              ease: "power1.out",
+              onComplete: () => {
+                ScrollTrigger.refresh();
+              },
+            }
+          );
+        },
+      });
+    },
+    { scope: container }
+  );
 
   return (
-    <div className="w-full min-h-dvh px-[32px] bg-white-ivory">
+    <div className="w-full min-h-svh px-[32px] bg-white-ivory" ref={container}>
       <div className="w-full flex flex-col gap-y-[60px]">
         <div
           className="w-full font-helixa text-[48px] leading-[48px] text-sunset-coral title"
@@ -119,8 +126,8 @@ const Section7Mobile = () => {
         </div>
         <div className="w-full flex justify-center flex-col gap-y-14 items-center">
           <Link href={"/daycare"}>
-            <div className="group card-daycare translate-y-full opacity-0">
-              <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+            <div className="group card-daycare translate-y-full opacity-0 class-mobile">
+              <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
                 <div className="flex flex-col  absolute top-[7%] left-[7%]">
                   <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                     Daycare
@@ -130,22 +137,22 @@ const Section7Mobile = () => {
                   </div>
                 </div>
                 <Image
-                  src={"/assets/images/home/Image1.png"}
+                  src={"/assets/images/home/daycare-photo.png"}
                   width={196}
                   height={233}
                   className="absolute bottom-0 right-0"
                 />
                 <div className="absolute bottom-[5%] right-[2%] ">
-                  <div className="relative w-[203px] h-[32px] flex items-center">
-                    <div className="w-0 group-hover:w-[203px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[76px] bg-white-ivory rounded-[38px] absolute right-0">
+                  <div className="relative w-[112px] h-[40px] flex items-center">
+                    <div className="w-0 group-hover:w-[112px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[40px] bg-white-ivory rounded-[20px] absolute right-0">
                       <div className="relative w-full h-full flex items-center">
-                        <div className="font-helixa font-bold text-[28px] text-[#404040] ml-0 group-hover:ml-8 opacity-0 group-hover:opacity-100 duration-1000 transition-all">
+                        <div className="font-helixa font-bold text-[20px] text-[#404040] ml-0 group-hover:ml-[16px] opacity-0 group-hover:opacity-100 duration-1000 transition-all">
                           More
                         </div>
                       </div>
                     </div>
                     <div className="flex justify-center items-center">
-                      <div className="w-[32px] h-[32px] group-hover:w-[62px] group-hover:h-[62px] transition-all duration-1000 bg-sunset-coral rounded-full flex justify-center items-center absolute right-[5%] z-10">
+                      <div className="w-[32px] h-[32px] group-hover:w-[32px] group-hover:h-[32px] transition-all duration-1000 bg-sunset-coral rounded-full flex justify-center items-center absolute right-[5%] z-10">
                         <svg
                           width="10"
                           height="10"
@@ -171,34 +178,34 @@ const Section7Mobile = () => {
               </div>
             </div>
           </Link>
-          <Link href={"/daycare"}>
-            <div className="group card-daycare translate-y-full opacity-0">
-              <div className="w-[366px] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
+          <Link href={"/playschool"}>
+            <div className="group card-daycare translate-y-full opacity-0 class-mobile">
+              <div className="w-[85.116vw] h-[170px] bg-almond-cream group-hover:bg-soft-tosca rounded-[25px] relative   overflow-y-visible duration-1000 transition-all group-hover:translate-y-[-5%]">
                 <div className="flex flex-col  absolute top-[7%] left-[7%]">
                   <div className="font-seagull text-[24px] text-sunset-coral group-hover:text-white-ivory duration-1000 transition-all">
                     Playschool
                   </div>
                   <div className="font-helixa text-[18px] text-[#5e5e5e] group-hover:text-white-ivory duration-1000 transition-all">
-                    3 - 6 years old
+                    20 months - 6 years old
                   </div>
                 </div>
                 <Image
-                  src={"/assets/images/home/Image2.png"}
+                  src={"/assets/images/home/playschool-photo.png"}
                   width={196}
                   height={233}
                   className="absolute bottom-0 right-0"
                 />
                 <div className="absolute bottom-[5%] right-[2%] ">
-                  <div className="relative w-[203px] h-[32px] flex items-center">
-                    <div className="w-0 group-hover:w-[203px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[76px] bg-white-ivory rounded-[38px] absolute right-0">
+                  <div className="relative w-[112px] h-[40px] flex items-center">
+                    <div className="w-0 group-hover:w-[112px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[40px] bg-white-ivory rounded-[20px] absolute right-0">
                       <div className="relative w-full h-full flex items-center">
-                        <div className="font-helixa font-bold text-[28px] text-[#404040] ml-0 group-hover:ml-8 opacity-0 group-hover:opacity-100 duration-1000 transition-all">
+                        <div className="font-helixa font-bold text-[20px] text-[#404040] ml-0 group-hover:ml-[16px] opacity-0 group-hover:opacity-100 duration-1000 transition-all">
                           More
                         </div>
                       </div>
                     </div>
                     <div className="flex justify-center items-center">
-                      <div className="w-[32px] h-[32px] group-hover:w-[62px] group-hover:h-[62px] transition-all duration-1000 bg-sunset-coral rounded-full flex justify-center items-center absolute right-[5%] z-10">
+                      <div className="w-[32px] h-[32px] group-hover:w-[32px] group-hover:h-[32px] transition-all duration-1000 bg-sunset-coral rounded-full flex justify-center items-center absolute right-[5%] z-10">
                         <svg
                           width="10"
                           height="10"

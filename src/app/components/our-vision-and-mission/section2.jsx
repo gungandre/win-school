@@ -64,7 +64,7 @@ const Section2 = ({ stRefresh }) => {
 
   return (
     <div
-      className="w-full min-h-dvh py-[132px] bg-white-ivory flex flex-col gap-y-20 section"
+      className="w-full min-h-svh py-[132px] bg-white-ivory flex flex-col gap-y-20 section"
       ref={elemenRef}
     >
       <div className="overflow-hidden">

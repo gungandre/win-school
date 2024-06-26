@@ -16,6 +16,8 @@ import useNavColor from "../hook/useNavColor";
 import useMediaQuery from "../utils/useMediaQuery";
 import HeroMobile from "../components/daycare/hero-mobile";
 import HeaderMobile from "../components/header/header-mobile";
+import Section4Mobile from "../components/daycare/section-4-mobile";
+import FooterMobile from "../components/daycare/mobile-footer";
 const page = () => {
   const [onHover, setOnHover] = useState(false);
   const [tlComplete, setTlComplete] = useState(false);
@@ -33,24 +35,23 @@ const page = () => {
 
   return (
     <>
-      <div>
-        {small === false ? (
-          <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
-        ) : (
-          <HeaderMobile />
-        )}
-      </div>
-
-      <div>{small === true ? <HeroMobile /> : <Hero />}</div>
+      <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
+      <Hero />
 
       <Section2 small={small} setTlComplete={setTlComplete} />
 
       <Section3 setOnHover={setOnHover} />
+      <div>{small === false ? <Section4 /> : <Section4Mobile />}</div>
 
-      <Section4 />
       <BeforeFooter tlComplete={tlComplete} />
 
-      <Footer />
+      <div>
+        {small === false ? (
+          <Footer tlComplete={tlComplete} />
+        ) : (
+          <FooterMobile />
+        )}
+      </div>
     </>
   );
 };

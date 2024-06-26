@@ -35,7 +35,7 @@ const Section3 = ({ tlComplete }) => {
 
   return (
     <div
-      className="w-full min-h-dvh bg-white-ivory bg-cover  bg-no-repeat relative bg-top bg-img-our-team scale-200"
+      className="w-full min-h-svh bg-white-ivory bg-cover  bg-no-repeat relative bg-top bg-img-our-team scale-200"
       style={{ backgroundImage: "url(/assets/images/our-principal/image.png)" }}
       ref={elemenRef}
     ></div>

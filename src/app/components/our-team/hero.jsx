@@ -65,10 +65,10 @@ const Hero = ({ setTlComplete }) => {
   }, []);
 
   return (
-    <div className="w-full min-h-dvh bg-white-ivory ">
+    <div className="w-full min-h-svh bg-white-ivory ">
       <div>
         <div
-          className="flex justify-center items-center w-full h-dvh overflow-hidden"
+          className="flex justify-center items-center w-full h-svh overflow-hidden"
           ref={elemenRef}
         >
           <div className="text-[15.625vw]  text-sunset-coral leading-[15.625vw] text-center font-seagull ">

@@ -2,8 +2,8 @@ import React from "react";
 
 const SectionVideoMobile = () => {
   return (
-    <div className="w-full  flex justify-center items-center ">
-      <div className="w-[366px] h-[206px]  ">
+    <div className="w-full  flex justify-center items-center px-[32px]">
+      <div className="max-w-[366px] h-[206px]  ">
         <video
           autoPlay
           muted

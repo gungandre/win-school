@@ -32,7 +32,7 @@ const Section2 = ({ tlComplete }) => {
   }, [tlComplete]);
 
   return (
-    <div className="w-full min-h-dvh bg-white-ivory px-15 py-[180px]">
+    <div className="w-full min-s-svh bg-white-ivory px-15 py-[180px]">
       <div className="overflow-hidden">
         <div className="text-center text-sunset-coral text-[128px] font-helixa our-team">
           Our Team

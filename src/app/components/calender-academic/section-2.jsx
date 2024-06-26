@@ -1,6 +1,6 @@
 const Section2 = () => {
   return (
-    <div className="w-full min-h-dvh flex justify-center items-center bg-white-ivory py-[111px]">
+    <div className="w-full min-h-svh flex justify-center items-center bg-white-ivory py-[111px]">
       <div className="w-[80%]">
         <div className="w-full flex justify-between items-center">
           <div className="w-[76px] h-[76px] rounded-full bg-sunset-coral flex justify-center items-center">

@@ -6,6 +6,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ClassModal from "./class-modal";
 import Link from "next/link";
+import useMediaQuery from "@/app/utils/useMediaQuery";
 
 const datas = [
   {
@@ -17,7 +18,7 @@ const datas = [
     activities: "Sensory Play, Arts & Craft",
     duration: "90 Minutes",
     number_of_participants: "Maximum 8 Kids and Parents",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Stimulation Class.png",
     image: "assets/images/playschool/class-image/stimulation_class.png",
@@ -38,7 +39,7 @@ one! Sign up now and watch them blossom with us.`,
     number_of_participants: "Maximum 8 Kids",
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Playful Music.png",
-    seat: 10,
+
     image: "assets/images/playschool/class-image/Playful Music.png",
     desc: `Let the Magic Begin with Playful Music & Craft Class! Join us for a delightful journey of music, storytelling, and creativity in our Playful Music & Craft Class! Perfect for children who love to sing, listen to stories, and get crafty! Enroll your child in a world of musical adventure, storytelling magic, and crafty fun! Limited spots available reserve yours today!`,
   },
@@ -51,7 +52,7 @@ one! Sign up now and watch them blossom with us.`,
     activities: "Arts & Craft, Literacy",
     duration: "120 Minutes",
     number_of_participants: "Maximum 10 Kids",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Crafty Kiddos.png",
     image: "assets/images/playschool/class-image/Crafty Kiddos.png",
@@ -66,7 +67,7 @@ one! Sign up now and watch them blossom with us.`,
     activities: "Understanding the World, Creative Expression",
     duration: "120 Minutes",
     number_of_participants: "Maximum 8 Kids",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Joyful Green Journey.png",
     image: "assets/images/playschool/class-image/Joyful Green Journey.png",
@@ -81,7 +82,7 @@ one! Sign up now and watch them blossom with us.`,
     activities: "Physical Development, Understanding the World, Literacy",
     duration: "120 Minutes",
     number_of_participants: "Maximum 8 Kids",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_WIN Little Explorer.png",
     image: "assets/images/playschool/class-image/WIN Little Explorer.png",
@@ -96,7 +97,7 @@ one! Sign up now and watch them blossom with us.`,
     days_detail: `2 Times a Week (Tuesday & Thursday)`,
     activities: "Understanding the World, Literacy, Critical Thinking, Crafts",
     duration: "120 Minutes",
-    seat: 10,
+
     number_of_participants: "Maximum 8 Kids",
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_World Adventurers.png",
@@ -113,7 +114,7 @@ one! Sign up now and watch them blossom with us.`,
       "Understanding the World, Literacy, Critical Thinking, Crafts Team Building, Creative Expression",
     duration: "90 Minutes",
     number_of_participants: "Maximum 10 Kids with Parents",
-    seat: 10,
+
     thumbnail:
       "assets/images/playschool/class-image/thumbnail_Creative Connection.png",
     image: "assets/images/playschool/class-image/Creative Connection.png",
@@ -121,24 +122,23 @@ one! Sign up now and watch them blossom with us.`,
   },
 ];
 
-const Section3 = ({ setOnHover }) => {
+const Section3 = ({ setOnHover, tlComplete }) => {
   gsap.registerPlugin(ScrollTrigger);
   const elemenRef = useRef(null);
   const [openModal, setOpenModal] = useState(false);
   const [dataModal, setDataModal] = useState({});
   const [dataClass, setDataClass] = useState(null);
+  const isSmall = useMediaQuery("(max-width: 640px)");
 
   useEffect(() => {
     const fetchData = async () => {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       try {
-        const isFetching = await fetch(
-          "http://localhost:1337/api/playschool?populate=*"
-        );
+        const isFetching = await fetch(`${apiUrl}/api/playschool?populate=*`);
         const response = await isFetching.json();
 
         response.data.attributes.Class_Seat.forEach((data) => {
           datas.forEach((item) => {
-            console.log(data.ClassName, item.className);
             if (item.className === data.ClassName) {
               item.seat = data.Seat;
             }
@@ -153,49 +153,29 @@ const Section3 = ({ setOnHover }) => {
     fetchData();
   }, []);
 
-  useGSAP(() => {
-    let getRatio = (el) =>
-      window.innerHeight / (window.innerHeight + el?.offsetHeight);
+  useGSAP(
+    () => {
+      ScrollTrigger.create({
+        trigger: elemenRef.current,
+        start: "top bottom",
+        end: "bottom top",
 
-    ScrollTrigger.create({
-      trigger: elemenRef.current,
-      start: "top bottom",
-      end: "bottom top",
-
-      onEnter: () => {
-        gsap.to(".class-card", {
-          opacity: 1,
-          transform: "translateY(0)",
-          ease: "power1.out",
-          duration: 1,
-          stagger: 0.2,
-        });
-      },
-    });
-
-    // datas.forEach((data, index) => {
-    //   gsap.to(`.playschool-img-thumbail-${index}`, {
-    //     objectPosition: `50% ${
-    //       -window.innerHeight *
-    //       (1 -
-    //         getRatio(
-    //           document.querySelector(`.playschool-img-thumbail-${index}`)
-    //         ))
-    //     }px`,
-    //     ease: "power1.out",
-    //     scrollTrigger: {
-    //       trigger: `.playschool-img-thumbail-${index}`,
-    //       start: "top bottom+=50%",
-    //       end: "bottom top-=30%",
-
-    //       scrub: true,
-    //       invalidateOnRefresh: true, // to make it responsive
-    //     },
-    //   });
-    // });
-  }, [dataClass]);
+        onEnter: () => {
+          gsap.to(".class-card", {
+            opacity: 1,
+            transform: "translateY(0)",
+            ease: "power1.out",
+            duration: 1,
+            stagger: 0.2,
+          });
+        },
+      });
+    },
+    { scope: elemenRef, dependencies: [elemenRef] }
+  );
 
   const modalClick = (data) => {
+    if (data === null) return;
     setOpenModal(!openModal);
     setDataModal(data);
   };
@@ -208,7 +188,7 @@ const Section3 = ({ setOnHover }) => {
         dataModal={dataModal}
       />
       <div
-        className="min-h-dvh w-full max-sm:px-[32px] px-15  bg-white-ivory section"
+        className="min-h-svh w-full max-sm:px-[32px] px-15  bg-white-ivory section"
         ref={elemenRef}
       >
         <div className="w-full grid max-sm:grid-cols-1 max-sm:gap-y-[80px] grid-cols-2 gap-5">
@@ -217,27 +197,32 @@ const Section3 = ({ setOnHover }) => {
               <div
                 className="group class-card translate-y-full opacity-0 cursor-none"
                 onClick={() => modalClick(data)}
-                onMouseEnter={() => setOnHover(true)}
+                onMouseEnter={() => !isSmall && setOnHover(true)}
                 onMouseLeave={() => setOnHover(false)}
               >
-                <div className="max-sm:p-0 max-sm:h-auto max-sm:gap-y-[20px] p-[48px] w-full h-[669px] flex flex-col justify-between  bg-white-ivory max-sm:rounded-[25px] rounded-[50px] group-hover:bg-soft-tosca duration-500 transition-all">
+                <div className="max-sm:p-0 max-sm:h-auto max-sm:gap-y-[20px] p-[48px] w-full h-[669px] flex flex-col justify-between  bg-white-ivory max-sm:rounded-[25px] rounded-[50px] sm:group-hover:bg-soft-tosca duration-500 transition-all">
                   <div className="w-full flex justify-between items-center ">
                     <div className="flex flex-col">
-                      <div className="font-helixa max-sm:text-[32px] text-[48px] text-sunset-coral group-hover:text-white-ivory transition-all duration-500">
+                      <div className="font-helixa max-sm:text-[32px] text-[48px] text-sunset-coral sm:group-hover:text-white-ivory transition-all duration-500">
                         {data.className}
                       </div>
-                      <div className="max-sm:text-[16px] text-[28px] font-helixa text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                      <div className="max-sm:text-[16px] text-[28px] font-helixa text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                         {data.age}
                       </div>
                     </div>
                     <div className="max-sm:hidden">
-                      <div className="relative w-[203px] h-[76px] flex items-center">
+                      <div
+                        className="relative w-[203px] h-[76px] flex items-center "
+                        onMouseEnter={() => setOnHover(false)}
+                        onMouseLeave={() => setOnHover(true)}
+                        onClick={() => {
+                          modalClick(null);
+                        }}
+                      >
                         <Link
                           href={"https://wa.me/6281130910001"}
                           target="_blank"
-                          className="cursor-pointer w-0 group-hover:w-[301px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[76px] bg-white-ivory rounded-[38px] absolute right-0 overflow-hidden"
-                          onMouseEnter={() => setOnHover(false)}
-                          onMouseLeave={() => setOnHover(true)}
+                          className="cursor-pointer  w-0 group-hover:w-[301px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[76px] max-sm:bg-[#EEE7D9] bg-white-ivory rounded-[38px] absolute right-0 overflow-hidden"
                         >
                           <div className="relative w-full h-full flex items-center">
                             <div className="font-helixa font-bold text-[28px] text-[#404040] ml-0 group-hover:ml-8 opacity-0 group-hover:opacity-100 duration-1000 transition-all text-nowrap">
@@ -245,7 +230,7 @@ const Section3 = ({ setOnHover }) => {
                             </div>
                           </div>
                         </Link>
-                        <div className="flex justify-center items-center">
+                        <div className="flex justify-center items-center pointer-events-none">
                           <div className="w-[76px] h-[76px] group-hover:w-[62px] group-hover:h-[62px] transition-all duration-1000 bg-sunset-coral rounded-full flex justify-center items-center absolute right-[5%] z-10">
                             <svg
                               width="20"
@@ -283,18 +268,18 @@ const Section3 = ({ setOnHover }) => {
                   <div className="w-full flex max-sm:flex-col max-sm:gap-y-[20px] justify-between">
                     <div className=" flex max-sm:w-full w-[55%] justify-between">
                       <div className="flex flex-col">
-                        <div className="font-helixa max-sm:text-[16px] text-[24px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa max-sm:text-[16px] text-[24px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           Time
                         </div>
-                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           {data.time}
                         </div>
                       </div>
                       <div className="flex flex-col">
-                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           Days
                         </div>
-                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           {data.days}
                         </div>
                       </div>
@@ -302,10 +287,10 @@ const Section3 = ({ setOnHover }) => {
 
                     <div className="flex max-sm:flex-row max-sm:justify-between max-sm:items-center flex-col ">
                       <div>
-                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040]  group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa text-[24px] max-sm:text-[16px] text-[#404040]  sm:group-hover:text-white-ivory transition-all duration-500">
                           Limited Seats
                         </div>
-                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] group-hover:text-white-ivory transition-all duration-500">
+                        <div className="font-helixa font-bold max-sm:text-[16px] text-[20px] text-[#404040] sm:group-hover:text-white-ivory transition-all duration-500">
                           {`${data.seat} Seats Left`}
                         </div>
                       </div>
@@ -314,7 +299,7 @@ const Section3 = ({ setOnHover }) => {
                           <Link
                             href={"https://wa.me/6281130910001"}
                             target="_blank"
-                            className="cursor-pointer w-0 group-hover:w-[183px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[40px] bg-white-ivory rounded-[20px] absolute right-0 overflow-hidden"
+                            className="cursor-pointer w-0 group-hover:w-[183px] duration-1000 opacity-0 group-hover:opacity-100 transition-all h-[40px] max-sm:bg-[#EEE7D9] bg-white-ivory rounded-[20px] absolute right-0 overflow-hidden"
                             onMouseEnter={() => setOnHover(false)}
                             onMouseLeave={() => setOnHover(true)}
                           >

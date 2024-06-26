@@ -2,7 +2,7 @@ import React from "react";
 
 const SectionAfterHero = () => {
   return (
-    <div className="text-center w-full font-helixa font-bold text-[128px] leading-[200px] h-dvh flex justify-center items-center bg-white-ivory section">
+    <div className="text-center w-full font-helixa font-bold text-[128px] leading-[200px] h-svh flex justify-center items-center bg-white-ivory section">
       <div className="">
         <div className="overflow-hidden">
           <div className="translate-y-[100%]  section-2-text">

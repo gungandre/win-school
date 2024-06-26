@@ -15,7 +15,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
-import Footer2 from "../components/footer/footer-2";
+import Footer from "../components/footer/footer-2";
 import useNavColor from "../hook/useNavColor";
 import HeaderMobile from "../components/header/header-mobile";
 import HeroMobile from "../components/playschool/Hero-mobile";
@@ -84,31 +84,19 @@ const page = () => {
     <>
       <Cursor cursorRef={cursorRef} cursorText={"MORE"} />
 
-      <div>
-        {small === false ? (
-          <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
-        ) : (
-          <HeaderMobile />
-        )}
-      </div>
+      <Header navbarAnimationPlay={true} navbarColor={navbarColor} />
 
-      <div>
-        {small === false ? (
-          <Hero setTlComplete={setTlComplete} />
-        ) : (
-          <HeroMobile />
-        )}
-      </div>
+      <Hero setTlComplete={setTlComplete} />
 
       <Section2 setTlComplete={setTlComplete} />
-      <Section3 setOnHover={setOnHover} />
+      <Section3 tlComplete={tlComplete} setOnHover={setOnHover} />
 
-      <div>{small === false ? <Section4 /> : <Section4Mobile />}</div>
+      <Section4 />
 
       <BeforeFooter tlComplete={tlComplete} />
       <div>
         {small === false ? (
-          <Footer2 tlComplete={tlComplete} />
+          <Footer tlComplete={tlComplete} />
         ) : (
           <FooterMobile />
         )}

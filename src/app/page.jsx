@@ -12,7 +12,6 @@ import gsap from "gsap";
 
 import SplitText from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
-import Preloader from "./components/preloader/Preloader";
 
 import Hero from "./components/homepage/hero";
 import Section2 from "./components/homepage/section-2";
@@ -39,9 +38,12 @@ import WinnerClasses from "./components/homepage/WinnerClasses";
 import BeforeFooterMobile from "./components/homepage/before-footer-mobile";
 import FooterMobile from "./components/homepage/FooterMobile";
 import useMediaQuery from "./utils/useMediaQuery";
-
+import Preloader from "./components/preloader/Preloader";
+import PreloaderMobile from "./components/preloader/Preloader-mobile";
 export default function Home() {
   gsap.registerPlugin(SplitText);
+
+  const [footerMobilePlay, setFooterMobilePlay] = useState(false);
 
   const [navbarAnimationPlay, setNavbarAnimationPlay] = useState(false);
 
@@ -77,10 +79,6 @@ export default function Home() {
       document.removeEventListener("mousemove", moveCursor);
     };
   }, [cursorRef.current]);
-
-  useGSAP(() => {
-    setTlMobile(true);
-  }, [small]);
 
   const cursorHover = (text) => {
     setCursorText(text);
@@ -126,53 +124,36 @@ export default function Home() {
 
   return (
     <>
-      {small === false ? (
-        <div>
+      <div>
+        {!small && (
           <Cursor
             cursorRef={cursorRef}
             videoPause={videoPause}
             cursorText={cursorText}
           />
-          <Header navbarColor={navbarColor} />
-          <Hero />
-          <Section2 />
+        )}
 
-          <SectionAfterSwiper />
-          <Section4 />
+        <Header navbarColor={navbarColor} />
+        <Hero />
+        <Section2 />
 
-          <SectionVideo
-            cursorLeave={cursorLeave}
-            videoRef={videoRef}
-            videoPlayback={videoPlayback}
-            cursorHover={cursorHover}
-          />
-          <Section6 />
-          <Section7 />
+        <SectionAfterSwiper />
+        <Section4 />
 
-          <Section8 cursorHover={cursorHover} cursorLeave={cursorLeave} />
-          <Section9 />
+        <SectionVideo
+          cursorLeave={cursorLeave}
+          videoRef={videoRef}
+          videoPlayback={videoPlayback}
+          cursorHover={cursorHover}
+        />
+        <Section6 />
+        <Section7 />
 
-          <Footer />
-        </div>
-      ) : (
-        <>
-          <HeaderMobile />
-          <HeroMobile />
-          <Section2Mobile />
+        <Section8 cursorHover={cursorHover} cursorLeave={cursorLeave} />
+        <Section9 setFooterMobilePlay={setFooterMobilePlay} />
 
-          <SectionAfterSwiper />
-          <Section4mobile />
-
-          <SectionVideoMobile />
-
-          <Section6Mobile tlMobile={tlMobile} />
-          <Section7Mobile />
-
-          <WinnerClasses />
-          <BeforeFooterMobile />
-          <FooterMobile />
-        </>
-      )}
+        <div>{!small ? <Footer /> : <FooterMobile />}</div>
+      </div>
     </>
   );
 }
