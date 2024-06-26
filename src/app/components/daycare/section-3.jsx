@@ -59,9 +59,7 @@ const Section3 = ({ setOnHover }) => {
     const fetchData = async () => {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       try {
-        const fetchingData = await fetch(
-          `http://127.0.0.1:1337/api/daycare?populate=*`
-        );
+        const fetchingData = await fetch(`${apiUrl}/api/daycare?populate=*`);
         const result = await fetchingData.json();
 
         setActivitiesData(result.data.attributes.Activities);

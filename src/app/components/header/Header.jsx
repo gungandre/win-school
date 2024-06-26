@@ -394,8 +394,16 @@ const Header = ({ navbarColor }) => {
 
   const subMenuClick = contextSafe((index) => {
     menuList.forEach((_, i) => {
+      gsap.to(`.arrow-mobile-${index}`, {
+        rotate: "180deg",
+        duration: 0.5,
+      });
       if (index === menuIndex) {
         setMenuIndex(null);
+        gsap.to(`.arrow-mobile-${index}`, {
+          rotate: "0deg",
+          duration: 0.5,
+        });
         return gsap.to(`.menu-${i}`, {
           height: "0",
           paddingBottom: "0",
@@ -412,18 +420,10 @@ const Header = ({ navbarColor }) => {
 
           duration: 0.5,
         });
-        gsap.to(`.arrow-mobile-${index}`, {
-          rotate: "180deg",
-          duration: 0.5,
-        });
       } else {
         gsap.to(`.menu-${i}`, {
           height: "0",
           paddingBottom: "0",
-          duration: 0.5,
-        });
-        gsap.to(`.arrow-mobile-${index}`, {
-          rotate: "0deg",
           duration: 0.5,
         });
       }

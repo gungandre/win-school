@@ -56,6 +56,7 @@ const HeaderMobile = () => {
   const elemenRef = useRef(null);
 
   const subMenuClick = (index) => {
+    console.log("click");
     menuList.forEach((_, i) => {
       if (i === index) {
         gsap.to(`.menu-${i}`, {
@@ -64,10 +65,10 @@ const HeaderMobile = () => {
 
           duration: 0.5,
         });
-        gsap.to(`.arrow-mobile-${index}`, {
-          rotate: 60,
-          duration: 0.5,
-        });
+        // gsap.to(`.arrow-mobile-${index}`, {
+        //   rotate: 60,
+        //   duration: 0.5,
+        // });
       } else {
         gsap.to(`.menu-${i}`, {
           height: "0",
@@ -75,10 +76,10 @@ const HeaderMobile = () => {
           duration: 0.5,
         });
 
-        gsap.to(`.arrow-mobile-${index}`, {
-          rotate: 0,
-          duration: 0.5,
-        });
+        // gsap.to(`.arrow-mobile-${index}`, {
+        //   rotate: 0,
+        //   duration: 0.5,
+        // });
       }
     });
   };
